@@ -8,12 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //MARK: Properties
     @IBOutlet weak var mainLabel: UILabel!
     @IBOutlet weak var mainTextField: UITextField!
-    @IBOutlet weak var mainButton: UIButton!
+    @IBOutlet weak var mainImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,37 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: Actions
     
+    //MARK: Images
+    @IBAction func selectImage(_ sender: UITapGestureRecognizer) {
+    
+        // Hide the keyboard if it was active
+        mainTextField.resignFirstResponder()
+        
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .photoLibrary
+        
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    //MARK: UIImagePickerControllerDelegate
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // The info dictionary may contain multiple representations of the image. You want to use the original.
+        guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        }
+        
+        // Set photoImageView to display the selected image.
+        mainImage.image = selectedImage
+        
+        // Dismiss the picker.
+        dismiss(animated: true, completion: nil)
+    }
+    
     //MARK: Label
     @IBAction func setDefaultLabelText(_ sender: UIButton) {
         mainLabel.text = "Default Label"
@@ -31,8 +62,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //MARK: UITextFieldDelegate
     // Define functions for the UITextDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-
-        print("returning ...")
+        
         // Hide the keyboard
         textField.resignFirstResponder()
         

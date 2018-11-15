@@ -17,25 +17,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="wxf-Ga-WyC">
-                                <rect key="frame" x="0.0" y="64.000000000000014" width="375" height="187.33333333333337"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="wxf-Ga-WyC">
+                                <rect key="frame" x="20" y="93.999999999999972" width="335" height="327.33333333333326"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53X-7v-1Tq">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="32.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="32.333333333333336"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="mS4-bM-ckG">
+                                        <rect key="frame" x="0.0" y="74.333333333333343" width="335" height="100"/>
+                                        <color key="backgroundColor" red="0.40000000000000002" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="FE1-rq-pGq"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="cTG-Oj-dQU" appends="YES" id="Lpf-Se-SCx"/>
+                                        </connections>
+                                    </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Placeholder" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X5g-SA-hQJ">
-                                        <rect key="frame" x="0.0" y="75.333333333333343" width="375" height="39"/>
+                                        <rect key="frame" x="0.0" y="216.33333333333331" width="335" height="39"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJY-jQ-crP">
-                                        <rect key="frame" x="0.0" y="157.33333333333334" width="375" height="30"/>
+                                        <rect key="frame" x="0.0" y="297.33333333333331" width="335" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" red="0.40000000000000002" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Reset"/>
@@ -45,30 +56,31 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="X5g-SA-hQJ" secondAttribute="trailing" id="Wt7-gG-CMD"/>
-                                    <constraint firstItem="X5g-SA-hQJ" firstAttribute="top" secondItem="53X-7v-1Tq" secondAttribute="bottom" constant="43" id="kFA-NA-Qkk"/>
-                                    <constraint firstAttribute="trailing" secondItem="53X-7v-1Tq" secondAttribute="trailing" id="nXM-fh-A2R"/>
-                                    <constraint firstItem="53X-7v-1Tq" firstAttribute="top" secondItem="wxf-Ga-WyC" secondAttribute="top" id="nok-dk-IA9"/>
-                                    <constraint firstItem="53X-7v-1Tq" firstAttribute="leading" secondItem="wxf-Ga-WyC" secondAttribute="leading" id="rrA-mK-UEY"/>
-                                    <constraint firstItem="X5g-SA-hQJ" firstAttribute="leading" secondItem="wxf-Ga-WyC" secondAttribute="leading" id="uXT-Io-BPF"/>
+                                    <constraint firstItem="X5g-SA-hQJ" firstAttribute="top" secondItem="mS4-bM-ckG" secondAttribute="bottom" constant="42" id="kMK-AB-T0q"/>
+                                    <constraint firstItem="mS4-bM-ckG" firstAttribute="top" secondItem="53X-7v-1Tq" secondAttribute="bottom" constant="42" id="yab-fe-wYr"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wxf-Ga-WyC" secondAttribute="trailing" id="3VD-pe-iC2"/>
-                            <constraint firstItem="wxf-Ga-WyC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Hbp-PW-2X7"/>
-                            <constraint firstItem="wxf-Ga-WyC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="fBu-xx-b8W"/>
+                            <constraint firstItem="wxf-Ga-WyC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="MxN-FH-NY2"/>
+                            <constraint firstAttribute="trailing" secondItem="wxf-Ga-WyC" secondAttribute="trailing" constant="20" id="fb2-tP-Fyr"/>
+                            <constraint firstItem="wxf-Ga-WyC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rVn-Q8-tSh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="mainButton" destination="WJY-jQ-crP" id="5qE-aE-F26"/>
+                        <outlet property="mainImage" destination="mS4-bM-ckG" id="VDl-8l-bOK"/>
                         <outlet property="mainLabel" destination="53X-7v-1Tq" id="q7r-MM-xgO"/>
                         <outlet property="mainTextField" destination="X5g-SA-hQJ" id="L3I-yH-k3f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="cTG-Oj-dQU">
+                    <connections>
+                        <action selector="selectImage:" destination="BYZ-38-t0r" id="TgJ-ey-eZI"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="40.799999999999997" y="20.689655172413794"/>
         </scene>
