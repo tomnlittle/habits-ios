@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E249C4AB219E9E8A002FE0ED /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249C4AA219E9E8A002FE0ED /* RatingControl.swift */; };
 		E2F36789217730AC00DAC0CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F36788217730AC00DAC0CE /* AppDelegate.swift */; };
 		E2F3678B217730AC00DAC0CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F3678A217730AC00DAC0CE /* ViewController.swift */; };
 		E2F3678E217730AC00DAC0CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2F3678C217730AC00DAC0CE /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E249C4AA219E9E8A002FE0ED /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		E2F36785217730AC00DAC0CE /* progress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = progress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F36788217730AC00DAC0CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2F3678A217730AC00DAC0CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				E2F36788217730AC00DAC0CE /* AppDelegate.swift */,
 				E2F3678A217730AC00DAC0CE /* ViewController.swift */,
+				E249C4AA219E9E8A002FE0ED /* RatingControl.swift */,
 				E2F3678C217730AC00DAC0CE /* Main.storyboard */,
 				E2F3678F217730AD00DAC0CE /* Assets.xcassets */,
 				E2F36791217730AD00DAC0CE /* LaunchScreen.storyboard */,
@@ -258,6 +261,7 @@
 			files = (
 				E2F3678B217730AC00DAC0CE /* ViewController.swift in Sources */,
 				E2F36789217730AC00DAC0CE /* AppDelegate.swift in Sources */,
+				E249C4AB219E9E8A002FE0ED /* RatingControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

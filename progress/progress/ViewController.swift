@@ -54,11 +54,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         dismiss(animated: true, completion: nil)
     }
     
-    //MARK: Label
-    @IBAction func setDefaultLabelText(_ sender: UIButton) {
-        mainLabel.text = "Default Label"
-    }
-    
     //MARK: UITextFieldDelegate
     // Define functions for the UITextDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

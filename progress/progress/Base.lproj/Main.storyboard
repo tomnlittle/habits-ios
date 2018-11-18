@@ -17,55 +17,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="wxf-Ga-WyC">
-                                <rect key="frame" x="20" y="93.999999999999972" width="335" height="327.33333333333326"/>
+                            <stackView opaque="NO" contentMode="top" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wxf-Ga-WyC">
+                                <rect key="frame" x="20" y="83.999999999999972" width="335" height="467.33333333333326"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53X-7v-1Tq">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="32.333333333333336"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53X-7v-1Tq" userLabel="Meal Name Label">
+                                        <rect key="frame" x="126.66666666666666" y="0.0" width="81.666666666666657" height="19.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="mS4-bM-ckG">
-                                        <rect key="frame" x="0.0" y="74.333333333333343" width="335" height="100"/>
-                                        <color key="backgroundColor" red="0.40000000000000002" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <gestureRecognizers/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="FE1-rq-pGq"/>
-                                        </constraints>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="cTG-Oj-dQU" appends="YES" id="Lpf-Se-SCx"/>
-                                        </connections>
-                                    </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Placeholder" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X5g-SA-hQJ">
-                                        <rect key="frame" x="0.0" y="216.33333333333331" width="335" height="39"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="13" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="X5g-SA-hQJ" userLabel="Meal Name Text Field">
+                                        <rect key="frame" x="0.0" y="27.333333333333329" width="335" height="39"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJY-jQ-crP">
-                                        <rect key="frame" x="0.0" y="297.33333333333331" width="335" height="30"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" red="0.40000000000000002" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Reset"/>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="100" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="mS4-bM-ckG" userLabel="Photo Image">
+                                        <rect key="frame" x="0.0" y="74.333333333333343" width="335" height="335"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="mS4-bM-ckG" secondAttribute="height" multiplier="1:1" id="nwo-LW-yKw"/>
+                                        </constraints>
                                         <connections>
-                                            <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O8L-mI-dNM"/>
+                                            <outletCollection property="gestureRecognizers" destination="cTG-Oj-dQU" appends="YES" id="Lpf-Se-SCx"/>
                                         </connections>
-                                    </button>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mCW-fL-9m4" userLabel="Rating Control" customClass="Rating_Control" customModule="progress" customModuleProvider="target">
+                                        <rect key="frame" x="41.666666666666657" y="417.33333333333331" width="251.99999999999997" height="50"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="starCount">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="X5g-SA-hQJ" firstAttribute="top" secondItem="mS4-bM-ckG" secondAttribute="bottom" constant="42" id="kMK-AB-T0q"/>
-                                    <constraint firstItem="mS4-bM-ckG" firstAttribute="top" secondItem="53X-7v-1Tq" secondAttribute="bottom" constant="42" id="yab-fe-wYr"/>
+                                    <constraint firstItem="mS4-bM-ckG" firstAttribute="leading" secondItem="wxf-Ga-WyC" secondAttribute="leading" id="7v3-dE-qf5"/>
+                                    <constraint firstAttribute="trailing" secondItem="X5g-SA-hQJ" secondAttribute="trailing" id="DSG-Ni-QP0"/>
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="wxf-Ga-WyC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="MxN-FH-NY2"/>
-                            <constraint firstAttribute="trailing" secondItem="wxf-Ga-WyC" secondAttribute="trailing" constant="20" id="fb2-tP-Fyr"/>
-                            <constraint firstItem="wxf-Ga-WyC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rVn-Q8-tSh"/>
+                            <constraint firstItem="wxf-Ga-WyC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="29z-oq-cWS"/>
+                            <constraint firstItem="wxf-Ga-WyC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="C98-Uv-2LC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wxf-Ga-WyC" secondAttribute="trailing" constant="20" id="lEP-VX-7Jm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -85,4 +82,7 @@
             <point key="canvasLocation" x="40.799999999999997" y="20.689655172413794"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="defaultPhoto" width="1080" height="1080"/>
+    </resources>
 </document>
