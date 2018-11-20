@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E20F0AC221A4B9BF00869B37 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F0AC121A4B9BE00869B37 /* Meal.swift */; };
 		E249C4AB219E9E8A002FE0ED /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249C4AA219E9E8A002FE0ED /* RatingControl.swift */; };
 		E2F36789217730AC00DAC0CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F36788217730AC00DAC0CE /* AppDelegate.swift */; };
 		E2F3678B217730AC00DAC0CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F3678A217730AC00DAC0CE /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E20F0AC121A4B9BE00869B37 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Meal.swift; path = progress/Meal.swift; sourceTree = "<group>"; };
 		E249C4AA219E9E8A002FE0ED /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		E2F36785217730AC00DAC0CE /* progress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = progress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F36788217730AC00DAC0CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		E2F3677C217730AC00DAC0CE = {
 			isa = PBXGroup;
 			children = (
+				E20F0AC121A4B9BE00869B37 /* Meal.swift */,
 				E2F36787217730AC00DAC0CE /* progress */,
 				E2F3679C217730AD00DAC0CE /* progressTests */,
 				E2F367A7217730AD00DAC0CE /* progressUITests */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E20F0AC221A4B9BF00869B37 /* Meal.swift in Sources */,
 				E2F3678B217730AC00DAC0CE /* ViewController.swift in Sources */,
 				E2F36789217730AC00DAC0CE /* AppDelegate.swift in Sources */,
 				E249C4AB219E9E8A002FE0ED /* RatingControl.swift in Sources */,
