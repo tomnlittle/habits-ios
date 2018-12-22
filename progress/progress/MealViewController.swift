@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MealViewController
 //  progress
 //
 //  Created by Thomas Northall-Little on 17/10/18.
@@ -7,18 +7,46 @@
 //
 
 import UIKit
+import os.log
 
-class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //MARK: Properties
-    @IBOutlet weak var mainLabel: UILabel!
     @IBOutlet weak var mainTextField: UITextField!
     @IBOutlet weak var mainImage: UIImageView!
+    @IBOutlet weak var ratingControl: Rating_Control!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    /*
+     This value is either passed by `MealTableViewController` in `prepare(for:sender:)`
+     or constructed as part of adding a new meal.
+     */
+    var meal: Meal?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mainTextField.delegate = self
+        updateSaveButtonState()
+    }
+    
+    //MARK: Navigation
+    
+    // This method lets you configure a view controller before it's presented.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        // Configure the destination view controller only when the save button is pressed.
+        guard let button = sender as? UIBarButtonItem, button === saveButton else {
+            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+            return
+        }
+        
+        let name = self.mainTextField.text ?? ""
+        let photo = self.mainImage.image
+        let rating = ratingControl.rating
+        
+        meal = Meal(name: name, photo: photo, rating: rating)
     }
     
     //MARK: Actions
@@ -65,9 +93,25 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         return true
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        // Disable the Save button while editing.
+        self.saveButton.isEnabled = false
+    }
+    
+
+    
     // Called after the textField has resigned its first responder status
     func textFieldDidEndEditing(_ textField: UITextField) {
-        mainLabel.text = textField.text
+        updateSaveButtonState()
+        navigationItem.title = textField.text
+    }
+    
+    // MARK:Private Methods
+    
+    private func updateSaveButtonState() {
+        // Disable the Save button if the text field is empty.
+        let text = self.mainTextField.text ?? ""
+        self.saveButton.isEnabled = !text.isEmpty
     }
 }
 
