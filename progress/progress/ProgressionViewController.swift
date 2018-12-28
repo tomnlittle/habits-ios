@@ -83,8 +83,7 @@ class ProgressionViewController: UIViewController, UITextFieldDelegate, UINaviga
         self.saveButton.isEnabled = false
     }
     
-    // Called after the textField has resigned its first responder status
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    @IBAction func textFieldDidChange(_ textField: UITextField) {
         updateSaveButtonState()
         navigationItem.title = textField.text
     }
