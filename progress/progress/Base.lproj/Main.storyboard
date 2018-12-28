@@ -49,23 +49,36 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Goal Name " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXz-Ve-iaL">
-                                            <rect key="frame" x="16" y="11" width="237" height="21"/>
+                                            <rect key="frame" x="33" y="11" width="237" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#No." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYB-mt-2fZ">
-                                            <rect key="frame" x="16" y="40" width="66" height="21"/>
+                                            <rect key="frame" x="49" y="35" width="66" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zDC-Nq-mvv" userLabel="Colour">
+                                            <rect key="frame" x="0.0" y="11" width="10" height="68"/>
+                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="10" id="ZPo-vP-LPe"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="zDC-Nq-mvv" secondAttribute="bottom" id="Mff-0o-QuS"/>
+                                        <constraint firstItem="zDC-Nq-mvv" firstAttribute="leading" secondItem="9lM-Wc-GY6" secondAttribute="leading" id="cPg-ys-joW"/>
+                                        <constraint firstItem="zDC-Nq-mvv" firstAttribute="top" secondItem="9lM-Wc-GY6" secondAttribute="top" id="qWu-pb-ttD"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="daysLeft" destination="VYB-mt-2fZ" id="2id-l1-96n"/>
+                                    <outlet property="labelColour" destination="zDC-Nq-mvv" id="gol-7i-CRS"/>
                                     <outlet property="nameLabel" destination="xXz-Ve-iaL" id="ddf-Bq-Ba4"/>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="zP0-k1-deO"/>
                                 </connections>

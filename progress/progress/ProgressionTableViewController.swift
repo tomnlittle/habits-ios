@@ -62,6 +62,8 @@ class ProgressionTableViewController: UITableViewController {
 //            cell.backgroundColor = UIColor(red:0.72, green:0.20, blue:0.42, alpha:1.0)
         }
         
+        cell.labelColour.backgroundColor = goal.colour
+        
         return cell
     }
 

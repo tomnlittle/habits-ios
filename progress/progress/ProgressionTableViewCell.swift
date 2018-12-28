@@ -13,6 +13,7 @@ class ProgressionTableViewCell: UITableViewCell {
     //MARK: Properties
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var daysLeft: UILabel!
+    @IBOutlet weak var labelColour: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

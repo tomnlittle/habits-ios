@@ -64,7 +64,12 @@ class ProgressionViewController: UIViewController, UITextFieldDelegate, UINaviga
         let name = self.mainTextField.text ?? ""
         let goalDate = self.goalDatePicker.date
         
-        self.currentGoal = TimeData(name: name, goalDate: goalDate)
+        // choose random colour
+        let index = Int.random(in: 0 ..< 3)
+        print(index)
+        let colour = ThemeColours.labelColours[index]
+        
+        self.currentGoal = TimeData(name: name, goalDate: goalDate, colour: colour)
     }
     
     //MARK: UITextFieldDelegate
