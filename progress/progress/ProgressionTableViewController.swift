@@ -18,8 +18,8 @@ class ProgressionTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let savedMeals = loadMeals() {
-            goalsList += savedMeals
+        if let savedGoals = loadGoals() {
+            goalsList += savedGoals
         }
 
         // Uncomment the following line to preserve selection between presentations
@@ -52,7 +52,15 @@ class ProgressionTableViewController: UITableViewController {
         let goal = goalsList[indexPath.row]
         
         cell.nameLabel.text = goal.name
-        cell.daysLeft.text = getDaysLeftText(date: goal.goalDate)
+        cell.daysLeft.text = String(getDaysLeft(date: goal.goalDate))
+        
+        if goal.goalDate > Date.init() {
+            // #70F8BA
+//            cell.backgroundColor = UIColor(red:0.44, green:0.97, blue:0.73, alpha:1.0)
+        } else {
+            // #B8336A
+//            cell.backgroundColor = UIColor(red:0.72, green:0.20, blue:0.42, alpha:1.0)
+        }
         
         return cell
     }
@@ -166,24 +174,19 @@ class ProgressionTableViewController: UITableViewController {
         
     }
     
-    private func loadMeals() -> [TimeData]? {
+    private func loadGoals() -> [TimeData]? {
         return NSKeyedUnarchiver.unarchiveObject(withFile: TimeData.ArchiveURL.path) as? [TimeData]
     }
     
-    private func getDaysLeftText(date: Date) -> String {
-        //String(getDays(date: goal.goalDate)) + " Days"
+    private func getDaysLeft(date: Date) -> Int {
         
         // Day Difference
         let days = Int(date.timeIntervalSinceNow / (60 * 60 * 24))
         
-        let plural = (days == 1 || days == -1) ? " day " : " days "
-        
         if days < 0 {
-            return String(-days) + plural + "over your goal"
-        } else if days > 0 {
-            return String(days) + plural + "left until you reach your goal"
+            return -days
         } else {
-            return "Reached your goal!"
+            return days
         }
     }
 }
