@@ -19,6 +19,7 @@
 		E2F36793217730AD00DAC0CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2F36791217730AD00DAC0CE /* LaunchScreen.storyboard */; };
 		E2F3679E217730AD00DAC0CE /* progressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F3679D217730AD00DAC0CE /* progressTests.swift */; };
 		E2F367A9217730AD00DAC0CE /* progressUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F367A8217730AD00DAC0CE /* progressUITests.swift */; };
+		E2FA55A021D634D600D2E1BD /* LabelColourPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FA559F21D634D600D2E1BD /* LabelColourPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		E2F367A4217730AD00DAC0CE /* progressUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = progressUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F367A8217730AD00DAC0CE /* progressUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = progressUITests.swift; sourceTree = "<group>"; };
 		E2F367AA217730AD00DAC0CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2FA559F21D634D600D2E1BD /* LabelColourPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelColourPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				E2F36788217730AC00DAC0CE /* AppDelegate.swift */,
 				E2F3678A217730AC00DAC0CE /* ProgressionViewController.swift */,
 				E2F3678C217730AC00DAC0CE /* Main.storyboard */,
+				E2FA559F21D634D600D2E1BD /* LabelColourPicker.swift */,
 				E20F0AC321A4C3D100869B37 /* ProgressionTableViewCell.swift */,
 				E2F3678F217730AD00DAC0CE /* Assets.xcassets */,
 				E2F36791217730AD00DAC0CE /* LaunchScreen.storyboard */,
@@ -272,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2FA55A021D634D600D2E1BD /* LabelColourPicker.swift in Sources */,
 				E20F0AC221A4B9BF00869B37 /* TimeData.swift in Sources */,
 				E2E0A65421D6292A00D61741 /* Colours.swift in Sources */,
 				E2F3678B217730AC00DAC0CE /* ProgressionViewController.swift in Sources */,

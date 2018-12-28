@@ -15,6 +15,7 @@ class ProgressionViewController: UIViewController, UITextFieldDelegate, UINaviga
     @IBOutlet weak var mainTextField: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var goalDatePicker: UIDatePicker!
+    @IBOutlet weak var labelColour: LabelColourPicker!
     
     /*
      This value is either passed by `MealTableViewController` in `prepare(for:sender:)`
@@ -47,7 +48,7 @@ class ProgressionViewController: UIViewController, UITextFieldDelegate, UINaviga
         } else if let owningNavigationController = navigationController{
             owningNavigationController.popViewController(animated: true)
         } else {
-            fatalError("The MealViewController is not inside a navigation controller.")
+            fatalError("Not inside a navigation controller.")
         }
     }
     
@@ -63,11 +64,7 @@ class ProgressionViewController: UIViewController, UITextFieldDelegate, UINaviga
         
         let name = self.mainTextField.text ?? ""
         let goalDate = self.goalDatePicker.date
-        
-        // choose random colour
-        let index = Int.random(in: 0 ..< 3)
-        print(index)
-        let colour = ThemeColours.labelColours[index]
+        let colour = self.labelColour.chosenColour
         
         self.currentGoal = TimeData(name: name, goalDate: goalDate, colour: colour)
     }
@@ -83,19 +80,9 @@ class ProgressionViewController: UIViewController, UITextFieldDelegate, UINaviga
         return true
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        // Disable the Save button while editing.
-        self.saveButton.isEnabled = false
-    }
-    
     @IBAction func textFieldDidChange(_ textField: UITextField) {
         updateSaveButtonState()
         navigationItem.title = textField.text
-    }
-    
-    @IBAction func dateChanged(_ sender: UIDatePicker) {
-        // seems already to be in UTC
-        
     }
     
     // MARK:Private Methods
