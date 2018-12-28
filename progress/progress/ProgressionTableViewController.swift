@@ -9,27 +9,22 @@
 import UIKit
 import os.log
 
-class MealTableViewController: UITableViewController {
+class ProgressionTableViewController: UITableViewController {
     
     
     //MARK: Properties
     
-    var meals = [Meal]()
+    var meals = [TimeData]()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.leftBarButtonItem = editButtonItem
-        
         if let savedMeals = loadMeals() {
             meals += savedMeals
         } else {
-            // Load the sample data.
             loadSampleMeals()
         }
-        
-
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -53,7 +48,7 @@ class MealTableViewController: UITableViewController {
         // Table view cells are reused and should be dequeued using a cell identifier.
         let cellIdentifier = "MealTableViewCell"
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? MealTableViewCell  else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ProgressionTableViewCell  else {
             fatalError("The dequeued cell is not an instance of MealTableViewCell.")
         }
         
@@ -114,11 +109,11 @@ class MealTableViewController: UITableViewController {
         case "AddItem":
             os_log("Adding a new meal.", log: OSLog.default, type: .debug)
         case "ShowDetail":
-            guard let mealDetailViewController = segue.destination as? MealViewController else {
+            guard let mealDetailViewController = segue.destination as? ProgressionViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
             
-            guard let selectedMealCell = sender as? MealTableViewCell else {
+            guard let selectedMealCell = sender as? ProgressionTableViewCell else {
                 fatalError("Unexpected sender: \(sender ?? "")")
             }
     
@@ -139,7 +134,7 @@ class MealTableViewController: UITableViewController {
     
     @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
         
-        if let sourceViewController = sender.source as? MealViewController, let meal = sourceViewController.meal {
+        if let sourceViewController = sender.source as? ProgressionViewController, let meal = sourceViewController.meal {
             // if editing
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 
@@ -163,19 +158,19 @@ class MealTableViewController: UITableViewController {
     //MARK: Private Methods
     
     private func loadSampleMeals() {
-        let photo1 = UIImage(named: "meal1")
-        let photo2 = UIImage(named: "meal2")
-        let photo3 = UIImage(named: "meal3")
+//        let photo1 = UIImage(named: "meal1")
+//        let photo2 = UIImage(named: "meal2")
+//        let photo3 = UIImage(named: "meal3")
         
-        guard let meal1 = Meal(name: "Caprese Salad", photo: photo1, rating: 4) else {
+        guard let meal1 = TimeData(name: "Caprese Salad", photo: nil, rating: 4) else {
             fatalError("Unable to instantiate meal1")
         }
         
-        guard let meal2 = Meal(name: "Chicken and Potatoes", photo: photo2, rating: 5) else {
+        guard let meal2 = TimeData(name: "Chicken and Potatoes", photo: nil, rating: 5) else {
             fatalError("Unable to instantiate meal2")
         }
         
-        guard let meal3 = Meal(name: "Pasta with Meatballs", photo: photo3, rating: 3) else {
+        guard let meal3 = TimeData(name: "Pasta with Meatballs", photo: nil, rating: 3) else {
             fatalError("Unable to instantiate meal2")
         }
         
@@ -183,7 +178,10 @@ class MealTableViewController: UITableViewController {
     }
     
     private func saveMeals() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(meals, toFile: Meal.ArchiveURL.path)
+        
+        os_log("Meals saving...", log: OSLog.default, type: .debug)
+
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(meals, toFile: TimeData.ArchiveURL.path)
         
         if isSuccessfulSave {
             os_log("Meals successfully saved.", log: OSLog.default, type: .debug)
@@ -193,7 +191,7 @@ class MealTableViewController: UITableViewController {
         
     }
     
-    private func loadMeals() -> [Meal]? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Meal.ArchiveURL.path) as? [Meal]
+    private func loadMeals() -> [TimeData]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: TimeData.ArchiveURL.path) as? [TimeData]
     }
 }

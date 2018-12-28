@@ -9,7 +9,7 @@
 import UIKit
 import os.log
 
-class Meal: NSObject, NSCoding {
+class TimeData: NSObject, NSCoding {
     
     // MARK: Properties
     
@@ -18,7 +18,7 @@ class Meal: NSObject, NSCoding {
     var rating: Int
     
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("meals")
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("time")
     
     //MARK: Types
     
@@ -31,17 +31,13 @@ class Meal: NSObject, NSCoding {
     
     init?(name: String, photo: UIImage?, rating: Int) {
         
-//        super.init(self.na)
-        
         if (name.isEmpty || rating < 0) {
             return nil
         }
         
-        
         self.name = name
         self.photo = photo
         self.rating = rating
-        
     }
     
     
@@ -63,8 +59,6 @@ class Meal: NSObject, NSCoding {
         let rating = aDecoder.decodeInteger(forKey: PropertyKey.rating)
     
         self.init(name: name, photo: photo, rating: rating)
-        
-
     }
 
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class Rating_Control: UIStackView {
+@IBDesignable class ProgressBar: UIStackView {
     
     //MARK: Properties
     @IBInspectable var starSize: CGSize = CGSize(width: 44.0, height: 44.0) {
@@ -73,7 +73,7 @@ import UIKit
             // Set the accessibility label
             button.accessibilityLabel = "Set \(i + 1) star rating"
             
-            button.addTarget(self, action: #selector(Rating_Control.ratingButtonTapped(button:)), for: .touchUpInside)
+            button.addTarget(self, action: #selector(ProgressBar.ratingButtonTapped(button:)), for: .touchUpInside)
             
             addArrangedSubview(button)
             ratingButtons.append(button)

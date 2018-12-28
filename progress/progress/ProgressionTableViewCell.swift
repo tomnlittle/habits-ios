@@ -1,5 +1,5 @@
 //
-//  MealTableViewCell.swift
+//  ProgressionTableViewCell.swift
 //  progress
 //
 //  Created by Thomas Northall-Little on 21/11/18.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class MealTableViewCell: UITableViewCell {
+class ProgressionTableViewCell: UITableViewCell {
     
     //MARK: Properties
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
-    @IBOutlet weak var ratingControl: Rating_Control!
+    @IBOutlet weak var ratingControl: ProgressBar!
     
     override func awakeFromNib() {
         super.awakeFromNib()
