@@ -32,6 +32,7 @@ class ProgressionViewController: UIViewController, UITextFieldDelegate, UINaviga
             navigationItem.title = goal.name
             mainTextField.text = goal.name
             goalDatePicker.date = goal.goalDate
+            labelColour.chosenColour = goal.colour
         }
         
         updateSaveButtonState()

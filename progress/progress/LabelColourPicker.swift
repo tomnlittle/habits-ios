@@ -41,7 +41,11 @@ import UIKit
         }
     }
     
-    var chosenColour = ThemeColours.defaultLabelColour
+    var chosenColour = ThemeColours.defaultLabelColour {
+        didSet {
+            updateBorderColours()
+        }
+    }
     
     private var colourButtons = [UIButton]()
     
@@ -81,31 +85,33 @@ import UIKit
             button.layer.borderWidth = defaultBorderWidth
             button.layer.cornerRadius = cornerRadius
             button.clipsToBounds = true
-            
-            // Set the accessibility label
-//            button.accessibilityLabel = "Colour"
 
             button.addTarget(self, action: #selector(LabelColourPicker.colourTapped(button:)), for: .touchUpInside)
 
             addArrangedSubview(button)
             colourButtons.append(button)
         }
-        
-        // set the initial highlight
-        self.colourTapped(button: self.colourButtons[0])
     }
     
     //MARK: Button Action
     @objc func colourTapped(button: UIButton) {
         guard let index = colourButtons.index(of: button) else {
-            fatalError("Button \(button) is not a rating button")
+            fatalError("Button \(button) not found")
         }
         
-        for (_, button) in colourButtons.enumerated() {
-            button.layer.borderColor = defaultBorderColour.cgColor
-        }
-
         chosenColour = ThemeColours.labelColours[index]
-        button.layer.borderColor = highlightedBorderColour.cgColor
+    }
+    
+    private func updateBorderColours() {
+        print("asdvasfv")
+        // set all buttons to the default border colour
+        for (_, button) in colourButtons.enumerated() {
+            if button.backgroundColor == chosenColour {
+                button.layer.borderColor = highlightedBorderColour.cgColor
+            } else {
+                button.layer.borderColor = defaultBorderColour.cgColor
+            }
+           
+        }
     }
 }
