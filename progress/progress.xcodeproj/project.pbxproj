@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E20F0AC221A4B9BF00869B37 /* TimeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F0AC121A4B9BE00869B37 /* TimeData.swift */; };
 		E20F0AC421A4C3D100869B37 /* ProgressionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F0AC321A4C3D100869B37 /* ProgressionTableViewCell.swift */; };
-		E249C4AB219E9E8A002FE0ED /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249C4AA219E9E8A002FE0ED /* ProgressBar.swift */; };
 		E2B503A021CE3E6A002DE8D4 /* ProgressionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B5039F21CE3E6A002DE8D4 /* ProgressionTableViewController.swift */; };
 		E2F0CE6D21D5DEF60033EA05 /* Credits in Resources */ = {isa = PBXBuildFile; fileRef = E2F0CE6C21D5DEF60033EA05 /* Credits */; };
 		E2F36789217730AC00DAC0CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F36788217730AC00DAC0CE /* AppDelegate.swift */; };
@@ -41,7 +40,6 @@
 /* Begin PBXFileReference section */
 		E20F0AC121A4B9BE00869B37 /* TimeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeData.swift; sourceTree = "<group>"; };
 		E20F0AC321A4C3D100869B37 /* ProgressionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionTableViewCell.swift; sourceTree = "<group>"; };
-		E249C4AA219E9E8A002FE0ED /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		E2B5039F21CE3E6A002DE8D4 /* ProgressionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionTableViewController.swift; sourceTree = "<group>"; };
 		E2F0CE6C21D5DEF60033EA05 /* Credits */ = {isa = PBXFileReference; lastKnownFileType = text; path = Credits; sourceTree = "<group>"; };
 		E2F36785217730AC00DAC0CE /* progress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = progress.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,7 +109,6 @@
 				E2B5039F21CE3E6A002DE8D4 /* ProgressionTableViewController.swift */,
 				E2F36788217730AC00DAC0CE /* AppDelegate.swift */,
 				E2F3678A217730AC00DAC0CE /* ProgressionViewController.swift */,
-				E249C4AA219E9E8A002FE0ED /* ProgressBar.swift */,
 				E2F3678C217730AC00DAC0CE /* Main.storyboard */,
 				E20F0AC321A4C3D100869B37 /* ProgressionTableViewCell.swift */,
 				E2F3678F217730AD00DAC0CE /* Assets.xcassets */,
@@ -275,7 +272,6 @@
 				E20F0AC221A4B9BF00869B37 /* TimeData.swift in Sources */,
 				E2F3678B217730AC00DAC0CE /* ProgressionViewController.swift in Sources */,
 				E2F36789217730AC00DAC0CE /* AppDelegate.swift in Sources */,
-				E249C4AB219E9E8A002FE0ED /* ProgressBar.swift in Sources */,
 				E2B503A021CE3E6A002DE8D4 /* ProgressionTableViewController.swift in Sources */,
 				E20F0AC421A4C3D100869B37 /* ProgressionTableViewCell.swift in Sources */,
 			);

@@ -9,30 +9,28 @@
 import UIKit
 import os.log
 
-class ProgressionViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ProgressionViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate {
     
     //MARK: Properties
     @IBOutlet weak var mainTextField: UITextField!
-    @IBOutlet weak var mainImage: UIImageView!
-    @IBOutlet weak var ratingControl: ProgressBar!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var goalDatePicker: UIDatePicker!
     
     /*
      This value is either passed by `MealTableViewController` in `prepare(for:sender:)`
      or constructed as part of adding a new meal.
      */
-    var meal: TimeData?
+    var currentGoal: TimeData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mainTextField.delegate = self
         
-        if let meal = meal {
-            navigationItem.title = meal.name
-            mainTextField.text   = meal.name
-            mainImage.image = meal.photo
-            ratingControl.rating = meal.rating
+        if let goal = currentGoal {
+            navigationItem.title = goal.name
+            mainTextField.text = goal.name
+            goalDatePicker.date = goal.goalDate
         }
         
         updateSaveButtonState()
@@ -64,43 +62,9 @@ class ProgressionViewController: UIViewController, UITextFieldDelegate, UIImageP
         }
         
         let name = self.mainTextField.text ?? ""
-        let photo = self.mainImage.image
-        let rating = ratingControl.rating
+        let goalDate = self.goalDatePicker.date
         
-        meal = TimeData(name: name, photo: photo, rating: rating)
-    }
-    
-    //MARK: Actions
-    
-    //MARK: Images
-    @IBAction func selectImage(_ sender: UITapGestureRecognizer) {
-    
-        // Hide the keyboard if it was active
-        mainTextField.resignFirstResponder()
-        
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.sourceType = .photoLibrary
-        
-        imagePickerController.delegate = self
-        present(imagePickerController, animated: true, completion: nil)
-    }
-    
-    //MARK: UIImagePickerControllerDelegate
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        // The info dictionary may contain multiple representations of the image. You want to use the original.
-        guard let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
-            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
-        }
-        
-        // Set photoImageView to display the selected image.
-        mainImage.image = selectedImage
-        
-        // Dismiss the picker.
-        dismiss(animated: true, completion: nil)
+        self.currentGoal = TimeData(name: name, goalDate: goalDate)
     }
     
     //MARK: UITextFieldDelegate
@@ -119,12 +83,15 @@ class ProgressionViewController: UIViewController, UITextFieldDelegate, UIImageP
         self.saveButton.isEnabled = false
     }
     
-
-    
     // Called after the textField has resigned its first responder status
     func textFieldDidEndEditing(_ textField: UITextField) {
         updateSaveButtonState()
         navigationItem.title = textField.text
+    }
+    
+    @IBAction func dateChanged(_ sender: UIDatePicker) {
+        // seems already to be in UTC
+        
     }
     
     // MARK:Private Methods
@@ -134,5 +101,6 @@ class ProgressionViewController: UIViewController, UITextFieldDelegate, UIImageP
         let text = self.mainTextField.text ?? ""
         self.saveButton.isEnabled = !text.isEmpty
     }
+   
 }
 

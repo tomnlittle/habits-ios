@@ -13,38 +13,35 @@ class TimeData: NSObject, NSCoding {
     
     // MARK: Properties
     
+    // Name of the Goal
     var name: String
-    var photo: UIImage?
-    var rating: Int
+    
+    // Finish Date
+    var goalDate: Date
     
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("time")
     
     //MARK: Types
-    
     struct PropertyKey {
         static let name = "name"
-        static let photo = "photo"
-        static let rating = "rating"
-        
+        static let goalDate = "goalDate"
     }
     
-    init?(name: String, photo: UIImage?, rating: Int) {
+    init?(name: String, goalDate: Date) {
         
-        if (name.isEmpty || rating < 0) {
+        if (name.isEmpty) {
             return nil
         }
         
         self.name = name
-        self.photo = photo
-        self.rating = rating
+        self.goalDate = goalDate
     }
     
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: PropertyKey.name)
-        aCoder.encode(photo, forKey: PropertyKey.photo)
-        aCoder.encode(rating, forKey: PropertyKey.rating)
+        aCoder.encode(goalDate, forKey: PropertyKey.goalDate)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -55,10 +52,11 @@ class TimeData: NSObject, NSCoding {
             return nil
         }
         
-        let photo = aDecoder.decodeObject(forKey: PropertyKey.photo) as? UIImage
-        let rating = aDecoder.decodeInteger(forKey: PropertyKey.rating)
-    
-        self.init(name: name, photo: photo, rating: rating)
+        guard let goalDate = aDecoder.decodeObject(forKey: PropertyKey.goalDate) as? Date else {
+            os_log("Unable to decode date", log: OSLog.default, type: .debug)
+            return nil
+        }
+     
+        self.init(name: name, goalDate: goalDate)
     }
-
 }

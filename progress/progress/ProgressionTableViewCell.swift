@@ -12,8 +12,7 @@ class ProgressionTableViewCell: UITableViewCell {
     
     //MARK: Properties
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var photoImageView: UIImageView!
-    @IBOutlet weak var ratingControl: ProgressBar!
+    @IBOutlet weak var daysLeft: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,8 +21,6 @@ class ProgressionTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
-
 }
