@@ -28,3 +28,43 @@ struct ThemeColours {
     ]
 }
 
+private func hashColour(colour: UIColor) -> Int {
+    
+    var hue: CGFloat = 0
+    var alpha: CGFloat = 0
+    var saturation: CGFloat = 0
+    var brightness: CGFloat = 0
+
+    
+    colour.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+    
+    // Apply Cantors Theorem Twice ? https://en.wikipedia.org/wiki/Pairing_function
+    
+    hue = round(hue * 100)
+    alpha = round(alpha * 100)
+    saturation = round(saturation * 100)
+    brightness = round(brightness * 100)
+    
+    let cantorHueAlpha = 1/2 * (hue + alpha)*(hue + alpha + 1) + alpha
+    let cantorSatBright = 1/2 * (saturation + brightness) * (saturation + brightness + 1) + brightness
+    
+    let finalCantor = 1/2 * (cantorHueAlpha + cantorSatBright) * (cantorHueAlpha + cantorSatBright + 1) + cantorSatBright
+    
+    print(cantorHueAlpha)
+    print(cantorSatBright)
+    
+    return Int(finalCantor)
+}
+
+public func areColoursEqual(colour_1: UIColor, colour_2: UIColor) -> Bool {
+    print("++++++++++++++")
+    
+    print(hashColour(colour: colour_1))
+    print(hashColour(colour: colour_2))
+    
+    print()
+    print(colour_1)
+    print(colour_2)
+    
+    return hashColour(colour: colour_1) == hashColour(colour: colour_2)
+}

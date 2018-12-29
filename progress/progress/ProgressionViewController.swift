@@ -31,6 +31,7 @@ class ProgressionViewController: UIViewController, UITextFieldDelegate, UINaviga
         if let goal = currentGoal {
             navigationItem.title = goal.name
             mainTextField.text = goal.name
+            
             goalDatePicker.date = goal.goalDate
             labelColour.chosenColour = goal.colour
         }

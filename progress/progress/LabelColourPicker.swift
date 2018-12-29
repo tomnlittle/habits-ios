@@ -103,10 +103,17 @@ import UIKit
     }
     
     private func updateBorderColours() {
-        print("asdvasfv")
+        
         // set all buttons to the default border colour
         for (_, button) in colourButtons.enumerated() {
-            if button.backgroundColor == chosenColour {
+
+//            print("+++++++++++++++++++++++++++++++++++")
+//            print(chosenColour.ciColor == button.backgroundColor!.ciColor)
+//            print(button.backgroundColor!.isEqual(chosenColour))
+//            print(chosenColour)
+//            print(button.backgroundColor!)
+            
+            if areColoursEqual(colour_1: button.backgroundColor!, colour_2: chosenColour) {
                 button.layer.borderColor = highlightedBorderColour.cgColor
             } else {
                 button.layer.borderColor = defaultBorderColour.cgColor

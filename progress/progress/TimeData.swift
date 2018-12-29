@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 import os.log
 
 class TimeData: NSObject, NSCoding {
@@ -23,7 +24,7 @@ class TimeData: NSObject, NSCoding {
     var colour: UIColor
     
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("time")
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("progress")
     
     //MARK: Types
     struct PropertyKey {
@@ -31,8 +32,6 @@ class TimeData: NSObject, NSCoding {
         static let goalDate = "goalDate"
         static let colour = "colour"
     }
-    
-    
     
     init?(name: String, goalDate: Date, colour: UIColor) {
         
@@ -44,7 +43,6 @@ class TimeData: NSObject, NSCoding {
         self.goalDate = goalDate
         self.colour = colour
     }
-    
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: PropertyKey.name)
