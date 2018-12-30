@@ -10,6 +10,7 @@
 		E20F0AC221A4B9BF00869B37 /* TimeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F0AC121A4B9BE00869B37 /* TimeData.swift */; };
 		E20F0AC421A4C3D100869B37 /* ProgressionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F0AC321A4C3D100869B37 /* ProgressionTableViewCell.swift */; };
 		E2B503A021CE3E6A002DE8D4 /* ProgressionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B5039F21CE3E6A002DE8D4 /* ProgressionTableViewController.swift */; };
+		E2D667BF21D861DA007CF73F /* TextEntryField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D667BE21D861DA007CF73F /* TextEntryField.swift */; };
 		E2E0A65421D6292A00D61741 /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E0A65321D6292A00D61741 /* Colours.swift */; };
 		E2F0CE6D21D5DEF60033EA05 /* Credits in Resources */ = {isa = PBXBuildFile; fileRef = E2F0CE6C21D5DEF60033EA05 /* Credits */; };
 		E2F36789217730AC00DAC0CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F36788217730AC00DAC0CE /* AppDelegate.swift */; };
@@ -43,6 +44,7 @@
 		E20F0AC121A4B9BE00869B37 /* TimeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeData.swift; sourceTree = "<group>"; };
 		E20F0AC321A4C3D100869B37 /* ProgressionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionTableViewCell.swift; sourceTree = "<group>"; };
 		E2B5039F21CE3E6A002DE8D4 /* ProgressionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionTableViewController.swift; sourceTree = "<group>"; };
+		E2D667BE21D861DA007CF73F /* TextEntryField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEntryField.swift; sourceTree = "<group>"; };
 		E2E0A65321D6292A00D61741 /* Colours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
 		E2F0CE6C21D5DEF60033EA05 /* Credits */ = {isa = PBXFileReference; lastKnownFileType = text; path = Credits; sourceTree = "<group>"; };
 		E2F36785217730AC00DAC0CE /* progress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = progress.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +123,7 @@
 				E2F36794217730AD00DAC0CE /* Info.plist */,
 				E2F0CE6C21D5DEF60033EA05 /* Credits */,
 				E2E0A65321D6292A00D61741 /* Colours.swift */,
+				E2D667BE21D861DA007CF73F /* TextEntryField.swift */,
 			);
 			path = progress;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			files = (
 				E2FA55A021D634D600D2E1BD /* LabelColourPicker.swift in Sources */,
 				E20F0AC221A4B9BF00869B37 /* TimeData.swift in Sources */,
+				E2D667BF21D861DA007CF73F /* TextEntryField.swift in Sources */,
 				E2E0A65421D6292A00D61741 /* Colours.swift in Sources */,
 				E2F3678B217730AC00DAC0CE /* ProgressionViewController.swift in Sources */,
 				E2F36789217730AC00DAC0CE /* AppDelegate.swift in Sources */,
