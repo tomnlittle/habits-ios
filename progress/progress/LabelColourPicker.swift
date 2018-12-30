@@ -29,12 +29,6 @@ import UIKit
         }
     }
     
-    @IBInspectable var highlightedBorderColour: UIColor = UIColor.blue {
-        didSet {
-            setupButtons()
-        }
-    }
-    
     @IBInspectable var defaultBorderWidth: CGFloat = 10.0 {
         didSet {
             setupButtons()
@@ -43,7 +37,7 @@ import UIKit
     
     var chosenColour = ThemeColours.defaultLabelColour {
         didSet {
-            updateBorderColours()
+            updateBorder()
         }
     }
     
@@ -102,23 +96,16 @@ import UIKit
         chosenColour = ThemeColours.labelColours[index]
     }
     
-    private func updateBorderColours() {
+    private func updateBorder() {
         
         // set all buttons to the default border colour
         for (_, button) in colourButtons.enumerated() {
-
-//            print("+++++++++++++++++++++++++++++++++++")
-//            print(chosenColour.ciColor == button.backgroundColor!.ciColor)
-//            print(button.backgroundColor!.isEqual(chosenColour))
-//            print(chosenColour)
-//            print(button.backgroundColor!)
             
             if areColoursEqual(colour_1: button.backgroundColor!, colour_2: chosenColour) {
-                button.layer.borderColor = highlightedBorderColour.cgColor
+                button.layer.borderWidth = defaultBorderWidth
             } else {
-                button.layer.borderColor = defaultBorderColour.cgColor
+                button.layer.borderWidth = 0.0
             }
-           
         }
     }
 }

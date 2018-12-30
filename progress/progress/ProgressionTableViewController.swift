@@ -86,33 +86,29 @@ class ProgressionTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
-        switch(segue.identifier ?? "") {
-        case "AddItem":
-            print("addItem")
-        case "ShowDetail":
-            guard let mealDetailViewController = segue.destination as? ProgressionViewController else {
+        if segue.identifier == "ShowDetail" {
+            guard let detailViewController = segue.destination as? ProgressionViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
             
-            guard let selectedMealCell = sender as? ProgressionTableViewCell else {
+            guard let selectedCell = sender as? ProgressionTableViewCell else {
                 fatalError("Unexpected sender: \(sender ?? "")")
             }
-    
-            guard let indexPath = tableView.indexPath(for: selectedMealCell) else {
+            
+            guard let indexPath = tableView.indexPath(for: selectedCell) else {
                 fatalError("The selected cell is not being displayed by the table")
             }
             
             let selectedGoal = goalsList[indexPath.row]
-            mealDetailViewController.currentGoal = selectedGoal
-            
-        default:
-            fatalError("Unexpected Segue Identifier; \(segue.identifier ?? "")")
+            detailViewController.currentGoal = selectedGoal
         }
     }
     
     //MARK: Actions
     
-    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+    @IBAction func unwindToGoalList(sender: UIStoryboardSegue) {
+        
+        print("here")
         
         if let sourceViewController = sender.source as? ProgressionViewController, let goal = sourceViewController.currentGoal {
             // if editing

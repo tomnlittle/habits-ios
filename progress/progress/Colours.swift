@@ -10,21 +10,40 @@ import UIKit
 
 struct ThemeColours {
     
-    static let red = UIColor(red:1.00, green:0.28, blue:0.58, alpha:1.0) // #FF4793
-    static let green = UIColor(red:0.15, green:1.00, blue:0.32, alpha:1.0) // #26FF51
-    static let purple = UIColor(red:0.34, green:0.16, blue:0.88, alpha:1.0) // #5628E0
+    // REDS
+    static let frenchFuchsia = UIColor(red:1.00, green:0.28, blue:0.58, alpha:1.0) // Red -> #FF4793
+    static let middlePurple = UIColor(red:0.79, green:0.55, blue:0.73, alpha:1.0) // #C98BB9
     
-    static let lightGrey = UIColor(red:0.71, green:0.76, blue:0.86, alpha:1.0) // #B6C3DB
-    static let grey = UIColor(red:0.17, green:0.18, blue:0.26, alpha:1.0) // #2B2D42
+    // GREENS
+    static let malachite = UIColor(red:0.15, green:1.00, blue:0.32, alpha:1.0) // Green -> #26FF51
     
-    static let defaultLabelColour = lightGrey
+    // BLUES/PURPLES
+    static let desaturatedCyan = UIColor(red:0.38, green:0.57, blue:0.62, alpha:1.0) // Mellowed Cyan #62929E
+    static let paynesGrey = UIColor(red:0.29, green:0.43, blue:0.49, alpha:1.0) // Bluey Grey #4A6D7C
+    static let hanPurple = UIColor(red:0.34, green:0.16, blue:0.88, alpha:1.0) // Purple -> #5628E0
+
+    // GREYS
+    static let lightBlueSteel = UIColor(red:0.71, green:0.76, blue:0.86, alpha:1.0) // #B6C3DB
+    static let gunmetal = UIColor(red:0.17, green:0.18, blue:0.26, alpha:1.0) // #2B2D42
+    
+    static let defaultLabelColour = lightBlueSteel
     
     static let labelColours = [
-        lightGrey,
-        grey,
-        green,
-        red,
-        purple
+        // REDS
+        frenchFuchsia,
+        middlePurple,
+       
+        // GREENS
+        malachite,
+       
+        // BLUES
+        desaturatedCyan,
+        paynesGrey,
+        hanPurple,
+        
+        // GREYS
+        lightBlueSteel,
+        gunmetal
     ]
 }
 
