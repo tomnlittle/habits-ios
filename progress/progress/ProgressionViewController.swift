@@ -18,7 +18,7 @@ class ProgressionViewController: UIViewController, UITextFieldDelegate, UINaviga
     @IBOutlet weak var labelColour: LabelColourPicker!
     
     /*
-     This value is either passed by `MealTableViewController` in `prepare(for:sender:)`
+     This value is either passed by `ProgressionTableViewController` in `prepare(for:sender:)`
      or constructed as part of adding a new meal.
      */
     var currentGoal: TimeData?
@@ -64,9 +64,9 @@ class ProgressionViewController: UIViewController, UITextFieldDelegate, UINaviga
             return
         }
         
-        let name = self.mainTextField.text ?? ""
-        let goalDate = self.goalDatePicker.date
-        let colour = self.labelColour.chosenColour
+        let name = mainTextField.text ?? ""
+        let goalDate = goalDatePicker.date
+        let colour = labelColour.chosenColour
         
         self.currentGoal = TimeData(name: name, goalDate: goalDate, colour: colour)
     }

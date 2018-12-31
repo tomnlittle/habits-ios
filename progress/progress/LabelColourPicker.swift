@@ -76,7 +76,6 @@ import UIKit
             button.widthAnchor.constraint(equalToConstant: boxSize.width).isActive = true
 
             button.layer.borderColor = defaultBorderColour.cgColor
-            button.layer.borderWidth = defaultBorderWidth
             button.layer.cornerRadius = cornerRadius
             button.clipsToBounds = true
 
@@ -85,6 +84,9 @@ import UIKit
             addArrangedSubview(button)
             colourButtons.append(button)
         }
+        
+        // update the border width
+        updateBorder()
     }
     
     //MARK: Button Action

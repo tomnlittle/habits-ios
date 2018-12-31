@@ -41,7 +41,7 @@ class TextEntryField: UITextField {
         
         // set height constraint
         let height = self.font!.pointSize + self.borderWidth + heightPadding
-        NSLayoutConstraint(item: self, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: height).isActive = true
+        NSLayoutConstraint(item: self, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.greaterThanOrEqual, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: height).isActive = true
     
         // add padding to the left side of the text box
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: borderWidth, height: self.frame.size.height))

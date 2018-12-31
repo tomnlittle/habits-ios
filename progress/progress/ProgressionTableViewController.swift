@@ -108,24 +108,21 @@ class ProgressionTableViewController: UITableViewController {
     
     @IBAction func unwindToGoalList(sender: UIStoryboardSegue) {
         
-        print("here")
-        
         if let sourceViewController = sender.source as? ProgressionViewController, let goal = sourceViewController.currentGoal {
+            
             // if editing
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
-                
                 goalsList[selectedIndexPath.row] = goal
                 tableView.reloadRows(at: [selectedIndexPath], with: .none)
-                
             } else {
-                // Add a new meal.
                 let newIndexPath = IndexPath(row: goalsList.count, section: 0)
                 goalsList.append(goal)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
-            
+
             saveData()
         }
+
     }
     
     //MARK: Private Methods
