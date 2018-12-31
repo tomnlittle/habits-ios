@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class TextEntryField: UITextField {
+class TextEntryField: UITextField {
     
     @IBInspectable var colour: UIColor = UIColor.clear {
         didSet {

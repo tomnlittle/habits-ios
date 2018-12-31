@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eIC-jw-kjc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C38-bz-8la">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -17,8 +17,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ltt-6z-Tao">
+                                <rect key="frame" x="0.0" y="44" width="375" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQv-9z-47D" userLabel="Title">
+                                        <rect key="frame" x="0.0" y="24" width="375" height="36"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="dQv-9z-47D" secondAttribute="trailing" id="MLO-ok-CXn"/>
+                                    <constraint firstItem="dQv-9z-47D" firstAttribute="leading" secondItem="ltt-6z-Tao" secondAttribute="leading" id="X1G-j6-MNH"/>
+                                    <constraint firstAttribute="bottom" secondItem="dQv-9z-47D" secondAttribute="bottom" id="h28-gY-M5d"/>
+                                    <constraint firstAttribute="height" constant="60" id="pSg-EO-MCg"/>
+                                </constraints>
+                            </view>
                             <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" sectionIndexMinimumDisplayRowCount="6" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hyQ-TJ-ZTO">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="688"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="584"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="15" reuseIdentifier="ProgressionTableViewCell" rowHeight="90" id="OrZ-60-iZX" userLabel="ProgressionTableViewCell" customClass="ProgressionTableViewCell" customModule="progress" customModuleProvider="target">
@@ -94,13 +112,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Xtg-pm-mTw" firstAttribute="trailing" secondItem="ltt-6z-Tao" secondAttribute="trailing" id="82s-S2-UsP"/>
                             <constraint firstItem="cmZ-tS-a4k" firstAttribute="leading" secondItem="Xtg-pm-mTw" secondAttribute="leading" id="9Ri-Sx-dyt"/>
                             <constraint firstItem="hyQ-TJ-ZTO" firstAttribute="trailing" secondItem="Xtg-pm-mTw" secondAttribute="trailing" id="ALl-wu-zbZ"/>
-                            <constraint firstItem="hyQ-TJ-ZTO" firstAttribute="top" secondItem="w6h-DY-3IJ" secondAttribute="top" id="L6S-EB-0L5"/>
+                            <constraint firstItem="ltt-6z-Tao" firstAttribute="leading" secondItem="Xtg-pm-mTw" secondAttribute="leading" id="JZS-N7-gGH"/>
                             <constraint firstItem="hyQ-TJ-ZTO" firstAttribute="leading" secondItem="Xtg-pm-mTw" secondAttribute="leading" id="Sgq-dU-AFp"/>
                             <constraint firstItem="Xtg-pm-mTw" firstAttribute="bottom" secondItem="cmZ-tS-a4k" secondAttribute="bottom" id="bC8-AB-xAV"/>
+                            <constraint firstItem="hyQ-TJ-ZTO" firstAttribute="top" secondItem="ltt-6z-Tao" secondAttribute="bottom" id="icg-Xn-bYC"/>
                             <constraint firstItem="cmZ-tS-a4k" firstAttribute="top" secondItem="hyQ-TJ-ZTO" secondAttribute="bottom" id="naB-Rm-eUO"/>
                             <constraint firstItem="cmZ-tS-a4k" firstAttribute="trailing" secondItem="Xtg-pm-mTw" secondAttribute="trailing" id="rre-wa-zrz"/>
+                            <constraint firstItem="ltt-6z-Tao" firstAttribute="top" secondItem="Xtg-pm-mTw" secondAttribute="top" id="tFT-aq-7yp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xtg-pm-mTw"/>
                     </view>
@@ -158,7 +179,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="g4M-6S-GaE">
-                                        <rect key="frame" x="7.6666666666666572" y="106.66666666666669" width="320" height="216"/>
+                                        <rect key="frame" x="7.6666666666666572" y="106.66666666666666" width="320" height="215.99999999999997"/>
                                         <date key="date" timeIntervalSinceReferenceDate="567666177.49378204">
                                             <!--2018-12-28 05:02:57 +0000-->
                                         </date>
@@ -230,27 +251,6 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2905" y="21"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="TKP-TL-hem">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eIC-jw-kjc" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BIt-NB-Q2r">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bnn-J4-V4H">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="C38-bz-8la" kind="relationship" relationship="rootViewController" id="bcf-e2-FBc"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iaN-pj-Ab9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-26" y="21"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IwL-gv-FFh">
