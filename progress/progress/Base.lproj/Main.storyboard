@@ -17,33 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" sectionIndexMinimumDisplayRowCount="6" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hyQ-TJ-ZTO">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" sectionIndexMinimumDisplayRowCount="6" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hyQ-TJ-ZTO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="688"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <view key="tableFooterView" contentMode="scaleToFill" id="cmZ-tS-a4k" userLabel="Button Bar">
-                                    <rect key="frame" x="0.0" y="118" width="375" height="90"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OX2-OW-7Km" userLabel="Add">
-                                            <rect key="frame" x="168" y="25.666666666666671" width="39" height="39"/>
-                                            <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="39" id="0dO-6K-bdG"/>
-                                                <constraint firstAttribute="width" constant="39" id="NVX-WJ-GNa"/>
-                                            </constraints>
-                                            <state key="normal" image="addIcon"/>
-                                            <connections>
-                                                <segue destination="Rqy-Pj-ae6" kind="presentation" id="7be-Xf-1Ti"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstItem="OX2-OW-7Km" firstAttribute="centerX" secondItem="cmZ-tS-a4k" secondAttribute="centerX" id="Rkb-gA-Smq"/>
-                                        <constraint firstItem="OX2-OW-7Km" firstAttribute="centerY" secondItem="cmZ-tS-a4k" secondAttribute="centerY" id="h72-ZY-pOB"/>
-                                    </constraints>
-                                </view>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="15" reuseIdentifier="ProgressionTableViewCell" rowHeight="90" id="OrZ-60-iZX" userLabel="ProgressionTableViewCell" customClass="ProgressionTableViewCell" customModule="progress" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="90"/>
@@ -91,8 +67,41 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="cmZ-tS-a4k" userLabel="Button Bar">
+                                <rect key="frame" x="0.0" y="688" width="375" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OX2-OW-7Km" userLabel="Add">
+                                        <rect key="frame" x="167" y="25" width="39" height="39"/>
+                                        <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="39" id="eO8-Lg-Klk"/>
+                                            <constraint firstAttribute="height" constant="39" id="hrf-w3-HMR"/>
+                                        </constraints>
+                                        <state key="normal" image="addIcon"/>
+                                        <connections>
+                                            <segue destination="Rqy-Pj-ae6" kind="presentation" id="7be-Xf-1Ti"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="OX2-OW-7Km" firstAttribute="top" secondItem="cmZ-tS-a4k" secondAttribute="top" constant="25" id="Xxf-RY-PDe"/>
+                                    <constraint firstAttribute="trailing" secondItem="OX2-OW-7Km" secondAttribute="trailing" constant="169.09" id="fjK-9V-d3D"/>
+                                    <constraint firstItem="OX2-OW-7Km" firstAttribute="leading" secondItem="cmZ-tS-a4k" secondAttribute="leading" constant="166.91" id="h3u-y5-qvI"/>
+                                    <constraint firstAttribute="height" constant="90" id="riL-iw-4VN"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cmZ-tS-a4k" firstAttribute="leading" secondItem="Xtg-pm-mTw" secondAttribute="leading" id="9Ri-Sx-dyt"/>
+                            <constraint firstItem="hyQ-TJ-ZTO" firstAttribute="trailing" secondItem="Xtg-pm-mTw" secondAttribute="trailing" id="ALl-wu-zbZ"/>
+                            <constraint firstItem="hyQ-TJ-ZTO" firstAttribute="top" secondItem="w6h-DY-3IJ" secondAttribute="top" id="L6S-EB-0L5"/>
+                            <constraint firstItem="hyQ-TJ-ZTO" firstAttribute="leading" secondItem="Xtg-pm-mTw" secondAttribute="leading" id="Sgq-dU-AFp"/>
+                            <constraint firstItem="Xtg-pm-mTw" firstAttribute="bottom" secondItem="cmZ-tS-a4k" secondAttribute="bottom" id="bC8-AB-xAV"/>
+                            <constraint firstItem="cmZ-tS-a4k" firstAttribute="top" secondItem="hyQ-TJ-ZTO" secondAttribute="bottom" id="naB-Rm-eUO"/>
+                            <constraint firstItem="cmZ-tS-a4k" firstAttribute="trailing" secondItem="Xtg-pm-mTw" secondAttribute="trailing" id="rre-wa-zrz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Xtg-pm-mTw"/>
                     </view>
                     <navigationItem key="navigationItem" id="6Lm-iA-PWk"/>
@@ -102,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sVV-Lj-bo6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="783" y="21"/>
+            <point key="canvasLocation" x="781.60000000000002" y="20.689655172413794"/>
         </scene>
         <!--New Goal-->
         <scene sceneID="tne-QT-ifu">
@@ -121,7 +130,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Goal Name" adjustsFontSizeToFit="NO" minimumFontSize="13" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="X5g-SA-hQJ" userLabel="Meal Name Text Field" customClass="TextEntryField" customModule="progress" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Goal Name" adjustsFontSizeToFit="NO" minimumFontSize="13" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="X5g-SA-hQJ" userLabel="Goal Textfield" customClass="TextEntryField" customModule="progress" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="35.333333333333343" width="335" height="21"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
@@ -227,8 +236,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eIC-jw-kjc" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="BIt-NB-Q2r">
-                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BIt-NB-Q2r">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

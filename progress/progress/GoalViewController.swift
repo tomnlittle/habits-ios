@@ -1,5 +1,5 @@
 //
-//  MealViewController
+//  GoalViewController
 //  progress
 //
 //  Created by Thomas Northall-Little on 17/10/18.
@@ -19,7 +19,7 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UINavigationCon
     
     /*
      This value is either passed by `ProgressionTableViewController` in `prepare(for:sender:)`
-     or constructed as part of adding a new meal.
+     or constructed as part of adding a new goal.
      */
     var currentGoal: TimeData?
     
@@ -43,9 +43,9 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UINavigationCon
     @IBAction func cancelButton(_ sender: Any) {
         // TODO:WHY
         // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
-        let isPresentingInAddMealMode = presentingViewController is UINavigationController
+        let isPresentingInAddGoalMode = presentingViewController is UINavigationController
         
-        if isPresentingInAddMealMode {
+        if isPresentingInAddGoalMode {
             dismiss(animated: true, completion: nil)
         } else if let owningNavigationController = navigationController{
             owningNavigationController.popViewController(animated: true)

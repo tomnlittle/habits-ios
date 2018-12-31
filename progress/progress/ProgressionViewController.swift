@@ -1,5 +1,5 @@
 //
-//  MealTableViewController.swift
+//  ProgressionViewController.swift
 //  progress
 //
 //  Created by Thomas Northall-Little on 22/12/18.
@@ -89,10 +89,10 @@ class ProgressionViewController: UIViewController, UITableViewDelegate, UITableV
         let cellIdentifier = "ProgressionTableViewCell"
 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ProgressionTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of MealTableViewCell.")
+            fatalError("The dequeued cell is not an instance of TableViewCell.")
         }
 
-        // Fetches the appropriate meal for the data source layout.
+        // Fetches the appropriate goal for the data source layout.
         let goal = goalsList[indexPath.row]
 
         cell.nameLabel.text = goal.name
