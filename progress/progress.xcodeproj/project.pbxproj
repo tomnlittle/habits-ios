@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		E20F0AC221A4B9BF00869B37 /* TimeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F0AC121A4B9BE00869B37 /* TimeData.swift */; };
 		E20F0AC421A4C3D100869B37 /* ProgressionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F0AC321A4C3D100869B37 /* ProgressionTableViewCell.swift */; };
-		E2B503A021CE3E6A002DE8D4 /* ProgressionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B5039F21CE3E6A002DE8D4 /* ProgressionTableViewController.swift */; };
+		E2B503A021CE3E6A002DE8D4 /* ProgressionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B5039F21CE3E6A002DE8D4 /* ProgressionViewController.swift */; };
 		E2D667BF21D861DA007CF73F /* TextEntryField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D667BE21D861DA007CF73F /* TextEntryField.swift */; };
 		E2E0A65421D6292A00D61741 /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E0A65321D6292A00D61741 /* Colours.swift */; };
 		E2F0CE6D21D5DEF60033EA05 /* Credits in Resources */ = {isa = PBXBuildFile; fileRef = E2F0CE6C21D5DEF60033EA05 /* Credits */; };
 		E2F36789217730AC00DAC0CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F36788217730AC00DAC0CE /* AppDelegate.swift */; };
-		E2F3678B217730AC00DAC0CE /* ProgressionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F3678A217730AC00DAC0CE /* ProgressionViewController.swift */; };
+		E2F3678B217730AC00DAC0CE /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F3678A217730AC00DAC0CE /* GoalViewController.swift */; };
 		E2F3678E217730AC00DAC0CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2F3678C217730AC00DAC0CE /* Main.storyboard */; };
 		E2F36790217730AD00DAC0CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2F3678F217730AD00DAC0CE /* Assets.xcassets */; };
 		E2F36793217730AD00DAC0CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2F36791217730AD00DAC0CE /* LaunchScreen.storyboard */; };
@@ -43,13 +43,13 @@
 /* Begin PBXFileReference section */
 		E20F0AC121A4B9BE00869B37 /* TimeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeData.swift; sourceTree = "<group>"; };
 		E20F0AC321A4C3D100869B37 /* ProgressionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionTableViewCell.swift; sourceTree = "<group>"; };
-		E2B5039F21CE3E6A002DE8D4 /* ProgressionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionTableViewController.swift; sourceTree = "<group>"; };
+		E2B5039F21CE3E6A002DE8D4 /* ProgressionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionViewController.swift; sourceTree = "<group>"; };
 		E2D667BE21D861DA007CF73F /* TextEntryField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEntryField.swift; sourceTree = "<group>"; };
 		E2E0A65321D6292A00D61741 /* Colours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
 		E2F0CE6C21D5DEF60033EA05 /* Credits */ = {isa = PBXFileReference; lastKnownFileType = text; path = Credits; sourceTree = "<group>"; };
 		E2F36785217730AC00DAC0CE /* progress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = progress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F36788217730AC00DAC0CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E2F3678A217730AC00DAC0CE /* ProgressionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionViewController.swift; sourceTree = "<group>"; };
+		E2F3678A217730AC00DAC0CE /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
 		E2F3678D217730AC00DAC0CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E2F3678F217730AD00DAC0CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2F36792217730AD00DAC0CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -112,9 +112,9 @@
 			isa = PBXGroup;
 			children = (
 				E20F0AC121A4B9BE00869B37 /* TimeData.swift */,
-				E2B5039F21CE3E6A002DE8D4 /* ProgressionTableViewController.swift */,
+				E2B5039F21CE3E6A002DE8D4 /* ProgressionViewController.swift */,
 				E2F36788217730AC00DAC0CE /* AppDelegate.swift */,
-				E2F3678A217730AC00DAC0CE /* ProgressionViewController.swift */,
+				E2F3678A217730AC00DAC0CE /* GoalViewController.swift */,
 				E2F3678C217730AC00DAC0CE /* Main.storyboard */,
 				E2FA559F21D634D600D2E1BD /* LabelColourPicker.swift */,
 				E20F0AC321A4C3D100869B37 /* ProgressionTableViewCell.swift */,
@@ -282,9 +282,9 @@
 				E20F0AC221A4B9BF00869B37 /* TimeData.swift in Sources */,
 				E2D667BF21D861DA007CF73F /* TextEntryField.swift in Sources */,
 				E2E0A65421D6292A00D61741 /* Colours.swift in Sources */,
-				E2F3678B217730AC00DAC0CE /* ProgressionViewController.swift in Sources */,
+				E2F3678B217730AC00DAC0CE /* GoalViewController.swift in Sources */,
 				E2F36789217730AC00DAC0CE /* AppDelegate.swift in Sources */,
-				E2B503A021CE3E6A002DE8D4 /* ProgressionTableViewController.swift in Sources */,
+				E2B503A021CE3E6A002DE8D4 /* ProgressionViewController.swift in Sources */,
 				E20F0AC421A4C3D100869B37 /* ProgressionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

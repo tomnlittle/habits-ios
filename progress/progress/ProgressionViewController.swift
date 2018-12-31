@@ -1,99 +1,155 @@
 //
-//  MealViewController
+//  MealTableViewController.swift
 //  progress
 //
-//  Created by Thomas Northall-Little on 17/10/18.
+//  Created by Thomas Northall-Little on 22/12/18.
 //  Copyright © 2018 Thomas Northall-Little. All rights reserved.
 //
 
 import UIKit
+import CoreData
 import os.log
 
-class ProgressionViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate {
+class ProgressionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: Properties
-    @IBOutlet weak var mainTextField: UITextField!
-    @IBOutlet weak var saveButton: UIBarButtonItem!
-    @IBOutlet weak var goalDatePicker: UIDatePicker!
-    @IBOutlet weak var labelColour: LabelColourPicker!
     
-    /*
-     This value is either passed by `ProgressionTableViewController` in `prepare(for:sender:)`
-     or constructed as part of adding a new meal.
-     */
-    var currentGoal: TimeData?
+    @IBOutlet weak var goalsTable: UITableView!
+    
+    var goalsList: [TimeData] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mainTextField.delegate = self
+        goalsTable.delegate = self
+        goalsTable.dataSource = self
         
-        if let goal = currentGoal {
-            navigationItem.title = goal.name
-            mainTextField.text = goal.name
-            
-            goalDatePicker.date = goal.goalDate
-            labelColour.chosenColour = goal.colour
-        }
-        
-        updateSaveButtonState()
-    }
-    
-    //MARK: Navigation
-    @IBAction func cancelButton(_ sender: Any) {
-        // TODO:WHY
-        // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
-        let isPresentingInAddMealMode = presentingViewController is UINavigationController
-        
-        if isPresentingInAddMealMode {
-            dismiss(animated: true, completion: nil)
-        } else if let owningNavigationController = navigationController{
-            owningNavigationController.popViewController(animated: true)
-        } else {
-            fatalError("Not inside a navigation controller.")
+        if let savedGoals = loadData() {
+            goalsList += savedGoals
         }
     }
-    
-    // This method lets you configure a view controller before it's presented.
+
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
-        // Configure the destination view controller only when the save button is pressed.
-        guard let button = sender as? UIBarButtonItem, button === saveButton else {
-            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
-            return
+        if segue.identifier == "ShowDetail" {
+            guard let detailViewController = segue.destination as? GoalViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+
+            guard let selectedCell = sender as? ProgressionTableViewCell else {
+                fatalError("Unexpected sender: \(sender ?? "")")
+            }
+
+            guard let indexPath = goalsTable.indexPath(for: selectedCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+
+            let selectedGoal = goalsList[indexPath.row]
+            detailViewController.currentGoal = selectedGoal
         }
-        
-        let name = mainTextField.text ?? ""
-        let goalDate = goalDatePicker.date
-        let colour = labelColour.chosenColour
-        
-        self.currentGoal = TimeData(name: name, goalDate: goalDate, colour: colour)
     }
     
-    //MARK: UITextFieldDelegate
-    // Define functions for the UITextDelegate
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    //MARK: Actions
+    
+    @IBAction func unwindToGoalList(sender: UIStoryboardSegue) {
         
-        // Hide the keyboard
-        textField.resignFirstResponder()
-        
-        // Indicates whether the system should process the press of the return key
+        if let sourceViewController = sender.source as? GoalViewController, let goal = sourceViewController.currentGoal {
+
+            // if editing
+            if let selectedIndexPath = goalsTable.indexPathForSelectedRow {
+                goalsList[selectedIndexPath.row] = goal
+                goalsTable.reloadRows(at: [selectedIndexPath], with: .none)
+                goalsTable.deselectRow(at: selectedIndexPath as IndexPath, animated: true)
+            } else {
+                let newIndexPath = IndexPath(row: goalsList.count, section: 0)
+                goalsList.append(goal)
+                goalsTable.insertRows(at: [newIndexPath], with: .automatic)
+            }
+
+            saveData()
+        }
+
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return goalsList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        // Table view cells are reused and should be dequeued using a cell identifier.
+        let cellIdentifier = "ProgressionTableViewCell"
+
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ProgressionTableViewCell  else {
+            fatalError("The dequeued cell is not an instance of MealTableViewCell.")
+        }
+
+        // Fetches the appropriate meal for the data source layout.
+        let goal = goalsList[indexPath.row]
+
+        cell.nameLabel.text = goal.name
+        cell.daysLeft.text = String(getDaysLeft(date: goal.goalDate))
+        cell.labelColour.backgroundColor = goal.colour
+
+        return cell
+    }
+    
+    // Support editing the table view.
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            goalsList.remove(at: indexPath.row)
+            saveData()
+
+            tableView.deleteRows(at: [indexPath], with: .fade)
+
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
+
+    /*
+     // Override to support rearranging the table view.
+     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+
+     }
+     */
+
+    // Support conditional rearranging of the table view.
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the item to be re-orderable.
         return true
     }
-    
-    @IBAction func textFieldDidChange(_ textField: UITextField) {
-        updateSaveButtonState()
-        navigationItem.title = textField.text
-    }
-    
-    // MARK:Private Methods
-    
-    private func updateSaveButtonState() {
-        // Disable the Save button if the text field is empty.
-        let text = self.mainTextField.text ?? ""
-        self.saveButton.isEnabled = !text.isEmpty
-    }
-   
-}
 
+   
+    //MARK: Private Methods
+    
+    private func getDaysLeft(date: Date) -> Int {
+        
+        // Day Difference
+        let days = Int(date.timeIntervalSinceNow / (60 * 60 * 24))
+        
+        if days < 0 {
+            return -days
+        } else {
+            return days
+        }
+    }
+    
+    //MARK: Data
+    private func saveData() {
+        NSKeyedArchiver.archiveRootObject(goalsList, toFile: TimeData.ArchiveURL.path)
+    }
+    
+    private func loadData() -> [TimeData]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: TimeData.ArchiveURL.path) as? [TimeData]
+    }
+}
