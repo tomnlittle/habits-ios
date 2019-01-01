@@ -45,13 +45,10 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UINavigationCon
     
     //MARK: Navigation
     @IBAction func cancelButton(_ sender: Any) {
-        // TODO:WHY
-        // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
-        let isPresentingInAddGoalMode = presentingViewController is UINavigationController
+        //            mainTextField.resignFirstResponder()
+        //            mainTextField.endEditing(true)
         
-        if isPresentingInAddGoalMode {
-            dismiss(animated: true, completion: nil)
-        } else if let owningNavigationController = navigationController{
+       if let owningNavigationController = navigationController{
             owningNavigationController.popViewController(animated: true)
         } else {
             fatalError("Not inside a navigation controller.")
@@ -101,11 +98,18 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UINavigationCon
     }
     
     @IBAction func textFieldDidChange(_ textField: UITextField) {
+        textField.text = textField.text?.uppercased()
         updateSaveButtonState()
     }
     
     @IBAction func resetDate(_ sender: UIButton) {
-        goalDatePicker.setDate(Date.init(), animated: true)
+//        UIView.animate(withDuration: 2.0, animations: { () -> Void in
+//            sender.transform = CGAffineTransform(rotationAngle: 180)
+//            self.goalDatePicker.setDate(Date.init(), animated: true)
+//        }, completion: { (finished: Bool) -> Void in
+//            sender.layer.removeAllAnimations()
+//            sender.transform = CGAffineTransform.identity
+//        })
     }
     
     // MARK: Private Methods

@@ -65,6 +65,8 @@ class ProgressionViewController: UIViewController, UITableViewDelegate, UITableV
                 goalsList[selectedIndexPath.row] = goal
                 goalsTable.reloadRows(at: [selectedIndexPath], with: .automatic)
             } else {
+                
+                
                 let newIndexPath = IndexPath(row: goalsList.count, section: 0)
                 goalsList.append(goal)
                 goalsTable.insertRows(at: [newIndexPath], with: .automatic)

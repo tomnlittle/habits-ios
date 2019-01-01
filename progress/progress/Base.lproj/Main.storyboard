@@ -196,7 +196,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="wxf-Ga-WyC">
-                                <rect key="frame" x="20" y="157" width="335" height="559"/>
+                                <rect key="frame" x="20" y="157" width="335" height="446"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDn-vj-Sa5" userLabel="Name">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="60"/>
@@ -315,38 +315,11 @@
                                             <constraint firstAttribute="trailing" secondItem="p5w-Xk-7sJ" secondAttribute="trailing" constant="8" id="xLz-o8-fs7"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WmS-VB-n0T" userLabel="Count Up/Down">
-                                        <rect key="frame" x="0.0" y="469" width="335" height="90"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COUNT UP OR DOWN:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yw4-Jn-F9L">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="54"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Clk-Kf-22b">
-                                                <rect key="frame" x="5" y="59" width="52" height="31"/>
-                                                <color key="onTintColor" red="0.16862745100000001" green="0.1764705882" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
-                                            </switch>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="Clk-Kf-22b" firstAttribute="top" secondItem="Yw4-Jn-F9L" secondAttribute="bottom" constant="5" id="7rj-de-6zG"/>
-                                            <constraint firstItem="Yw4-Jn-F9L" firstAttribute="top" secondItem="WmS-VB-n0T" secondAttribute="top" id="Dy3-jB-Udh"/>
-                                            <constraint firstAttribute="trailing" secondItem="Clk-Kf-22b" secondAttribute="trailing" constant="280" id="HdF-5d-t7O"/>
-                                            <constraint firstAttribute="bottom" secondItem="Clk-Kf-22b" secondAttribute="bottom" id="fnX-en-RJR"/>
-                                            <constraint firstItem="Clk-Kf-22b" firstAttribute="leading" secondItem="WmS-VB-n0T" secondAttribute="leading" constant="5" id="g8n-tX-Qt2"/>
-                                            <constraint firstAttribute="trailing" secondItem="Yw4-Jn-F9L" secondAttribute="trailing" id="ypO-aa-5c7"/>
-                                            <constraint firstItem="Yw4-Jn-F9L" firstAttribute="leading" secondItem="WmS-VB-n0T" secondAttribute="leading" id="za7-iB-3Pn"/>
-                                        </constraints>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="aDn-vj-Sa5" firstAttribute="leading" secondItem="wxf-Ga-WyC" secondAttribute="leading" id="0Yl-Dg-ZeJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="WmS-VB-n0T" secondAttribute="trailing" id="Bag-hd-CF9"/>
                                     <constraint firstItem="aDn-vj-Sa5" firstAttribute="top" secondItem="wxf-Ga-WyC" secondAttribute="top" id="SuU-IK-Iq2"/>
-                                    <constraint firstItem="WmS-VB-n0T" firstAttribute="leading" secondItem="wxf-Ga-WyC" secondAttribute="leading" id="alq-z3-icv"/>
                                     <constraint firstItem="sK3-on-A8o" firstAttribute="leading" secondItem="wxf-Ga-WyC" secondAttribute="leading" id="bcb-vl-QAU"/>
                                     <constraint firstAttribute="trailing" secondItem="aDn-vj-Sa5" secondAttribute="trailing" id="gO9-ts-xgb"/>
                                     <constraint firstAttribute="trailing" secondItem="sK3-on-A8o" secondAttribute="trailing" id="kFv-IW-0Li"/>
