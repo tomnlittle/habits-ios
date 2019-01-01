@@ -12,7 +12,7 @@ import os.log
 class GoalViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate {
     
     //MARK: Properties
-    @IBOutlet weak var mainTextField: UITextField!
+    @IBOutlet weak var mainTextField: TextEntryField!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var goalDatePicker: UIDatePicker!
     @IBOutlet weak var labelColour: LabelColourPicker!
@@ -82,9 +82,23 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UINavigationCon
         return true
     }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        guard let currentString = textField.text else {
+            return true
+        }
+        
+        let newLength = currentString.count + string.count - range.length
+        
+        if newLength >= mainTextField.maxCharacters {
+            return false
+        }
+        
+        return true
+    }
+    
     @IBAction func textFieldDidChange(_ textField: UITextField) {
         updateSaveButtonState()
-        navigationItem.title = textField.text
     }
     
     // MARK:Private Methods

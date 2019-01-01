@@ -28,6 +28,8 @@ class TextEntryField: UITextField {
         }
     }
     
+    @IBInspectable var maxCharacters: Int = 17
+    
     let heightPadding: CGFloat = 10.0
     
     //MARK: Initialisation
