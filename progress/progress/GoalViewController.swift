@@ -83,17 +83,17 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UINavigationCon
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
+
         guard let currentString = textField.text else {
             return true
         }
         
         let newLength = currentString.count + string.count - range.length
-        
+
         if newLength >= mainTextField.maxCharacters {
             return false
         }
-        
+
         return true
     }
     
