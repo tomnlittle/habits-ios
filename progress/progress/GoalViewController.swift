@@ -13,7 +13,7 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UINavigationCon
     
     //MARK: Properties
     @IBOutlet weak var mainTextField: UITextField!
-    @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var goalDatePicker: UIDatePicker!
     @IBOutlet weak var labelColour: LabelColourPicker!
     
@@ -59,7 +59,7 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UINavigationCon
         super.prepare(for: segue, sender: sender)
         
         // Configure the destination view controller only when the save button is pressed.
-        guard let button = sender as? UIBarButtonItem, button === saveButton else {
+        guard let button = sender as? UIButton, button === saveButton else {
             os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
             return
         }
