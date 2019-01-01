@@ -103,13 +103,13 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UINavigationCon
     }
     
     @IBAction func resetDate(_ sender: UIButton) {
-//        UIView.animate(withDuration: 2.0, animations: { () -> Void in
-//            sender.transform = CGAffineTransform(rotationAngle: 180)
-//            self.goalDatePicker.setDate(Date.init(), animated: true)
-//        }, completion: { (finished: Bool) -> Void in
-//            sender.layer.removeAllAnimations()
-//            sender.transform = CGAffineTransform.identity
-//        })
+        UIView.animate(withDuration: 1.0, animations: { () -> Void in
+            sender.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+            self.goalDatePicker.setDate(Date.init(), animated: true)
+        }, completion: { (finished: Bool) -> Void in
+            sender.layer.removeAllAnimations()
+            sender.transform = CGAffineTransform.identity
+        })
     }
     
     // MARK: Private Methods

@@ -65,8 +65,6 @@ class ProgressionViewController: UIViewController, UITableViewDelegate, UITableV
                 goalsList[selectedIndexPath.row] = goal
                 goalsTable.reloadRows(at: [selectedIndexPath], with: .automatic)
             } else {
-                
-                
                 let newIndexPath = IndexPath(row: goalsList.count, section: 0)
                 goalsList.append(goal)
                 goalsTable.insertRows(at: [newIndexPath], with: .automatic)
@@ -131,7 +129,7 @@ class ProgressionViewController: UIViewController, UITableViewDelegate, UITableV
 
     @IBAction func animateAdd(_ sender: UIButton) {
         UIView.animate(withDuration: 0.6, animations: { () -> Void in
-            sender.transform = CGAffineTransform(rotationAngle: -720)
+            sender.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
         }, completion: { (finished: Bool) -> Void in
             sender.layer.removeAllAnimations()
             sender.transform = CGAffineTransform.identity
