@@ -51,26 +51,26 @@
                                                     <rect key="frame" x="30" y="5" width="315" height="70"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal Name " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8q4-O1-QVH" userLabel="Goal Name">
-                                                            <rect key="frame" x="8" y="8" width="299" height="29"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                            <rect key="frame" x="12" y="7.9999999999999982" width="291" height="26.333333333333329"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#No." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixX-cO-pr2" userLabel="Countdown">
-                                                            <rect key="frame" x="8" y="41" width="299" height="24"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="#No." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixX-cO-pr2" userLabel="Countdown">
+                                                            <rect key="frame" x="12" y="38.333333333333336" width="291" height="26.666666666666664"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="8q4-O1-QVH" firstAttribute="leading" secondItem="LUC-fc-RWi" secondAttribute="leading" constant="8" id="2qJ-oh-jVK"/>
-                                                        <constraint firstAttribute="bottom" secondItem="ixX-cO-pr2" secondAttribute="bottom" constant="5" id="JIm-Xr-ga3"/>
-                                                        <constraint firstAttribute="trailing" secondItem="8q4-O1-QVH" secondAttribute="trailing" constant="8" id="Vyg-Uj-ZsS"/>
-                                                        <constraint firstItem="ixX-cO-pr2" firstAttribute="leading" secondItem="LUC-fc-RWi" secondAttribute="leading" constant="8" id="Wa8-Ow-QoW"/>
-                                                        <constraint firstItem="ixX-cO-pr2" firstAttribute="top" secondItem="8q4-O1-QVH" secondAttribute="bottom" constant="4" id="cXk-W5-Rx1"/>
-                                                        <constraint firstAttribute="trailing" secondItem="ixX-cO-pr2" secondAttribute="trailing" constant="8" id="rZO-Rm-XPi"/>
+                                                        <constraint firstItem="8q4-O1-QVH" firstAttribute="leading" secondItem="LUC-fc-RWi" secondAttribute="leading" constant="12" id="2qJ-oh-jVK"/>
+                                                        <constraint firstItem="ixX-cO-pr2" firstAttribute="leading" secondItem="LUC-fc-RWi" secondAttribute="leading" constant="12" id="5h4-KA-slg"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ixX-cO-pr2" secondAttribute="trailing" constant="12" id="EnZ-S4-y73"/>
+                                                        <constraint firstItem="ixX-cO-pr2" firstAttribute="top" secondItem="8q4-O1-QVH" secondAttribute="bottom" constant="4" id="NlN-05-FG5"/>
+                                                        <constraint firstAttribute="trailing" secondItem="8q4-O1-QVH" secondAttribute="trailing" constant="12" id="Vyg-Uj-ZsS"/>
+                                                        <constraint firstAttribute="bottom" secondItem="ixX-cO-pr2" secondAttribute="bottom" constant="5" id="dfF-fa-JP7"/>
                                                         <constraint firstItem="8q4-O1-QVH" firstAttribute="top" secondItem="LUC-fc-RWi" secondAttribute="top" constant="8" id="x8l-KI-bJY"/>
                                                     </constraints>
                                                 </view>
@@ -151,10 +151,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gs7-dX-heQ" userLabel="ControlView">
-                                <rect key="frame" x="0.0" y="44" width="375" height="90"/>
+                                <rect key="frame" x="0.0" y="44" width="424.33333333333331" height="90"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eft-Ps-jNS">
-                                        <rect key="frame" x="225" y="0.0" width="150" height="90"/>
+                                        <rect key="frame" x="274.33333333333331" y="0.0" width="150" height="90"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="kCc-t3-97t"/>
                                         </constraints>
@@ -170,7 +170,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qmi-47-lEW" userLabel="Cancel">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="90"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="150.33333333333334" height="90"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="39b-m8-8GW"/>
                                         </constraints>
@@ -196,19 +196,19 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="wxf-Ga-WyC">
-                                <rect key="frame" x="20" y="157" width="335" height="446"/>
+                                <rect key="frame" x="30.333333333333343" y="157" width="364" height="446"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDn-vj-Sa5" userLabel="Name">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="364" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME YOUR GOAL:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSJ-M3-gnS" userLabel="Label">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="18"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="364" height="18"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Goal Name" adjustsFontSizeToFit="NO" minimumFontSize="13" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="X5g-SA-hQJ" userLabel="Textfield" customClass="TextEntryField" customModule="progress" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="335" height="32"/>
+                                                <rect key="frame" x="0.0" y="28" width="364" height="32"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -241,10 +241,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sK3-on-A8o" userLabel="Colour">
-                                        <rect key="frame" x="0.0" y="83" width="335" height="90"/>
+                                        <rect key="frame" x="0.0" y="83" width="364" height="90"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHOOSE A COLOUR:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgo-VO-qKZ" userLabel="Label">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="46"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="364" height="46"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -276,22 +276,22 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ogD-ac-qHo" userLabel="Date">
-                                        <rect key="frame" x="0.0" y="196" width="335" height="250"/>
+                                        <rect key="frame" x="0.0" y="196" width="364" height="250"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GOAL END DATE:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLK-OX-3qM" userLabel="Label">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="18"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="364" height="18"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="g4M-6S-GaE" userLabel="Picker">
-                                                <rect key="frame" x="0.0" y="18" width="291" height="232"/>
+                                                <rect key="frame" x="0.0" y="18" width="320" height="232"/>
                                                 <date key="date" timeIntervalSinceReferenceDate="567666177.49378204">
                                                     <!--2018-12-28 05:02:57 +0000-->
                                                 </date>
                                             </datePicker>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p5w-Xk-7sJ" userLabel="ResetDate">
-                                                <rect key="frame" x="299" y="120" width="28" height="28"/>
+                                                <rect key="frame" x="328" y="120" width="28" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="28" id="0D1-1L-Efc"/>
                                                     <constraint firstAttribute="height" constant="28" id="Fpr-Ay-MhG"/>
@@ -330,9 +330,9 @@
                         <constraints>
                             <constraint firstItem="wxf-Ga-WyC" firstAttribute="top" secondItem="Gs7-dX-heQ" secondAttribute="bottom" constant="23" id="7Wv-fg-Oi7"/>
                             <constraint firstItem="Gs7-dX-heQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NHQ-8G-Pae"/>
-                            <constraint firstItem="wxf-Ga-WyC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="U0r-Af-V08"/>
+                            <constraint firstItem="wxf-Ga-WyC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="U0r-Af-V08"/>
                             <constraint firstItem="Gs7-dX-heQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Vpz-bh-PGq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wxf-Ga-WyC" secondAttribute="trailing" constant="20" id="dNO-eW-P6U"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wxf-Ga-WyC" secondAttribute="trailing" constant="30" id="dNO-eW-P6U"/>
                             <constraint firstItem="Gs7-dX-heQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uuN-r9-BU2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

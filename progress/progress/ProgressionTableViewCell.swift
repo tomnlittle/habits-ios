@@ -29,12 +29,8 @@ class ProgressionTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
-    }
-    
-    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         
-        if highlighted {
+        if selected {
             UIView.animate(withDuration: 1.0, animations: { () -> Void in
                 self.mainView.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
             }, completion: { (finished: Bool) -> Void in
@@ -46,7 +42,7 @@ class ProgressionTableViewCell: UITableViewCell {
     
     public func addGoalInformation(goal: TimeData) {
         nameLabel.text = goal.name
-        daysLeft.text = String(getDaysLeft(date: goal.goalDate))
+        daysLeft.text = String(getDaysLeft(date: goal.goalDate)) + " DAYS"
         mainView.backgroundColor = goal.colour
 
         if brightTextOnColour(colour: goal.colour) {

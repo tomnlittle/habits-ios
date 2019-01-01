@@ -40,7 +40,7 @@ class TextEntryField: UITextField {
         }
     }
     
-    @IBInspectable var maxCharacters: Int = 17
+    @IBInspectable var maxCharacters: Int = 15
     
     //MARK: Initialisation
     required init?(coder: NSCoder) {
