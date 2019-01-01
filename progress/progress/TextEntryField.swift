@@ -28,9 +28,19 @@ class TextEntryField: UITextField {
         }
     }
     
-    @IBInspectable var maxCharacters: Int = 17
+    @IBInspectable var heightPadding: CGFloat = 25.0 {
+        didSet {
+            setup()
+        }
+    }
     
-    let heightPadding: CGFloat = 10.0
+    @IBInspectable var leftPadding: CGFloat = 7.0 {
+        didSet {
+            setup()
+        }
+    }
+    
+    @IBInspectable var maxCharacters: Int = 17
     
     //MARK: Initialisation
     required init?(coder: NSCoder) {
@@ -46,7 +56,8 @@ class TextEntryField: UITextField {
         NSLayoutConstraint(item: self, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: height).isActive = true
     
         // add padding to the left side of the text box
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: borderWidth, height: self.frame.size.height))
+        let paddingWidth = borderWidth + leftPadding
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: paddingWidth, height: self.frame.size.height))
         self.leftView = paddingView
         self.leftViewMode = .always
         

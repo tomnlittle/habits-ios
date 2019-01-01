@@ -226,7 +226,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Goal Name" adjustsFontSizeToFit="NO" minimumFontSize="13" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="X5g-SA-hQJ" userLabel="Textfield" customClass="TextEntryField" customModule="progress" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="23" width="335" height="37"/>
+                                                <rect key="frame" x="0.0" y="28" width="335" height="32"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -250,8 +250,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="X5g-SA-hQJ" secondAttribute="bottom" id="GQO-Zw-09W"/>
-                                            <constraint firstItem="X5g-SA-hQJ" firstAttribute="top" secondItem="XSJ-M3-gnS" secondAttribute="bottom" constant="5" id="ITc-yi-xXn"/>
-                                            <constraint firstItem="X5g-SA-hQJ" firstAttribute="top" secondItem="XSJ-M3-gnS" secondAttribute="bottom" constant="5" id="Ivg-eL-Ykg"/>
+                                            <constraint firstItem="X5g-SA-hQJ" firstAttribute="top" secondItem="XSJ-M3-gnS" secondAttribute="bottom" constant="10" id="ITc-yi-xXn"/>
                                             <constraint firstAttribute="trailing" secondItem="XSJ-M3-gnS" secondAttribute="trailing" id="e8J-aJ-HEc"/>
                                             <constraint firstItem="X5g-SA-hQJ" firstAttribute="leading" secondItem="aDn-vj-Sa5" secondAttribute="leading" id="gDq-Zj-Jbu"/>
                                             <constraint firstAttribute="trailing" secondItem="X5g-SA-hQJ" secondAttribute="trailing" id="j6g-nS-kDt"/>
@@ -315,7 +314,7 @@
                                         <rect key="frame" x="0.0" y="469" width="335" height="90"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHOOSE A COLOUR:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgo-VO-qKZ" userLabel="Label">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="51"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="46"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -339,7 +338,7 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Lgo-VO-qKZ" secondAttribute="trailing" id="CGg-M9-iH4"/>
                                             <constraint firstItem="81D-4H-rmh" firstAttribute="leading" secondItem="sK3-on-A8o" secondAttribute="leading" constant="21" id="Dsd-Iw-Tcm"/>
-                                            <constraint firstItem="81D-4H-rmh" firstAttribute="top" secondItem="Lgo-VO-qKZ" secondAttribute="bottom" constant="5" id="Fo1-Sc-V97"/>
+                                            <constraint firstItem="81D-4H-rmh" firstAttribute="top" secondItem="Lgo-VO-qKZ" secondAttribute="bottom" constant="10" id="Fo1-Sc-V97"/>
                                             <constraint firstItem="Lgo-VO-qKZ" firstAttribute="top" secondItem="sK3-on-A8o" secondAttribute="top" id="KZk-EN-4Oh"/>
                                             <constraint firstAttribute="bottom" secondItem="81D-4H-rmh" secondAttribute="bottom" id="Ucc-cw-ArC"/>
                                             <constraint firstItem="Lgo-VO-qKZ" firstAttribute="leading" secondItem="sK3-on-A8o" secondAttribute="leading" id="mch-59-szA"/>
