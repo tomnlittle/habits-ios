@@ -63,8 +63,7 @@ class ProgressionViewController: UIViewController, UITableViewDelegate, UITableV
             // if editing
             if let selectedIndexPath = goalsTable.indexPathForSelectedRow {
                 goalsList[selectedIndexPath.row] = goal
-                goalsTable.reloadRows(at: [selectedIndexPath], with: .none)
-                goalsTable.deselectRow(at: selectedIndexPath as IndexPath, animated: true)
+                goalsTable.reloadRows(at: [selectedIndexPath], with: .automatic)
             } else {
                 let newIndexPath = IndexPath(row: goalsList.count, section: 0)
                 goalsList.append(goal)
