@@ -104,6 +104,7 @@
                                         </constraints>
                                         <state key="normal" image="addIcon"/>
                                         <connections>
+                                            <action selector="animateAdd:" destination="C38-bz-8la" eventType="touchUpInside" id="Hn4-Ba-dKx"/>
                                             <segue destination="BYZ-38-t0r" kind="presentation" id="jzv-Wj-cYB"/>
                                         </connections>
                                     </button>

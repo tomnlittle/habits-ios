@@ -127,7 +127,15 @@ class ProgressionViewController: UIViewController, UITableViewDelegate, UITableV
         return true
     }
 
-   
+    @IBAction func animateAdd(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.6, animations: { () -> Void in
+            sender.transform = CGAffineTransform(rotationAngle: -720)
+        }, completion: { (finished: Bool) -> Void in
+            sender.layer.removeAllAnimations()
+            sender.transform = CGAffineTransform.identity
+        })
+    }
+    
     //MARK: Private Methods
     
     //MARK: Data

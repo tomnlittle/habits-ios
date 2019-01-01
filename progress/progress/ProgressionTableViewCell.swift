@@ -35,14 +35,12 @@ class ProgressionTableViewCell: UITableViewCell {
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         
         if highlighted {
-            
             UIView.animate(withDuration: 1.0, animations: { () -> Void in
                 self.mainView.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
             }, completion: { (finished: Bool) -> Void in
                 self.mainView.layer.removeAllAnimations()
                 self.mainView.transform = CGAffineTransform.identity
             })
-        
         }
     }
     
