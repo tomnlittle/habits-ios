@@ -180,6 +180,9 @@
                                         <state key="normal" title="Save">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <segue destination="IgF-ig-Gbf" kind="unwind" unwindAction="unwindToGoalListWithSender:" id="MxL-bn-hX4"/>
                                         </connections>
