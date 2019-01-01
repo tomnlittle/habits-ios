@@ -115,6 +115,10 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UINavigationCon
         }
     }
     
+    @IBAction func swipeGesture(_ sender: UIScreenEdgePanGestureRecognizer) {
+        print("hello")
+    }
+    
     // MARK: Private Methods
     private func updateSaveButtonState() {
         // Disable the Save button if the text field is empty.

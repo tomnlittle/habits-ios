@@ -16,6 +16,9 @@ class ProgressionViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBOutlet weak var goalsTable: UITableView!
     
+    // haptic feedback
+    let impact = UIImpactFeedbackGenerator()
+    
     var goalsList: [TimeData] = []
     
     override func viewDidLoad() {
@@ -128,6 +131,9 @@ class ProgressionViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
     @IBAction func animateAdd(_ sender: UIButton) {
+    
+        self.impact.impactOccurred()
+        
         UIView.animate(withDuration: 0.6, animations: { () -> Void in
             sender.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
         }, completion: { (finished: Bool) -> Void in

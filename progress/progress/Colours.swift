@@ -11,16 +11,18 @@ import UIKit
 struct ThemeColours {
     
     // REDS
-    static let frenchPink = UIColor(red:1.00, green:0.40, blue:0.65, alpha:1.0) // Red -> #FF66A5
+    static let begonia = UIColor(red:1.00, green:0.42, blue:0.47, alpha:1.0) // Red -> #FF6C78
     
     // GREENS
-    static let malachite = UIColor(red:0.22, green:0.94, blue:0.52, alpha:1.0) // Green -> #38EF84
+    static let pistachio = UIColor(red:0.59, green:0.92, blue:0.44, alpha:1.0) // Green -> #96EA6F
+    
+    // YELLOWS
+    static let yellow = UIColor(red:1.00, green:0.85, blue:0.45, alpha:1.0) // #FFD874
     
     // BLUES/PURPLES
     static let queenBlue = UIColor(red:0.25, green:0.40, blue:0.65, alpha:1.0) // #3F66A5
     static let paynesGrey = UIColor(red:0.29, green:0.43, blue:0.49, alpha:1.0) // Bluey Grey #4A6D7C
-
-
+    
     // GREYS
     static let lightBlueSteel = UIColor(red:0.71, green:0.76, blue:0.86, alpha:1.0) // #B6C3DB
     static let gunmetal = UIColor(red:0.17, green:0.18, blue:0.26, alpha:1.0) // #2B2D42
@@ -29,10 +31,13 @@ struct ThemeColours {
     
     static let labelColours = [
         // REDS
-        frenchPink,
+        begonia,
        
         // GREENS
-        malachite,
+        pistachio,
+        
+        // YELLOWS
+        yellow,
        
         // BLUES
         queenBlue,

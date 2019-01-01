@@ -16,6 +16,9 @@ class ProgressionTableViewCell: UITableViewCell {
         }
     }
     
+    // haptic feedback
+    let impact = UIImpactFeedbackGenerator()
+    
     //MARK: Properties
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var daysLeft: UILabel!
@@ -31,7 +34,9 @@ class ProgressionTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         if selected {
-            UIView.animate(withDuration: 1.0, animations: { () -> Void in
+            self.impact.impactOccurred()
+            
+            UIView.animate(withDuration: 0.5, animations: { () -> Void in
                 self.mainView.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
             }, completion: { (finished: Bool) -> Void in
                 self.mainView.layer.removeAllAnimations()
