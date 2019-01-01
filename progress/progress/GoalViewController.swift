@@ -28,12 +28,16 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UINavigationCon
         
         mainTextField.delegate = self
         
+        // if editing
         if let goal = currentGoal {
             navigationItem.title = goal.name
             mainTextField.text = goal.name
             
             goalDatePicker.date = goal.goalDate
             labelColour.chosenColour = goal.colour
+        } else {
+            // trigger the keyboard on the text field
+            mainTextField.becomeFirstResponder()
         }
         
         updateSaveButtonState()
@@ -72,7 +76,6 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UINavigationCon
     }
     
     //MARK: UITextFieldDelegate
-    // Define functions for the UITextDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         // Hide the keyboard
@@ -101,8 +104,11 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UINavigationCon
         updateSaveButtonState()
     }
     
-    // MARK:Private Methods
+    @IBAction func resetDate(_ sender: UIButton) {
+        goalDatePicker.setDate(Date.init(), animated: true)
+    }
     
+    // MARK: Private Methods
     private func updateSaveButtonState() {
         // Disable the Save button if the text field is empty.
         let text = self.mainTextField.text ?? ""

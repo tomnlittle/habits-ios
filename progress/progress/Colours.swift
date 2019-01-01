@@ -74,3 +74,24 @@ private func hashColour(colour: UIColor) -> Int {
 public func areColoursEqual(colour_1: UIColor, colour_2: UIColor) -> Bool {
     return hashColour(colour: colour_1) == hashColour(colour: colour_2)
 }
+
+public func brightTextOnColour(colour: UIColor) -> Bool {
+    // calculate when to use black text on the background or white text
+    // https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color/3943023
+    
+    var L: CGFloat = 0.0
+    var R: CGFloat = 0.0
+    var G: CGFloat = 0.0
+    var B: CGFloat = 0.0
+    var alpha: CGFloat = 0.0
+    
+    colour.getRed(&R, green: &G, blue: &B, alpha: &alpha)
+    
+    R = R <= 0.03928 ? R/12.92 : pow(((R + 0.055)/1.055), 2.4)
+    G = G <= 0.03928 ? G/12.92 : pow(((G + 0.055)/1.055), 2.4)
+    B = B <= 0.03928 ? B/12.92 : pow(((B + 0.055)/1.055), 2.4)
+    
+    L = 0.2126 * R + 0.7152 * G + 0.0722 * B
+    
+    return L < 0.179
+}

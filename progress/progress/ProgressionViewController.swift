@@ -23,6 +23,7 @@ class ProgressionViewController: UIViewController, UITableViewDelegate, UITableV
         
         goalsTable.delegate = self
         goalsTable.dataSource = self
+
         
         if let savedGoals = loadData() {
             goalsList += savedGoals
@@ -95,9 +96,7 @@ class ProgressionViewController: UIViewController, UITableViewDelegate, UITableV
         // Fetches the appropriate goal for the data source layout.
         let goal = goalsList[indexPath.row]
 
-        cell.nameLabel.text = goal.name
-        cell.daysLeft.text = String(getDaysLeft(date: goal.goalDate))
-        cell.labelColour.backgroundColor = goal.colour
+        cell.addGoalInformation(goal: goal)
 
         return cell
     }
@@ -131,18 +130,6 @@ class ProgressionViewController: UIViewController, UITableViewDelegate, UITableV
 
    
     //MARK: Private Methods
-    
-    private func getDaysLeft(date: Date) -> Int {
-        
-        // Day Difference
-        let days = Int(date.timeIntervalSinceNow / (60 * 60 * 24))
-        
-        if days < 0 {
-            return -days
-        } else {
-            return days
-        }
-    }
     
     //MARK: Data
     private func saveData() {
