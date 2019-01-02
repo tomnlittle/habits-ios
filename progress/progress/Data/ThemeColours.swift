@@ -27,8 +27,6 @@ struct ThemeColours {
     static let lightBlueSteel = UIColor(red:0.71, green:0.76, blue:0.86, alpha:1.0) // #B6C3DB
     static let gunmetal = UIColor(red:0.17, green:0.18, blue:0.26, alpha:1.0) // #2B2D42
     
-    static let defaultLabelColour = lightBlueSteel
-    
     static let labelColours = [
         // REDS
         begonia,

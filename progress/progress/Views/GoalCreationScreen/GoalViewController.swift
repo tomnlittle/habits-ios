@@ -9,13 +9,19 @@
 import UIKit
 import os.log
 
-class GoalViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate {
+class GoalViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, LabelColourPickerDelegate {
     
     //MARK: Properties
     @IBOutlet weak var mainTextField: TextEntryField!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var goalDatePicker: UIDatePicker!
     @IBOutlet weak var labelColour: LabelColourPicker!
+    
+    @IBOutlet weak var colourView: UIView!
+    @IBOutlet weak var dateView: UIView!
+    
+    // assume initially that the controller is displaying an add new goal screen
+    var isEditingGoal: Bool = false
     
     /*
      This value is either passed by `ProgressionTableViewController` in `prepare(for:sender:)`
@@ -27,9 +33,12 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UINavigationCon
         super.viewDidLoad()
         
         mainTextField.delegate = self
+        labelColour.delegate = self
         
         // if editing
         if let goal = currentGoal {
+            self.isEditingGoal = true
+
             navigationItem.title = goal.name
             mainTextField.text = goal.name
             
@@ -38,15 +47,18 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UINavigationCon
         } else {
             // trigger the keyboard on the text field
             mainTextField.becomeFirstResponder()
+            
+            // hide the colour and date picker initially
+            self.colourView.layer.opacity = 0.0
+            self.dateView.layer.opacity = 0.0
         }
         
+        // update the save button state -> disabled or enabled
         updateSaveButtonState()
     }
     
     //MARK: Navigation
     @IBAction func cancelButton(_ sender: Any) {
-        //            mainTextField.resignFirstResponder()
-        //            mainTextField.endEditing(true)
         
        if let owningNavigationController = navigationController{
             owningNavigationController.popViewController(animated: true)
@@ -61,13 +73,13 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UINavigationCon
         
         // Configure the destination view controller only when the save button is pressed.
         guard let button = sender as? UIButton, button === saveButton else {
-            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
             return
         }
         
         let name = mainTextField.text ?? ""
         let goalDate = goalDatePicker.date
-        let colour = labelColour.chosenColour
+        
+        let colour = labelColour.chosenColour!
         
         self.currentGoal = TimeData(name: name, goalDate: goalDate, colour: colour)
     }
@@ -75,7 +87,6 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UINavigationCon
     //MARK: UITextFieldDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        // Hide the keyboard
         textField.resignFirstResponder()
         
         // Indicates whether the system should process the press of the return key
@@ -93,26 +104,46 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UINavigationCon
         if newLength >= mainTextField.maxCharacters {
             return false
         }
+        
+        // animate the next section
+        self.animateNextSection()
 
         return true
     }
     
     @IBAction func textFieldDidChange(_ textField: UITextField) {
+        
+        // upper case the input text
         textField.text = textField.text?.uppercased()
+        
+        // update the state of the save button
+        updateSaveButtonState()
+    }
+    
+    // called when a colour is selected in the colour picker field
+    func colourSelected(sender: LabelColourPicker) {
+        
+        // close the keyboard
+        self.mainTextField.resignFirstResponder()
+        
+        // call the animation field again
+        animateNextSection()
+        
+        // update the state of the save button
         updateSaveButtonState()
     }
     
     @IBAction func resetDate(_ sender: UIButton) {
-
-        if let dateToReset = self.currentGoal?.goalDate {
-            UIView.animate(withDuration: 1.0, animations: { () -> Void in
-                sender.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
-                self.goalDatePicker.setDate(dateToReset, animated: true)
-            }, completion: { (finished: Bool) -> Void in
-                sender.layer.removeAllAnimations()
-                sender.transform = CGAffineTransform.identity
-            })
-        }
+        
+        let dateToReset = self.currentGoal?.goalDate ?? Date.init()
+        
+        UIView.animate(withDuration: AnimationConstants.spinDuration, animations: { () -> Void in
+            sender.transform = CGAffineTransform(rotationAngle: AnimationConstants.spinAmount)
+            self.goalDatePicker.setDate(dateToReset, animated: true)
+        }, completion: { (finished: Bool) -> Void in
+            sender.layer.removeAllAnimations()
+            sender.transform = CGAffineTransform.identity
+        })
     }
     
     @IBAction func swipeGesture(_ sender: UIScreenEdgePanGestureRecognizer) {
@@ -120,11 +151,30 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UINavigationCon
     }
     
     // MARK: Private Methods
+    // Disable the Save button if the text field is empty or if the colour has not yet been selected
     private func updateSaveButtonState() {
-        // Disable the Save button if the text field is empty.
         let text = self.mainTextField.text ?? ""
-        self.saveButton.isEnabled = !text.isEmpty
+        self.saveButton.isEnabled = !text.isEmpty && self.labelColour.chosenColour != nil
     }
-   
+    
+    private func animateNextSection() {
+        
+        // if we're editing an old goal we dont need to animate as everything is visible
+        if self.isEditingGoal {
+            return
+        }
+        
+        if self.colourView.layer.opacity == 0.0 {
+            UIView.animate(withDuration: AnimationConstants.fadeInDuration, animations: { () -> Void in
+                self.colourView.layer.opacity = 1.0
+            })
+        }
+        
+        if self.labelColour.chosenColour != nil {
+            UIView.animate(withDuration: AnimationConstants.fadeInDuration, animations: { () -> Void in
+                self.dateView.layer.opacity = 1.0
+            })
+        }
+    }
 }
 

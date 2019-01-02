@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		E20F0AC221A4B9BF00869B37 /* TimeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F0AC121A4B9BE00869B37 /* TimeData.swift */; };
-		E20F0AC421A4C3D100869B37 /* ProgressionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F0AC321A4C3D100869B37 /* ProgressionTableViewCell.swift */; };
-		E2B503A021CE3E6A002DE8D4 /* ProgressionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B5039F21CE3E6A002DE8D4 /* ProgressionViewController.swift */; };
+		E20F0AC421A4C3D100869B37 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F0AC321A4C3D100869B37 /* MainTableViewCell.swift */; };
+		E2B503A021CE3E6A002DE8D4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B5039F21CE3E6A002DE8D4 /* MainViewController.swift */; };
 		E2D667BF21D861DA007CF73F /* TextEntryField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D667BE21D861DA007CF73F /* TextEntryField.swift */; };
-		E2E0A65421D6292A00D61741 /* Colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E0A65321D6292A00D61741 /* Colours.swift */; };
+		E2DE7EFB21DCCBDF00ED7B37 /* ColourPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE7EFA21DCCBDF00ED7B37 /* ColourPickerDelegate.swift */; };
+		E2DE7EFE21DCCFB800ED7B37 /* AnimationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE7EFD21DCCFB800ED7B37 /* AnimationConstants.swift */; };
+		E2E0A65421D6292A00D61741 /* ThemeColours.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E0A65321D6292A00D61741 /* ThemeColours.swift */; };
 		E2F0CE6D21D5DEF60033EA05 /* Credits in Resources */ = {isa = PBXBuildFile; fileRef = E2F0CE6C21D5DEF60033EA05 /* Credits */; };
 		E2F36789217730AC00DAC0CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F36788217730AC00DAC0CE /* AppDelegate.swift */; };
 		E2F3678B217730AC00DAC0CE /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F3678A217730AC00DAC0CE /* GoalViewController.swift */; };
@@ -20,7 +22,7 @@
 		E2F36793217730AD00DAC0CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2F36791217730AD00DAC0CE /* LaunchScreen.storyboard */; };
 		E2F3679E217730AD00DAC0CE /* progressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F3679D217730AD00DAC0CE /* progressTests.swift */; };
 		E2F367A9217730AD00DAC0CE /* progressUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F367A8217730AD00DAC0CE /* progressUITests.swift */; };
-		E2FA55A021D634D600D2E1BD /* LabelColourPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FA559F21D634D600D2E1BD /* LabelColourPicker.swift */; };
+		E2FA55A021D634D600D2E1BD /* ColourPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FA559F21D634D600D2E1BD /* ColourPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,10 +44,12 @@
 
 /* Begin PBXFileReference section */
 		E20F0AC121A4B9BE00869B37 /* TimeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeData.swift; sourceTree = "<group>"; };
-		E20F0AC321A4C3D100869B37 /* ProgressionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionTableViewCell.swift; sourceTree = "<group>"; };
-		E2B5039F21CE3E6A002DE8D4 /* ProgressionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionViewController.swift; sourceTree = "<group>"; };
+		E20F0AC321A4C3D100869B37 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		E2B5039F21CE3E6A002DE8D4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E2D667BE21D861DA007CF73F /* TextEntryField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEntryField.swift; sourceTree = "<group>"; };
-		E2E0A65321D6292A00D61741 /* Colours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colours.swift; sourceTree = "<group>"; };
+		E2DE7EFA21DCCBDF00ED7B37 /* ColourPickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourPickerDelegate.swift; sourceTree = "<group>"; };
+		E2DE7EFD21DCCFB800ED7B37 /* AnimationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationConstants.swift; sourceTree = "<group>"; };
+		E2E0A65321D6292A00D61741 /* ThemeColours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColours.swift; sourceTree = "<group>"; };
 		E2F0CE6C21D5DEF60033EA05 /* Credits */ = {isa = PBXFileReference; lastKnownFileType = text; path = Credits; sourceTree = "<group>"; };
 		E2F36785217730AC00DAC0CE /* progress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = progress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F36788217730AC00DAC0CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,7 +64,7 @@
 		E2F367A4217730AD00DAC0CE /* progressUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = progressUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F367A8217730AD00DAC0CE /* progressUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = progressUITests.swift; sourceTree = "<group>"; };
 		E2F367AA217730AD00DAC0CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E2FA559F21D634D600D2E1BD /* LabelColourPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelColourPicker.swift; sourceTree = "<group>"; };
+		E2FA559F21D634D600D2E1BD /* ColourPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E2760C0D21DC23D5001F0D79 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E2760C1221DC246B001F0D79 /* GoalCreationScreen */,
+				E2760C1121DC2452001F0D79 /* MainScreen */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E2760C0E21DC23DD001F0D79 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E2DE7EFC21DCCC2600ED7B37 /* ColourPicker */,
+				E2D667BE21D861DA007CF73F /* TextEntryField.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E2760C0F21DC240A001F0D79 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E2F3678C217730AC00DAC0CE /* Main.storyboard */,
+				E2F36791217730AD00DAC0CE /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		E2760C1021DC2420001F0D79 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E2E0A65321D6292A00D61741 /* ThemeColours.swift */,
+				E20F0AC121A4B9BE00869B37 /* TimeData.swift */,
+				E2DE7EFD21DCCFB800ED7B37 /* AnimationConstants.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E2760C1121DC2452001F0D79 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E2B5039F21CE3E6A002DE8D4 /* MainViewController.swift */,
+				E20F0AC321A4C3D100869B37 /* MainTableViewCell.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		E2760C1221DC246B001F0D79 /* GoalCreationScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E2F3678A217730AC00DAC0CE /* GoalViewController.swift */,
+			);
+			path = GoalCreationScreen;
+			sourceTree = "<group>";
+		};
+		E2DE7EFC21DCCC2600ED7B37 /* ColourPicker */ = {
+			isa = PBXGroup;
+			children = (
+				E2FA559F21D634D600D2E1BD /* ColourPicker.swift */,
+				E2DE7EFA21DCCBDF00ED7B37 /* ColourPickerDelegate.swift */,
+			);
+			path = ColourPicker;
+			sourceTree = "<group>";
+		};
 		E2F3677C217730AC00DAC0CE = {
 			isa = PBXGroup;
 			children = (
@@ -111,19 +178,14 @@
 		E2F36787217730AC00DAC0CE /* progress */ = {
 			isa = PBXGroup;
 			children = (
-				E20F0AC121A4B9BE00869B37 /* TimeData.swift */,
-				E2B5039F21CE3E6A002DE8D4 /* ProgressionViewController.swift */,
+				E2760C1021DC2420001F0D79 /* Data */,
+				E2760C0F21DC240A001F0D79 /* Storyboards */,
+				E2760C0E21DC23DD001F0D79 /* Components */,
+				E2760C0D21DC23D5001F0D79 /* Views */,
 				E2F36788217730AC00DAC0CE /* AppDelegate.swift */,
-				E2F3678A217730AC00DAC0CE /* GoalViewController.swift */,
-				E2F3678C217730AC00DAC0CE /* Main.storyboard */,
-				E2FA559F21D634D600D2E1BD /* LabelColourPicker.swift */,
-				E20F0AC321A4C3D100869B37 /* ProgressionTableViewCell.swift */,
 				E2F3678F217730AD00DAC0CE /* Assets.xcassets */,
-				E2F36791217730AD00DAC0CE /* LaunchScreen.storyboard */,
 				E2F36794217730AD00DAC0CE /* Info.plist */,
 				E2F0CE6C21D5DEF60033EA05 /* Credits */,
-				E2E0A65321D6292A00D61741 /* Colours.swift */,
-				E2D667BE21D861DA007CF73F /* TextEntryField.swift */,
 			);
 			path = progress;
 			sourceTree = "<group>";
@@ -278,14 +340,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2FA55A021D634D600D2E1BD /* LabelColourPicker.swift in Sources */,
+				E2DE7EFE21DCCFB800ED7B37 /* AnimationConstants.swift in Sources */,
+				E2FA55A021D634D600D2E1BD /* ColourPicker.swift in Sources */,
 				E20F0AC221A4B9BF00869B37 /* TimeData.swift in Sources */,
 				E2D667BF21D861DA007CF73F /* TextEntryField.swift in Sources */,
-				E2E0A65421D6292A00D61741 /* Colours.swift in Sources */,
+				E2E0A65421D6292A00D61741 /* ThemeColours.swift in Sources */,
 				E2F3678B217730AC00DAC0CE /* GoalViewController.swift in Sources */,
 				E2F36789217730AC00DAC0CE /* AppDelegate.swift in Sources */,
-				E2B503A021CE3E6A002DE8D4 /* ProgressionViewController.swift in Sources */,
-				E20F0AC421A4C3D100869B37 /* ProgressionTableViewCell.swift in Sources */,
+				E2B503A021CE3E6A002DE8D4 /* MainViewController.swift in Sources */,
+				E20F0AC421A4C3D100869B37 /* MainTableViewCell.swift in Sources */,
+				E2DE7EFB21DCCBDF00ED7B37 /* ColourPickerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

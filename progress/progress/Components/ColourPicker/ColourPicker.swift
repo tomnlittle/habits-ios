@@ -10,6 +10,9 @@ import UIKit
 
 @IBDesignable class LabelColourPicker: UIStackView {
     
+    // haptic feedback
+    let selectionVibration = UISelectionFeedbackGenerator()
+    
     //MARK: Properties
     @IBInspectable var boxSize: CGSize = CGSize(width: 44.0, height: 44.0) {
         didSet {
@@ -35,7 +38,10 @@ import UIKit
         }
     }
     
-    var chosenColour = ThemeColours.defaultLabelColour {
+    // delegate
+    weak var delegate: LabelColourPickerDelegate?
+    
+    var chosenColour: UIColor? {
         didSet {
             updateBorder()
         }
@@ -96,14 +102,24 @@ import UIKit
         }
         
         chosenColour = ThemeColours.labelColours[index]
+        
+        // run the delegate function
+        delegate?.colourSelected(sender: self)
     }
     
     private func updateBorder() {
         
+        // check if colour is unwrappable
+        guard let colour = self.chosenColour else {
+            return
+        }
+        
+        self.selectionVibration.selectionChanged()
+        
         // set all buttons to the default border colour
         for (_, button) in colourButtons.enumerated() {
-            
-            if areColoursEqual(colour_1: button.backgroundColor!, colour_2: chosenColour) {
+    
+            if areColoursEqual(colour_1: button.backgroundColor!, colour_2: colour) {
                 button.layer.borderWidth = defaultBorderWidth
             } else {
                 button.layer.borderWidth = 0.0
