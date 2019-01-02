@@ -145,13 +145,14 @@
                                 <rect key="frame" x="0.0" y="718" width="375" height="94"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OX2-OW-7Km" userLabel="Add">
-                                        <rect key="frame" x="173" y="15.666666666666629" width="29" height="29"/>
+                                        <rect key="frame" x="155" y="0.0" width="65" height="65"/>
                                         <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="29" id="cGJ-XC-79D"/>
-                                            <constraint firstAttribute="width" constant="29" id="tf1-Ni-nbL"/>
+                                            <constraint firstAttribute="width" constant="65" id="7zP-Qp-SSi"/>
+                                            <constraint firstAttribute="height" constant="65" id="9AD-sN-ngo"/>
                                         </constraints>
                                         <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        <inset key="contentEdgeInsets" minX="18" minY="18" maxX="18" maxY="18"/>
                                         <state key="normal" image="addIcon">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -161,12 +162,13 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qqi-CE-MwZ">
-                                        <rect key="frame" x="316" y="15.666666666666629" width="29" height="29"/>
+                                        <rect key="frame" x="310" y="0.0" width="65" height="65"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="29" id="Pyq-5c-hsY"/>
-                                            <constraint firstAttribute="height" constant="29" id="myw-fF-hfI"/>
+                                            <constraint firstAttribute="width" constant="65" id="I3b-qJ-fE8"/>
+                                            <constraint firstAttribute="height" constant="65" id="SO6-EJ-0Qq"/>
                                         </constraints>
                                         <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                        <inset key="contentEdgeInsets" minX="18" minY="18" maxX="18" maxY="18"/>
                                         <state key="normal" title="Button" image="info"/>
                                         <connections>
                                             <segue destination="n87-wA-oaR" kind="presentation" id="FVY-2u-ATC"/>
@@ -175,11 +177,11 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="Qqi-CE-MwZ" firstAttribute="top" secondItem="OX2-OW-7Km" secondAttribute="top" id="D6t-ht-09L"/>
-                                    <constraint firstAttribute="trailing" secondItem="Qqi-CE-MwZ" secondAttribute="trailing" constant="30" id="bWj-Sc-8A7"/>
-                                    <constraint firstItem="OX2-OW-7Km" firstAttribute="centerY" secondItem="cmZ-tS-a4k" secondAttribute="centerY" constant="-16.833333333333371" id="nbN-Dy-oT4"/>
+                                    <constraint firstItem="OX2-OW-7Km" firstAttribute="top" secondItem="cmZ-tS-a4k" secondAttribute="top" id="Pqh-SA-4dJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qqi-CE-MwZ" secondAttribute="trailing" id="ZJO-JV-iTH"/>
+                                    <constraint firstItem="OX2-OW-7Km" firstAttribute="centerX" secondItem="cmZ-tS-a4k" secondAttribute="centerX" id="dNe-Wj-uwE"/>
+                                    <constraint firstItem="Qqi-CE-MwZ" firstAttribute="top" secondItem="cmZ-tS-a4k" secondAttribute="top" id="dbP-VI-9E9"/>
                                     <constraint firstAttribute="height" constant="94" id="riL-iw-4VN"/>
-                                    <constraint firstItem="OX2-OW-7Km" firstAttribute="centerX" secondItem="cmZ-tS-a4k" secondAttribute="centerX" id="sAq-ro-pqU"/>
                                 </constraints>
                             </view>
                         </subviews>
