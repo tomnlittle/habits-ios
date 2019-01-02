@@ -20,6 +20,9 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UINavigationCon
     @IBOutlet weak var colourView: UIView!
     @IBOutlet weak var dateView: UIView!
     
+    // screen edge drag gesture
+    var screenEdgeGesture: UIScreenEdgePanGestureRecognizer!
+    
     // assume initially that the controller is displaying an add new goal screen
     var isEditingGoal: Bool = false
     
@@ -53,18 +56,15 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UINavigationCon
             self.dateView.layer.opacity = 0.0
         }
         
+        addGestures()
+    
         // update the save button state -> disabled or enabled
         updateSaveButtonState()
     }
     
     //MARK: Navigation
     @IBAction func cancelButton(_ sender: Any) {
-        
-       if let owningNavigationController = navigationController{
-            owningNavigationController.popViewController(animated: true)
-        } else {
-            fatalError("Not inside a navigation controller.")
-        }
+        self.dismiss(animated: true, completion: nil)
     }
     
     // This method lets you configure a view controller before it's presented.
@@ -175,6 +175,12 @@ class GoalViewController: UIViewController, UITextFieldDelegate, UINavigationCon
                 self.dateView.layer.opacity = 1.0
             })
         }
+    }
+    
+    private func addGestures() {
+        self.screenEdgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(cancelButton))
+        self.screenEdgeGesture.edges = .left
+        self.view.addGestureRecognizer(screenEdgeGesture)
     }
 }
 

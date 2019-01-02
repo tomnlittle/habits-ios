@@ -334,9 +334,6 @@
                             <constraint firstItem="Gs7-dX-heQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uuN-r9-BU2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="Wcp-nq-bKv" appends="YES" id="6c9-zl-OTy"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="New Goal" id="OwY-JD-JeJ">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="C09-9V-r9c">
@@ -356,12 +353,6 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="IgF-ig-Gbf" userLabel="Exit" sceneMemberID="exit"/>
-                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="Wcp-nq-bKv">
-                    <rectEdge key="edges" left="YES"/>
-                    <connections>
-                        <action selector="swipeGesture:" destination="BYZ-38-t0r" id="ri2-iw-pA1"/>
-                    </connections>
-                </screenEdgePanGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1589.5999999999999" y="20.689655172413794"/>
         </scene>

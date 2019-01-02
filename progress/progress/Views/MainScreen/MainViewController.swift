@@ -27,7 +27,6 @@ class ProgressionViewController: UIViewController, UITableViewDelegate, UITableV
         goalsTable.delegate = self
         goalsTable.dataSource = self
 
-        
         if let savedGoals = loadData() {
             goalsList += savedGoals
         }
@@ -117,12 +116,12 @@ class ProgressionViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
 
-    /*
+    
      // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-     }
-     */
+//     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+//
+//     }
+    
 
     // Support conditional rearranging of the table view.
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
