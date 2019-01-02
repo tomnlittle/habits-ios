@@ -134,7 +134,7 @@ class ProgressionViewController: UIViewController, UITableViewDelegate, UITableV
         self.impact.impactOccurred()
         
         UIView.animate(withDuration: AnimationConstants.spinDuration, animations: { () -> Void in
-            sender.transform = CGAffineTransform(rotationAngle: AnimationConstants.spinAmount)
+            sender.transform = CGAffineTransform(rotationAngle: AnimationConstants.spinMagnitude)
         }, completion: { (finished: Bool) -> Void in
             sender.layer.removeAllAnimations()
             sender.transform = CGAffineTransform.identity

@@ -36,8 +36,8 @@ class ProgressionTableViewCell: UITableViewCell {
         if selected {
             self.impact.impactOccurred()
             
-            UIView.animate(withDuration: 0.5, animations: { () -> Void in
-                self.mainView.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+            UIView.animate(withDuration: AnimationConstants.scaleDuration, animations: { () -> Void in
+                self.mainView.transform = CGAffineTransform(scaleX: AnimationConstants.scaleMagnitude, y: AnimationConstants.scaleMagnitude)
             }, completion: { (finished: Bool) -> Void in
                 self.mainView.layer.removeAllAnimations()
                 self.mainView.transform = CGAffineTransform.identity

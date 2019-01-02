@@ -13,6 +13,9 @@ struct AnimationConstants {
     static let fadeInDuration: Double = 0.5
     
     static let spinDuration: Double = 1.0
-    static let spinAmount: CGFloat = CGFloat.pi
+    static let spinMagnitude: CGFloat = CGFloat.pi
+    
+    static let scaleDuration: Double = 0.5
+    static let scaleMagnitude: CGFloat = 1.3
     
 }

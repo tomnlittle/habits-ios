@@ -133,7 +133,7 @@ class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINav
         let dateToReset = self.currentGoal?.goalDate ?? Date.init()
         
         UIView.animate(withDuration: AnimationConstants.spinDuration, animations: { () -> Void in
-            sender.transform = CGAffineTransform(rotationAngle: AnimationConstants.spinAmount)
+            sender.transform = CGAffineTransform(rotationAngle: AnimationConstants.spinMagnitude)
             self.goalDatePicker.setDate(dateToReset, animated: true)
         }, completion: { (finished: Bool) -> Void in
             sender.layer.removeAllAnimations()
