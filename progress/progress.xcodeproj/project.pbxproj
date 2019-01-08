@@ -10,6 +10,9 @@
 		E20F0AC221A4B9BF00869B37 /* TimeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F0AC121A4B9BE00869B37 /* TimeData.swift */; };
 		E20F0AC421A4C3D100869B37 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F0AC321A4C3D100869B37 /* MainTableViewCell.swift */; };
 		E239350221E4A59400B3AD2D /* DefaultOverContextModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E239350121E4A59400B3AD2D /* DefaultOverContextModal.swift */; };
+		E239350521E4B42E00B3AD2D /* UIViewRoundedBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E239350421E4B42E00B3AD2D /* UIViewRoundedBorder.swift */; };
+		E239350721E4B59100B3AD2D /* LayerDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E239350621E4B59100B3AD2D /* LayerDefaults.swift */; };
+		E239350921E4B9C700B3AD2D /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E239350821E4B9C700B3AD2D /* TextButton.swift */; };
 		E274C52421DE2008007AB9D3 /* GoalViewDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E274C52321DE2008007AB9D3 /* GoalViewDatePickerViewController.swift */; };
 		E2B503A021CE3E6A002DE8D4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B5039F21CE3E6A002DE8D4 /* MainViewController.swift */; };
 		E2D667BF21D861DA007CF73F /* TextEntryField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D667BE21D861DA007CF73F /* TextEntryField.swift */; };
@@ -50,6 +53,9 @@
 		E20F0AC121A4B9BE00869B37 /* TimeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeData.swift; sourceTree = "<group>"; };
 		E20F0AC321A4C3D100869B37 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		E239350121E4A59400B3AD2D /* DefaultOverContextModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultOverContextModal.swift; sourceTree = "<group>"; };
+		E239350421E4B42E00B3AD2D /* UIViewRoundedBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewRoundedBorder.swift; sourceTree = "<group>"; };
+		E239350621E4B59100B3AD2D /* LayerDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerDefaults.swift; sourceTree = "<group>"; };
+		E239350821E4B9C700B3AD2D /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
 		E274C52321DE2008007AB9D3 /* GoalViewDatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewDatePickerViewController.swift; sourceTree = "<group>"; };
 		E2B5039F21CE3E6A002DE8D4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E2D667BE21D861DA007CF73F /* TextEntryField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEntryField.swift; sourceTree = "<group>"; };
@@ -100,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E239350321E4B3F000B3AD2D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E239350421E4B42E00B3AD2D /* UIViewRoundedBorder.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E274C52221DE1FF1007AB9D3 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +139,7 @@
 			children = (
 				E2DE7EFC21DCCC2600ED7B37 /* ColourPicker */,
 				E2D667BE21D861DA007CF73F /* TextEntryField.swift */,
+				E239350821E4B9C700B3AD2D /* TextButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -144,6 +159,7 @@
 				E2E0A65321D6292A00D61741 /* ThemeColours.swift */,
 				E20F0AC121A4B9BE00869B37 /* TimeData.swift */,
 				E2DE7EFD21DCCFB800ED7B37 /* AnimationConstants.swift */,
+				E239350621E4B59100B3AD2D /* LayerDefaults.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -206,6 +222,7 @@
 		E2F36787217730AC00DAC0CE /* progress */ = {
 			isa = PBXGroup;
 			children = (
+				E239350321E4B3F000B3AD2D /* Extensions */,
 				E2760C1021DC2420001F0D79 /* Data */,
 				E2760C0F21DC240A001F0D79 /* Storyboards */,
 				E2760C0E21DC23DD001F0D79 /* Components */,
@@ -370,7 +387,9 @@
 			files = (
 				E2DE7EFE21DCCFB800ED7B37 /* AnimationConstants.swift in Sources */,
 				E2FA55A021D634D600D2E1BD /* ColourPicker.swift in Sources */,
+				E239350921E4B9C700B3AD2D /* TextButton.swift in Sources */,
 				E2DE7F0121DCDCA900ED7B37 /* AboutViewController.swift in Sources */,
+				E239350721E4B59100B3AD2D /* LayerDefaults.swift in Sources */,
 				E239350221E4A59400B3AD2D /* DefaultOverContextModal.swift in Sources */,
 				E20F0AC221A4B9BF00869B37 /* TimeData.swift in Sources */,
 				E2D667BF21D861DA007CF73F /* TextEntryField.swift in Sources */,
@@ -382,6 +401,7 @@
 				E2B503A021CE3E6A002DE8D4 /* MainViewController.swift in Sources */,
 				E20F0AC421A4C3D100869B37 /* MainTableViewCell.swift in Sources */,
 				E2DE7EFB21DCCBDF00ED7B37 /* ColourPickerDelegate.swift in Sources */,
+				E239350521E4B42E00B3AD2D /* UIViewRoundedBorder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

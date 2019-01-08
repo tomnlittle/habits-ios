@@ -34,11 +34,6 @@ class TimeData: NSObject, NSCoding {
     }
     
     init?(name: String, goalDate: Date, colour: UIColor) {
-        
-        if (name.isEmpty) {
-            return nil
-        }
-        
         self.name = name
         self.goalDate = goalDate
         self.colour = colour

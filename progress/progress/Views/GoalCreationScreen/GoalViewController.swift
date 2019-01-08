@@ -20,9 +20,6 @@ class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINav
     @IBOutlet weak var colourView: UIView!
     @IBOutlet weak var dateView: UIView!
     
-    var tempDate: Date = Date.init()
-    
-    
     // assume initially that the controller is displaying an add new goal screen
     var isEditingGoal: Bool = false
     
@@ -30,7 +27,7 @@ class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINav
      This value is either passed by `ProgressionTableViewController` in `prepare(for:sender:)`
      or constructed as part of adding a new goal.
      */
-    var currentGoal: TimeData?
+    var currentGoal: TimeData = TimeData(name: "", goalDate: Date.init(), colour: ThemeColours.gunmetal)!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,26 +36,22 @@ class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINav
         labelColour.delegate = self
         
         // if editing
-        if let goal = currentGoal {
-            self.isEditingGoal = true
+        if self.isEditingGoal {
 
-            navigationItem.title = goal.name
-            mainTextField.text = goal.name
+            navigationItem.title = self.currentGoal.name
+            mainTextField.text = self.currentGoal.name
             
-            //REMOVE
-//            tempDate = goal.goalDate
-            
-            updateDateButtonText(date: goal.goalDate)
+            updateDateButtonText(date: self.currentGoal.goalDate)
            
-            labelColour.chosenColour = goal.colour
+            labelColour.chosenColour = self.currentGoal.colour
         } else {
+        
             // trigger the keyboard on the text field
             mainTextField.becomeFirstResponder()
             
             // hide the colour and date picker initially
             self.colourView.layer.opacity = 0.0
             self.dateView.layer.opacity = 0.0
-            
         }
     
         // update the save button state -> disabled or enabled
@@ -70,22 +63,13 @@ class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINav
         super.prepare(for: segue, sender: sender)
         
         if let button = sender as? UIButton, button === self.saveButton {
-            
-            let name = mainTextField.text ?? ""
-//            let goalDate = self.tempDate
-            let colour = labelColour.chosenColour!
-            
-            self.currentGoal = TimeData(name: name, goalDate: Date.init(), colour: colour)
+            self.currentGoal.name = mainTextField.text ?? ""
+            self.currentGoal.colour = labelColour.chosenColour!
         }
         
-        
-        if let button = sender as? UIButton, button === self.dateButton {
-            
-//            let destViewController = segue.destination as? GoalViewDatePickerViewController
-            
-//            destViewController?.datePicker.setDate(Date.init(), animated: false)
+        if let button = sender as? UIButton, button === self.dateButton, let destViewController = segue.destination as? GoalViewDatePickerViewController {
+            destViewController.resetDate = self.currentGoal.goalDate
         }
-    
     }
     
     //MARK: UITextFieldDelegate
@@ -125,14 +109,12 @@ class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINav
     }
     
     @IBAction func unwindDatePicker(sender: UIStoryboardSegue) {
-
-        if let sourceViewController = sender.source as? GoalViewDatePickerViewController, let datePicker = sourceViewController.datePicker {
-            
-            self.tempDate = datePicker.date
-            
-            updateDateButtonText(date: self.tempDate)
-        }
         
+        if let sourceViewController = sender.source as? GoalViewDatePickerViewController {
+
+            self.currentGoal.goalDate = sourceViewController.datePicker.date
+            updateDateButtonText(date: self.currentGoal.goalDate)
+        }
     }
     
     // called when a colour is selected in the colour picker field
@@ -182,7 +164,10 @@ class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINav
     
     private func updateDateButtonText(date: Date) {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd-MM-yyyy"
+        
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        formatter.locale = Locale(identifier: "en_US")
         
         self.dateButton.setTitle(formatter.string(from: date), for: .normal)
     }

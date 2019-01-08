@@ -52,6 +52,9 @@ class ProgressionViewController: UIViewController, UITableViewDelegate, UITableV
             }
 
             let selectedGoal = goalsList[indexPath.row]
+            
+            // set the view to editing mode
+            detailViewController.isEditingGoal = true
             detailViewController.currentGoal = selectedGoal
         }
     }
@@ -60,8 +63,10 @@ class ProgressionViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBAction func unwindToGoalList(sender: UIStoryboardSegue) {
         
-        if let sourceViewController = sender.source as? GoalViewController, let goal = sourceViewController.currentGoal {
+        if let sourceViewController = sender.source as? GoalViewController {
 
+            let goal = sourceViewController.currentGoal
+            
             // if editing
             if let selectedIndexPath = goalsTable.indexPathForSelectedRow {
                 goalsList[selectedIndexPath.row] = goal
@@ -104,27 +109,19 @@ class ProgressionViewController: UIViewController, UITableViewDelegate, UITableV
     
     // Support editing the table view.
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
         if editingStyle == .delete {
             // Delete the row from the data source
             goalsList.remove(at: indexPath.row)
             
             // handle removing the reminder here
             
-        
             
             saveData()
 
             tableView.deleteRows(at: [indexPath], with: .fade)
-
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
-    
-     // Override to support rearranging the table view.
-//     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-//
-//     }
     
     // Support conditional rearranging of the table view.
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
