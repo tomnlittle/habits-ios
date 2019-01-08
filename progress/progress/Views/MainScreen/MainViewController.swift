@@ -107,6 +107,11 @@ class ProgressionViewController: UIViewController, UITableViewDelegate, UITableV
         if editingStyle == .delete {
             // Delete the row from the data source
             goalsList.remove(at: indexPath.row)
+            
+            // handle removing the reminder here
+            
+        
+            
             saveData()
 
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -115,14 +120,12 @@ class ProgressionViewController: UIViewController, UITableViewDelegate, UITableV
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
-
     
      // Override to support rearranging the table view.
 //     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
 //
 //     }
     
-
     // Support conditional rearranging of the table view.
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.

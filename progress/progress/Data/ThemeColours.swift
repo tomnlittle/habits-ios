@@ -10,6 +10,10 @@ import UIKit
 
 struct ThemeColours {
     
+    static let overContextBackgroundColour = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 0.3)
+    
+    static let modalBackgroundColour = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 0.3)
+    
     // REDS
     static let begonia = UIColor(red:1.00, green:0.42, blue:0.47, alpha:1.0) // Red -> #FF6C78
     

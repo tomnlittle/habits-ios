@@ -14,11 +14,14 @@ class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINav
     //MARK: Properties
     @IBOutlet weak var mainTextField: TextEntryField!
     @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var goalDatePicker: UIDatePicker!
     @IBOutlet weak var labelColour: LabelColourPicker!
+    @IBOutlet weak var dateButton: UIButton!
     
     @IBOutlet weak var colourView: UIView!
     @IBOutlet weak var dateView: UIView!
+    
+    var tempDate: Date = Date.init()
+    
     
     // assume initially that the controller is displaying an add new goal screen
     var isEditingGoal: Bool = false
@@ -42,7 +45,11 @@ class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINav
             navigationItem.title = goal.name
             mainTextField.text = goal.name
             
-            goalDatePicker.date = goal.goalDate
+            //REMOVE
+//            tempDate = goal.goalDate
+            
+            updateDateButtonText(date: goal.goalDate)
+           
             labelColour.chosenColour = goal.colour
         } else {
             // trigger the keyboard on the text field
@@ -51,32 +58,34 @@ class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINav
             // hide the colour and date picker initially
             self.colourView.layer.opacity = 0.0
             self.dateView.layer.opacity = 0.0
+            
         }
     
         // update the save button state -> disabled or enabled
         updateSaveButtonState()
     }
     
-    //MARK: Navigation
-    @IBAction func cancelButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     // This method lets you configure a view controller before it's presented.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
-        // Configure the destination view controller only when the save button is pressed.
-        guard let button = sender as? UIButton, button === saveButton else {
-            return
+        if let button = sender as? UIButton, button === self.saveButton {
+            
+            let name = mainTextField.text ?? ""
+//            let goalDate = self.tempDate
+            let colour = labelColour.chosenColour!
+            
+            self.currentGoal = TimeData(name: name, goalDate: Date.init(), colour: colour)
         }
         
-        let name = mainTextField.text ?? ""
-        let goalDate = goalDatePicker.date
         
-        let colour = labelColour.chosenColour!
-        
-        self.currentGoal = TimeData(name: name, goalDate: goalDate, colour: colour)
+        if let button = sender as? UIButton, button === self.dateButton {
+            
+//            let destViewController = segue.destination as? GoalViewDatePickerViewController
+            
+//            destViewController?.datePicker.setDate(Date.init(), animated: false)
+        }
+    
     }
     
     //MARK: UITextFieldDelegate
@@ -115,6 +124,17 @@ class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINav
         updateSaveButtonState()
     }
     
+    @IBAction func unwindDatePicker(sender: UIStoryboardSegue) {
+
+        if let sourceViewController = sender.source as? GoalViewDatePickerViewController, let datePicker = sourceViewController.datePicker {
+            
+            self.tempDate = datePicker.date
+            
+            updateDateButtonText(date: self.tempDate)
+        }
+        
+    }
+    
     // called when a colour is selected in the colour picker field
     func colourSelected(sender: LabelColourPicker) {
         
@@ -128,21 +148,9 @@ class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINav
         updateSaveButtonState()
     }
     
-    @IBAction func resetDate(_ sender: UIButton) {
-        
-        let dateToReset = self.currentGoal?.goalDate ?? Date.init()
-        
-        UIView.animate(withDuration: AnimationConstants.spinDuration, animations: { () -> Void in
-            sender.transform = CGAffineTransform(rotationAngle: AnimationConstants.spinMagnitude)
-            self.goalDatePicker.setDate(dateToReset, animated: true)
-        }, completion: { (finished: Bool) -> Void in
-            sender.layer.removeAllAnimations()
-            sender.transform = CGAffineTransform.identity
-        })
-    }
-    
-    @IBAction func swipeGesture(_ sender: UIScreenEdgePanGestureRecognizer) {
-        print("hello")
+    //MARK: Navigation
+    @IBAction func cancelButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: Private Methods
@@ -170,6 +178,13 @@ class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINav
                 self.dateView.layer.opacity = 1.0
             })
         }
+    }
+    
+    private func updateDateButtonText(date: Date) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy"
+        
+        self.dateButton.setTitle(formatter.string(from: date), for: .normal)
     }
 }
 
