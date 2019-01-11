@@ -47,7 +47,7 @@ class ProgressionTableViewCell: UITableViewCell {
     
     public func addGoalInformation(goal: TimeData) {
         nameLabel.text = goal.name
-        daysLeft.text = String(getDaysLeft(date: goal.goalDate)) + " DAYS"
+        daysLeft.text = String(getDaysLeft(date: goal.initialDate)) + " DAYS"
         mainView.backgroundColor = goal.colour
 
         if brightTextOnColour(colour: goal.colour) {

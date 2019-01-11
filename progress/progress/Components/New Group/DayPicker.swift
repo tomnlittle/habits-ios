@@ -8,16 +8,6 @@
 
 import UIKit
 
-enum DaysOfWeek {
-    case monday
-    case tuesday
-    case wednesday
-    case thursday
-    case friday
-    case saturday
-    case sunday
-}
-
 @IBDesignable class DayPicker: UIStackView {
     
     // haptic feedback

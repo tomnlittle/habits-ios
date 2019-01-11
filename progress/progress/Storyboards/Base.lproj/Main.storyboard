@@ -426,7 +426,7 @@
                                             <constraint firstItem="egi-Lc-1vU" firstAttribute="top" secondItem="dxo-cr-PZ7" secondAttribute="bottom" constant="4" id="tow-Lp-fPW"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldY-Nv-0Hr">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldY-Nv-0Hr" userLabel="ReminderView">
                                         <rect key="frame" x="0.0" y="350.33333333333331" width="315" height="247.66666666666669"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REMINDERS:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PzB-ci-uAw">
@@ -435,12 +435,20 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yk0-hw-lm4">
+                                                <rect key="frame" x="0.0" y="34.000000000000043" width="315" height="213.66666666666663"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </tableView>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="PzB-ci-uAw" secondAttribute="trailing" id="1h2-iE-qjr"/>
+                                            <constraint firstItem="Yk0-hw-lm4" firstAttribute="top" secondItem="PzB-ci-uAw" secondAttribute="bottom" constant="8" id="60l-ss-2Uo"/>
                                             <constraint firstItem="PzB-ci-uAw" firstAttribute="top" secondItem="ldY-Nv-0Hr" secondAttribute="top" constant="8" id="6SG-2V-5GU"/>
+                                            <constraint firstAttribute="trailing" secondItem="Yk0-hw-lm4" secondAttribute="trailing" id="c5u-OQ-JGQ"/>
                                             <constraint firstItem="PzB-ci-uAw" firstAttribute="leading" secondItem="ldY-Nv-0Hr" secondAttribute="leading" id="dcw-UF-q9z"/>
+                                            <constraint firstItem="Yk0-hw-lm4" firstAttribute="leading" secondItem="ldY-Nv-0Hr" secondAttribute="leading" id="fxZ-x0-ckP"/>
+                                            <constraint firstAttribute="bottom" secondItem="Yk0-hw-lm4" secondAttribute="bottom" id="wwz-vq-HYG"/>
                                         </constraints>
                                     </view>
                                 </subviews>

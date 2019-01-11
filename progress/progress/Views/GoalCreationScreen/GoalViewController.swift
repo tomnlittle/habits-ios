@@ -27,7 +27,7 @@ class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINav
      This value is either passed by `ProgressionTableViewController` in `prepare(for:sender:)`
      or constructed as part of adding a new goal.
      */
-    var currentGoal: TimeData = TimeData(name: "", goalDate: Date.init(), colour: ThemeColours.gunmetal)!
+    var currentGoal: TimeData = TimeData(name: "", initialDate: Date.init(), colour: ThemeColours.gunmetal, daysToTrack: [], reminders: [])!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +49,7 @@ class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINav
             self.dateView.layer.opacity = 0.0
         }
         
-        updateDateButtonText(date: self.currentGoal.goalDate)
+        updateDateButtonText(date: self.currentGoal.initialDate)
     
         // update the save button state -> disabled or enabled
         updateSaveButtonState()
@@ -65,7 +65,7 @@ class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINav
         }
         
         if let button = sender as? UIButton, button === self.dateButton, let destViewController = segue.destination as? GoalViewDatePickerViewController {
-            destViewController.resetDate = self.currentGoal.goalDate
+            destViewController.resetDate = self.currentGoal.initialDate
         }
     }
     
@@ -109,8 +109,8 @@ class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINav
         
         if let sourceViewController = sender.source as? GoalViewDatePickerViewController {
 
-            self.currentGoal.goalDate = sourceViewController.datePicker.date
-            updateDateButtonText(date: self.currentGoal.goalDate)
+            self.currentGoal.initialDate = sourceViewController.datePicker.date
+            updateDateButtonText(date: self.currentGoal.initialDate)
         }
     }
     

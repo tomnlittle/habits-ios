@@ -17,11 +17,17 @@ class TimeData: NSObject, NSCoding {
     // Name of the Goal
     var name: String
     
-    // Finish Date
-    var goalDate: Date
+    // Start Date
+    var initialDate: Date
     
     // colour of the label
     var colour: UIColor
+    
+    // what days of the week are we going to track
+    var daysToTrack: [EnumDaysOfWeek]
+    
+    // reminders that have been set by the user
+    var reminders: [Int] = []
     
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("progress")
@@ -29,20 +35,26 @@ class TimeData: NSObject, NSCoding {
     //MARK: Types
     struct PropertyKey {
         static let name = "name"
-        static let goalDate = "goalDate"
+        static let initialDate = "initialDate"
         static let colour = "colour"
+        static let daysToTrack = "daysToTrack"
+        static let reminders = "reminders"
     }
     
-    init?(name: String, goalDate: Date, colour: UIColor) {
+    init?(name: String, initialDate: Date, colour: UIColor, daysToTrack: [EnumDaysOfWeek], reminders: [Int]) {
         self.name = name
-        self.goalDate = goalDate
+        self.initialDate = initialDate
         self.colour = colour
+        self.daysToTrack = daysToTrack
+        self.reminders = reminders
     }
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: PropertyKey.name)
-        aCoder.encode(goalDate, forKey: PropertyKey.goalDate)
+        aCoder.encode(initialDate, forKey: PropertyKey.initialDate)
         aCoder.encode(colour, forKey: PropertyKey.colour)
+        aCoder.encode(daysToTrack, forKey: PropertyKey.daysToTrack)
+        aCoder.encode(reminders, forKey: PropertyKey.reminders)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -53,7 +65,7 @@ class TimeData: NSObject, NSCoding {
             return nil
         }
         
-        guard let goalDate = aDecoder.decodeObject(forKey: PropertyKey.goalDate) as? Date else {
+        guard let initialDate = aDecoder.decodeObject(forKey: PropertyKey.initialDate) as? Date else {
             os_log("Unable to decode Date", log: OSLog.default, type: .debug)
             return nil
         }
@@ -62,7 +74,17 @@ class TimeData: NSObject, NSCoding {
             os_log("Unable to decode UIColor", log: OSLog.default, type: .debug)
             return nil
         }
+        
+        guard let daysToTrack = aDecoder.decodeObject(forKey: PropertyKey.daysToTrack) as? [EnumDaysOfWeek] else {
+            os_log("Unable to decode UIColor", log: OSLog.default, type: .debug)
+            return nil
+        }
+        
+        guard let reminders = aDecoder.decodeObject(forKey: PropertyKey.reminders) as? [Int] else {
+            os_log("Unable to decode UIColor", log: OSLog.default, type: .debug)
+            return nil
+        }
      
-        self.init(name: name, goalDate: goalDate, colour: colour)
+        self.init(name: name, initialDate: initialDate, colour: colour, daysToTrack: daysToTrack, reminders: reminders)
     }
 }

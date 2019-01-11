@@ -15,6 +15,7 @@
 		E239350921E4B9C700B3AD2D /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E239350821E4B9C700B3AD2D /* TextButton.swift */; };
 		E2517DEB21E75FC60020E961 /* DayPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2517DEA21E75FC60020E961 /* DayPicker.swift */; };
 		E274C52421DE2008007AB9D3 /* GoalViewDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E274C52321DE2008007AB9D3 /* GoalViewDatePickerViewController.swift */; };
+		E29889DC21E86484001D8B69 /* EnumDaysOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29889DB21E86484001D8B69 /* EnumDaysOfWeek.swift */; };
 		E2B503A021CE3E6A002DE8D4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B5039F21CE3E6A002DE8D4 /* MainViewController.swift */; };
 		E2D667BF21D861DA007CF73F /* TextEntryField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D667BE21D861DA007CF73F /* TextEntryField.swift */; };
 		E2DE7EFB21DCCBDF00ED7B37 /* ColourPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE7EFA21DCCBDF00ED7B37 /* ColourPickerDelegate.swift */; };
@@ -59,6 +60,7 @@
 		E239350821E4B9C700B3AD2D /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
 		E2517DEA21E75FC60020E961 /* DayPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DayPicker.swift; path = "progress/Components/New Group/DayPicker.swift"; sourceTree = SOURCE_ROOT; };
 		E274C52321DE2008007AB9D3 /* GoalViewDatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewDatePickerViewController.swift; sourceTree = "<group>"; };
+		E29889DB21E86484001D8B69 /* EnumDaysOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumDaysOfWeek.swift; sourceTree = "<group>"; };
 		E2B5039F21CE3E6A002DE8D4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E2D667BE21D861DA007CF73F /* TextEntryField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEntryField.swift; sourceTree = "<group>"; };
 		E2DE7EFA21DCCBDF00ED7B37 /* ColourPickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourPickerDelegate.swift; sourceTree = "<group>"; };
@@ -168,10 +170,7 @@
 		E2760C1021DC2420001F0D79 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				E2E0A65321D6292A00D61741 /* ThemeColours.swift */,
 				E20F0AC121A4B9BE00869B37 /* TimeData.swift */,
-				E2DE7EFD21DCCFB800ED7B37 /* AnimationConstants.swift */,
-				E239350621E4B59100B3AD2D /* LayerDefaults.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -192,6 +191,24 @@
 				E2F3678A217730AC00DAC0CE /* GoalViewController.swift */,
 			);
 			path = GoalCreationScreen;
+			sourceTree = "<group>";
+		};
+		E29889DA21E8646E001D8B69 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				E29889DB21E86484001D8B69 /* EnumDaysOfWeek.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		E29889DD21E86540001D8B69 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				E2E0A65321D6292A00D61741 /* ThemeColours.swift */,
+				E2DE7EFD21DCCFB800ED7B37 /* AnimationConstants.swift */,
+				E239350621E4B59100B3AD2D /* LayerDefaults.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		E2DE7EFC21DCCC2600ED7B37 /* ColourPicker */ = {
@@ -234,6 +251,8 @@
 		E2F36787217730AC00DAC0CE /* progress */ = {
 			isa = PBXGroup;
 			children = (
+				E29889DD21E86540001D8B69 /* Constants */,
+				E29889DA21E8646E001D8B69 /* Enums */,
 				E239350321E4B3F000B3AD2D /* Extensions */,
 				E2760C1021DC2420001F0D79 /* Data */,
 				E2760C0F21DC240A001F0D79 /* Storyboards */,
@@ -398,6 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2DE7EFE21DCCFB800ED7B37 /* AnimationConstants.swift in Sources */,
+				E29889DC21E86484001D8B69 /* EnumDaysOfWeek.swift in Sources */,
 				E2FA55A021D634D600D2E1BD /* ColourPicker.swift in Sources */,
 				E239350921E4B9C700B3AD2D /* TextButton.swift in Sources */,
 				E2DE7F0121DCDCA900ED7B37 /* AboutViewController.swift in Sources */,
