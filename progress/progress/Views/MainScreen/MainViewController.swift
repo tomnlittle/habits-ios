@@ -19,7 +19,7 @@ class ProgressionViewController: UIViewController, UITableViewDelegate, UITableV
     // haptic feedback
     let impact = UIImpactFeedbackGenerator()
     
-    var goalsList: [TimeData] = []
+    var goalsList: [GoalData] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -145,10 +145,10 @@ class ProgressionViewController: UIViewController, UITableViewDelegate, UITableV
     
     //MARK: Data
     private func saveData() {
-        NSKeyedArchiver.archiveRootObject(goalsList, toFile: TimeData.ArchiveURL.path)
+        NSKeyedArchiver.archiveRootObject(goalsList, toFile: GoalData.ArchiveURL.path)
     }
     
-    private func loadData() -> [TimeData]? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: TimeData.ArchiveURL.path) as? [TimeData]
+    private func loadData() -> [GoalData]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: GoalData.ArchiveURL.path) as? [GoalData]
     }
 }

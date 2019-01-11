@@ -27,7 +27,7 @@ class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINav
      This value is either passed by `ProgressionTableViewController` in `prepare(for:sender:)`
      or constructed as part of adding a new goal.
      */
-    var currentGoal: TimeData = TimeData(name: "", initialDate: Date.init(), colour: ThemeColours.gunmetal, daysToTrack: [], reminders: [])!
+    var currentGoal: GoalData = GoalData(name: "", initialDate: Date.init(), colour: ThemeColours.gunmetal, daysToTrack: [], reminders: [])!
     
     override func viewDidLoad() {
         super.viewDidLoad()
