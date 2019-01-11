@@ -16,7 +16,7 @@ class DefaultOverContextModal: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if animated {
-            UIView.animate(withDuration: AnimationConstants.fadeInDuration, animations: { () -> Void in
+            UIView.animate(withDuration: AnimationConstants.modalFadeInDuration, animations: { () -> Void in
                 self.view.backgroundColor = ThemeColours.overContextBackgroundColour
             })
         }

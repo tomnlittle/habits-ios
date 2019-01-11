@@ -40,7 +40,6 @@ class TextButton: UIButton {
         }
     }
     
-    
     //MARK: Initialisation
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -62,5 +61,4 @@ class TextButton: UIButton {
         
         self.backgroundColor = colour
     }
-
 }

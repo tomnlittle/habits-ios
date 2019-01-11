@@ -10,7 +10,8 @@ import UIKit
 
 struct AnimationConstants {
     
-    static let fadeOutDuration: Double = 0.2
+    static let modalFadeInDuration: Double = 0.2
+    
     static let fadeInDuration: Double = 0.5
     
     static let spinDuration: Double = 1.0

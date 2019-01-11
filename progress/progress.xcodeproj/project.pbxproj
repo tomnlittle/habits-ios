@@ -13,6 +13,7 @@
 		E239350521E4B42E00B3AD2D /* UIViewRoundedBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E239350421E4B42E00B3AD2D /* UIViewRoundedBorder.swift */; };
 		E239350721E4B59100B3AD2D /* LayerDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E239350621E4B59100B3AD2D /* LayerDefaults.swift */; };
 		E239350921E4B9C700B3AD2D /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E239350821E4B9C700B3AD2D /* TextButton.swift */; };
+		E2517DEB21E75FC60020E961 /* DayPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2517DEA21E75FC60020E961 /* DayPicker.swift */; };
 		E274C52421DE2008007AB9D3 /* GoalViewDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E274C52321DE2008007AB9D3 /* GoalViewDatePickerViewController.swift */; };
 		E2B503A021CE3E6A002DE8D4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B5039F21CE3E6A002DE8D4 /* MainViewController.swift */; };
 		E2D667BF21D861DA007CF73F /* TextEntryField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D667BE21D861DA007CF73F /* TextEntryField.swift */; };
@@ -56,6 +57,7 @@
 		E239350421E4B42E00B3AD2D /* UIViewRoundedBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewRoundedBorder.swift; sourceTree = "<group>"; };
 		E239350621E4B59100B3AD2D /* LayerDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerDefaults.swift; sourceTree = "<group>"; };
 		E239350821E4B9C700B3AD2D /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
+		E2517DEA21E75FC60020E961 /* DayPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DayPicker.swift; path = "progress/Components/New Group/DayPicker.swift"; sourceTree = SOURCE_ROOT; };
 		E274C52321DE2008007AB9D3 /* GoalViewDatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewDatePickerViewController.swift; sourceTree = "<group>"; };
 		E2B5039F21CE3E6A002DE8D4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E2D667BE21D861DA007CF73F /* TextEntryField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEntryField.swift; sourceTree = "<group>"; };
@@ -114,6 +116,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		E2517DEC21E75FD10020E961 /* DayPicker */ = {
+			isa = PBXGroup;
+			children = (
+				E2517DEA21E75FC60020E961 /* DayPicker.swift */,
+			);
+			name = DayPicker;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		E274C52221DE1FF1007AB9D3 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +148,7 @@
 		E2760C0E21DC23DD001F0D79 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E2517DEC21E75FD10020E961 /* DayPicker */,
 				E2DE7EFC21DCCC2600ED7B37 /* ColourPicker */,
 				E2D667BE21D861DA007CF73F /* TextEntryField.swift */,
 				E239350821E4B9C700B3AD2D /* TextButton.swift */,
@@ -391,6 +403,7 @@
 				E2DE7F0121DCDCA900ED7B37 /* AboutViewController.swift in Sources */,
 				E239350721E4B59100B3AD2D /* LayerDefaults.swift in Sources */,
 				E239350221E4A59400B3AD2D /* DefaultOverContextModal.swift in Sources */,
+				E2517DEB21E75FC60020E961 /* DayPicker.swift in Sources */,
 				E20F0AC221A4B9BF00869B37 /* TimeData.swift in Sources */,
 				E2D667BF21D861DA007CF73F /* TextEntryField.swift in Sources */,
 				E2E0A65421D6292A00D61741 /* ThemeColours.swift in Sources */,

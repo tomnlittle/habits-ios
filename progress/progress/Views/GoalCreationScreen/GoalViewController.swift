@@ -37,12 +37,7 @@ class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINav
         
         // if editing
         if self.isEditingGoal {
-
-            navigationItem.title = self.currentGoal.name
             mainTextField.text = self.currentGoal.name
-            
-            updateDateButtonText(date: self.currentGoal.goalDate)
-           
             labelColour.chosenColour = self.currentGoal.colour
         } else {
         
@@ -53,6 +48,8 @@ class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINav
             self.colourView.layer.opacity = 0.0
             self.dateView.layer.opacity = 0.0
         }
+        
+        updateDateButtonText(date: self.currentGoal.goalDate)
     
         // update the save button state -> disabled or enabled
         updateSaveButtonState()

@@ -14,15 +14,9 @@ import UIKit
     let selectionVibration = UISelectionFeedbackGenerator()
     
     //MARK: Properties
-    @IBInspectable var boxSize: CGSize = CGSize(width: 44.0, height: 44.0) {
+    @IBInspectable var boxSize: CGFloat = 34 {
         didSet {
             setupButtons()
-        }
-    }
-    
-    @IBInspectable var cornerRadius: CGFloat = 15 {
-        didSet {
-             setupButtons()
         }
     }
     
@@ -32,7 +26,7 @@ import UIKit
         }
     }
     
-    @IBInspectable var defaultBorderWidth: CGFloat = 10.0 {
+    @IBInspectable var defaultBorderWidth: CGFloat = 3 {
         didSet {
             setupButtons()
         }
@@ -78,11 +72,11 @@ import UIKit
             button.backgroundColor = ThemeColours.labelColours[i]
 
             button.translatesAutoresizingMaskIntoConstraints = false
-            button.heightAnchor.constraint(equalToConstant: boxSize.height).isActive = true
-            button.widthAnchor.constraint(equalToConstant: boxSize.width).isActive = true
+            button.heightAnchor.constraint(equalToConstant: boxSize).isActive = true
+            button.widthAnchor.constraint(equalToConstant: boxSize).isActive = true
 
             button.layer.borderColor = defaultBorderColour.cgColor
-            button.layer.cornerRadius = cornerRadius
+            button.layer.cornerRadius = boxSize / 2
             button.clipsToBounds = true
 
             button.addTarget(self, action: #selector(LabelColourPicker.colourTapped(button:)), for: .touchUpInside)
