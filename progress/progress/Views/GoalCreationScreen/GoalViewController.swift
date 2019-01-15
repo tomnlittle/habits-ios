@@ -16,7 +16,8 @@ class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINav
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var labelColour: LabelColourPicker!
     @IBOutlet weak var dateButton: UIButton!
-    
+    @IBOutlet weak var dayPicker: UIDayPicker!
+
     @IBOutlet weak var colourView: UIView!
     @IBOutlet weak var dateView: UIView!
     
@@ -62,6 +63,7 @@ class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINav
         if let button = sender as? UIButton, button === self.saveButton {
             self.currentGoal.name = mainTextField.text ?? ""
             self.currentGoal.colour = labelColour.chosenColour!
+//            self.currentGoal.daysToTrack = dayPicker.selectedBut
         }
         
         if let button = sender as? UIButton, button === self.dateButton, let destViewController = segue.destination as? GoalViewDatePickerViewController {
