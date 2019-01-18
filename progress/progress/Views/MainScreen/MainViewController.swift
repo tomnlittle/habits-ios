@@ -67,6 +67,10 @@ class ProgressionViewController: UIViewController, UITableViewDelegate, UITableV
 
             let goal = sourceViewController.currentGoal
             
+            if (goal.name.isEmpty) {
+                return
+            }
+            
             // if editing
             if let selectedIndexPath = goalsTable.indexPathForSelectedRow {
                 goalsList[selectedIndexPath.row] = goal

@@ -16,7 +16,7 @@ class GoalViewController: DefaultModalViewController, UINavigationControllerDele
     
     @IBOutlet weak var mainTextField: UIDefaultTextField!
     @IBOutlet weak var colourPicker: UIColourPicker!
-    @IBOutlet weak var startDatePicker: UIDateButton!
+    @IBOutlet weak var startDatePicker: UITextFieldButton!
     @IBOutlet weak var dayPicker: UIDayPicker!
 
     @IBOutlet weak var colourView: UIView!
@@ -74,15 +74,6 @@ class GoalViewController: DefaultModalViewController, UINavigationControllerDele
             destViewController.resetDate = self.currentGoal.initialDate
         }
     }
-  
-    @IBAction func unwindDatePicker(sender: UIStoryboardSegue) {
-        
-        if let sourceViewController = sender.source as? GoalViewDatePickerViewController {
-
-            self.currentGoal.initialDate = sourceViewController.datePicker.date
-            updateDateButtonText(date: self.currentGoal.initialDate)
-        }
-    }
     
     // called when a colour is selected in the colour picker field
     func colourSelected(sender: UIColourPicker) {
@@ -96,7 +87,16 @@ class GoalViewController: DefaultModalViewController, UINavigationControllerDele
         // update the state of the save button
         updateSaveButtonState()
     }
-    
+  
+    @IBAction func unwindDatePicker(sender: UIStoryboardSegue) {
+        
+        if let sourceViewController = sender.source as? GoalViewDatePickerViewController {
+
+            self.currentGoal.initialDate = sourceViewController.datePicker.date
+            updateDateButtonText(date: self.currentGoal.initialDate)
+        }
+    }
+
     //MARK: Navigation
     @IBAction func cancelButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
