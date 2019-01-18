@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TextButton: UIButton {
+class UITextFieldButton: UIButton {
     
     @IBInspectable var colour: UIColor = ThemeColours.textBackground {
         didSet {

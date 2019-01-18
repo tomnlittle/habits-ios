@@ -16,7 +16,7 @@ class GoalViewController: DefaultModalViewController, UINavigationControllerDele
     
     @IBOutlet weak var mainTextField: UIDefaultTextField!
     @IBOutlet weak var colourPicker: UIColourPicker!
-    @IBOutlet weak var startDatePicker: TextButton!
+    @IBOutlet weak var startDatePicker: UIDateButton!
     @IBOutlet weak var dayPicker: UIDayPicker!
 
     @IBOutlet weak var colourView: UIView!

@@ -8,14 +8,12 @@
 
 import UIKit
 
-class UIWeekdayButton: UIButton {
+class UIWeekdayButton: UIRoundButton {
     
     // delegate
     weak var delegate: UIWeekdayButtonDelegate?
 
-    
     //MARK: Private Variables
-    
     private var weekday: WeekdayData
    
     // unselected colours
@@ -28,9 +26,6 @@ class UIWeekdayButton: UIButton {
     private let selectedBackgroundColour: UIColor = UIColor.blue
     private let selectedTextColour: UIColor = UIColor.black
     
-    // haptic feedback
-    private let selectionVibration = UISelectionFeedbackGenerator()
-    
     required init(day: EnumWeekdays, radius: CGFloat) {
         
         let weekday = WeekdayData(day: day)
@@ -39,7 +34,7 @@ class UIWeekdayButton: UIButton {
         self.weekday = weekday
         
         // initialise super
-        super.init(frame: .zero)
+        super.init(radius: radius)
         
         self.isSelected = true
         
@@ -51,16 +46,7 @@ class UIWeekdayButton: UIButton {
         
         self.backgroundColor = self.unselectedBackgroundColour
         
-        self.translatesAutoresizingMaskIntoConstraints = false
-        self.heightAnchor.constraint(equalToConstant: radius).isActive = true
-        self.widthAnchor.constraint(equalToConstant: radius).isActive = true
-        
-        self.layer.borderWidth = 0.0
-        self.layer.cornerRadius = radius / 2
-        self.clipsToBounds = true
-        
         self.addTarget(self, action: #selector(UIWeekdayButton.dayTapped(button:)), for: .touchUpInside)
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -69,8 +55,8 @@ class UIWeekdayButton: UIButton {
     
     //MARK: Button Action
     @objc func dayTapped(button: UIButton) {
+        
         button.isSelected = !button.isSelected
-        self.selectionVibration.selectionChanged()
         
         // call the delegate
         delegate?.daySelected(sender: self)

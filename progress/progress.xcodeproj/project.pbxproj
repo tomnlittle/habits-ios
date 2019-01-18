@@ -11,13 +11,15 @@
 		E2048F8921EF269B004A0E95 /* UIColourPickerButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2048F8821EF269B004A0E95 /* UIColourPickerButtonDelegate.swift */; };
 		E20F0AC221A4B9BF00869B37 /* GoalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F0AC121A4B9BE00869B37 /* GoalData.swift */; };
 		E20F0AC421A4C3D100869B37 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F0AC321A4C3D100869B37 /* MainTableViewCell.swift */; };
+		E214C8B821F16ABB00D131FB /* UIRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214C8B721F16ABB00D131FB /* UIRoundButton.swift */; };
+		E214C8BA21F16ADC00D131FB /* UIDefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214C8B921F16ADC00D131FB /* UIDefaultButton.swift */; };
 		E2158D0D21EDCD21008F23DE /* UIWeekdayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2158D0C21EDCD21008F23DE /* UIWeekdayButton.swift */; };
 		E2158D0F21EDCD61008F23DE /* WeekdayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2158D0E21EDCD61008F23DE /* WeekdayData.swift */; };
 		E2158D1221EE91E4008F23DE /* UIWeekdayButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2158D1121EE91E4008F23DE /* UIWeekdayButtonDelegate.swift */; };
 		E239350221E4A59400B3AD2D /* DefaultOverContextModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E239350121E4A59400B3AD2D /* DefaultOverContextModal.swift */; };
 		E239350521E4B42E00B3AD2D /* UIViewRoundedBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E239350421E4B42E00B3AD2D /* UIViewRoundedBorder.swift */; };
 		E239350721E4B59100B3AD2D /* LayerDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E239350621E4B59100B3AD2D /* LayerDefaults.swift */; };
-		E239350921E4B9C700B3AD2D /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E239350821E4B9C700B3AD2D /* TextButton.swift */; };
+		E239350921E4B9C700B3AD2D /* UITextFieldButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E239350821E4B9C700B3AD2D /* UITextFieldButton.swift */; };
 		E274C52421DE2008007AB9D3 /* GoalViewDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E274C52321DE2008007AB9D3 /* GoalViewDatePickerViewController.swift */; };
 		E28F935121EAEE9200FC87BC /* UITimeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28F935021EAEE9200FC87BC /* UITimeCollectionView.swift */; };
 		E28F935321EAEF6A00FC87BC /* UITimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28F935221EAEF6A00FC87BC /* UITimeCollectionViewCell.swift */; };
@@ -64,13 +66,15 @@
 		E2048F8821EF269B004A0E95 /* UIColourPickerButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColourPickerButtonDelegate.swift; sourceTree = "<group>"; };
 		E20F0AC121A4B9BE00869B37 /* GoalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalData.swift; sourceTree = "<group>"; };
 		E20F0AC321A4C3D100869B37 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		E214C8B721F16ABB00D131FB /* UIRoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIRoundButton.swift; sourceTree = "<group>"; };
+		E214C8B921F16ADC00D131FB /* UIDefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDefaultButton.swift; sourceTree = "<group>"; };
 		E2158D0C21EDCD21008F23DE /* UIWeekdayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIWeekdayButton.swift; path = progress/Components/DayPicker/UIWeekdayButton.swift; sourceTree = SOURCE_ROOT; };
 		E2158D0E21EDCD61008F23DE /* WeekdayData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeekdayData.swift; path = progress/Components/DayPicker/WeekdayData.swift; sourceTree = SOURCE_ROOT; };
 		E2158D1121EE91E4008F23DE /* UIWeekdayButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIWeekdayButtonDelegate.swift; path = progress/Components/DayPicker/UIWeekdayButtonDelegate.swift; sourceTree = SOURCE_ROOT; };
 		E239350121E4A59400B3AD2D /* DefaultOverContextModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultOverContextModal.swift; sourceTree = "<group>"; };
 		E239350421E4B42E00B3AD2D /* UIViewRoundedBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewRoundedBorder.swift; sourceTree = "<group>"; };
 		E239350621E4B59100B3AD2D /* LayerDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerDefaults.swift; sourceTree = "<group>"; };
-		E239350821E4B9C700B3AD2D /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
+		E239350821E4B9C700B3AD2D /* UITextFieldButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldButton.swift; sourceTree = "<group>"; };
 		E274C52321DE2008007AB9D3 /* GoalViewDatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewDatePickerViewController.swift; sourceTree = "<group>"; };
 		E28F935021EAEE9200FC87BC /* UITimeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITimeCollectionView.swift; sourceTree = "<group>"; };
 		E28F935221EAEF6A00FC87BC /* UITimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITimeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -134,6 +138,16 @@
 			path = DefaultTextField;
 			sourceTree = "<group>";
 		};
+		E214C8BB21F16CA700D131FB /* DefaultButtons */ = {
+			isa = PBXGroup;
+			children = (
+				E214C8B921F16ADC00D131FB /* UIDefaultButton.swift */,
+				E214C8B721F16ABB00D131FB /* UIRoundButton.swift */,
+				E239350821E4B9C700B3AD2D /* UITextFieldButton.swift */,
+			);
+			path = DefaultButtons;
+			sourceTree = "<group>";
+		};
 		E239350321E4B3F000B3AD2D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,11 +192,11 @@
 		E2760C0E21DC23DD001F0D79 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E214C8BB21F16CA700D131FB /* DefaultButtons */,
 				E214C8B621F164EF00D131FB /* DefaultTextField */,
 				E29889DE21E87131001D8B69 /* TimePicker */,
 				E2517DEC21E75FD10020E961 /* DayPicker */,
 				E2DE7EFC21DCCC2600ED7B37 /* ColourPicker */,
-				E239350821E4B9C700B3AD2D /* TextButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -454,16 +468,18 @@
 				E2158D0D21EDCD21008F23DE /* UIWeekdayButton.swift in Sources */,
 				E2FA55A021D634D600D2E1BD /* UIColourPicker.swift in Sources */,
 				E28F935121EAEE9200FC87BC /* UITimeCollectionView.swift in Sources */,
-				E239350921E4B9C700B3AD2D /* TextButton.swift in Sources */,
+				E239350921E4B9C700B3AD2D /* UITextFieldButton.swift in Sources */,
 				E29889E021E8714F001D8B69 /* UITimePickerView.swift in Sources */,
 				E2DE7F0121DCDCA900ED7B37 /* AboutViewController.swift in Sources */,
 				E28F935521EAF28D00FC87BC /* UIDayPickerDelegate.swift in Sources */,
 				E239350721E4B59100B3AD2D /* LayerDefaults.swift in Sources */,
 				E239350221E4A59400B3AD2D /* DefaultOverContextModal.swift in Sources */,
+				E214C8BA21F16ADC00D131FB /* UIDefaultButton.swift in Sources */,
 				E20F0AC221A4B9BF00869B37 /* GoalData.swift in Sources */,
 				E2D667BF21D861DA007CF73F /* UIDefaultTextField.swift in Sources */,
 				E2E0A65421D6292A00D61741 /* ThemeColours.swift in Sources */,
 				E2048F8921EF269B004A0E95 /* UIColourPickerButtonDelegate.swift in Sources */,
+				E214C8B821F16ABB00D131FB /* UIRoundButton.swift in Sources */,
 				E274C52421DE2008007AB9D3 /* GoalViewDatePickerViewController.swift in Sources */,
 				E2F3678B217730AC00DAC0CE /* GoalViewController.swift in Sources */,
 				E2F36789217730AC00DAC0CE /* AppDelegate.swift in Sources */,
