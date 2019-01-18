@@ -25,7 +25,7 @@
 		E28F935721EAF2B700FC87BC /* UIDayPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28F935621EAF2B700FC87BC /* UIDayPicker.swift */; };
 		E29889E021E8714F001D8B69 /* UITimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29889DF21E8714F001D8B69 /* UITimePickerView.swift */; };
 		E2B503A021CE3E6A002DE8D4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B5039F21CE3E6A002DE8D4 /* MainViewController.swift */; };
-		E2D667BF21D861DA007CF73F /* TextEntryField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D667BE21D861DA007CF73F /* TextEntryField.swift */; };
+		E2D667BF21D861DA007CF73F /* UIDefaultTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D667BE21D861DA007CF73F /* UIDefaultTextField.swift */; };
 		E2DE7EFB21DCCBDF00ED7B37 /* UIColourPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE7EFA21DCCBDF00ED7B37 /* UIColourPickerDelegate.swift */; };
 		E2DE7EFE21DCCFB800ED7B37 /* AnimationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE7EFD21DCCFB800ED7B37 /* AnimationConstants.swift */; };
 		E2DE7F0121DCDCA900ED7B37 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE7F0021DCDCA900ED7B37 /* AboutViewController.swift */; };
@@ -78,7 +78,7 @@
 		E28F935621EAF2B700FC87BC /* UIDayPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIDayPicker.swift; path = progress/Components/DayPicker/UIDayPicker.swift; sourceTree = SOURCE_ROOT; };
 		E29889DF21E8714F001D8B69 /* UITimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITimePickerView.swift; sourceTree = "<group>"; };
 		E2B5039F21CE3E6A002DE8D4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		E2D667BE21D861DA007CF73F /* TextEntryField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEntryField.swift; sourceTree = "<group>"; };
+		E2D667BE21D861DA007CF73F /* UIDefaultTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDefaultTextField.swift; sourceTree = "<group>"; };
 		E2DE7EFA21DCCBDF00ED7B37 /* UIColourPickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColourPickerDelegate.swift; sourceTree = "<group>"; };
 		E2DE7EFD21DCCFB800ED7B37 /* AnimationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationConstants.swift; sourceTree = "<group>"; };
 		E2DE7F0021DCDCA900ED7B37 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +126,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E214C8B621F164EF00D131FB /* DefaultTextField */ = {
+			isa = PBXGroup;
+			children = (
+				E2D667BE21D861DA007CF73F /* UIDefaultTextField.swift */,
+			);
+			path = DefaultTextField;
+			sourceTree = "<group>";
+		};
 		E239350321E4B3F000B3AD2D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,10 +178,10 @@
 		E2760C0E21DC23DD001F0D79 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E214C8B621F164EF00D131FB /* DefaultTextField */,
 				E29889DE21E87131001D8B69 /* TimePicker */,
 				E2517DEC21E75FD10020E961 /* DayPicker */,
 				E2DE7EFC21DCCC2600ED7B37 /* ColourPicker */,
-				E2D667BE21D861DA007CF73F /* TextEntryField.swift */,
 				E239350821E4B9C700B3AD2D /* TextButton.swift */,
 			);
 			path = Components;
@@ -453,7 +461,7 @@
 				E239350721E4B59100B3AD2D /* LayerDefaults.swift in Sources */,
 				E239350221E4A59400B3AD2D /* DefaultOverContextModal.swift in Sources */,
 				E20F0AC221A4B9BF00869B37 /* GoalData.swift in Sources */,
-				E2D667BF21D861DA007CF73F /* TextEntryField.swift in Sources */,
+				E2D667BF21D861DA007CF73F /* UIDefaultTextField.swift in Sources */,
 				E2E0A65421D6292A00D61741 /* ThemeColours.swift in Sources */,
 				E2048F8921EF269B004A0E95 /* UIColourPickerButtonDelegate.swift in Sources */,
 				E274C52421DE2008007AB9D3 /* GoalViewDatePickerViewController.swift in Sources */,

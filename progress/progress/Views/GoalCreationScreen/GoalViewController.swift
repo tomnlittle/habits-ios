@@ -9,10 +9,10 @@
 import UIKit
 import os.log
 
-class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIColourPickerDelegate {
+class GoalViewController: DefaultModalViewController, UINavigationControllerDelegate, UIColourPickerDelegate {
     
     //MARK: Properties
-    @IBOutlet weak var mainTextField: TextEntryField!
+    @IBOutlet weak var mainTextField: UIDefaultTextField!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var labelColour: UIColourPicker!
     @IBOutlet weak var dateButton: UIButton!
@@ -33,7 +33,6 @@ class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINav
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mainTextField.delegate = self
         labelColour.delegate = self
         
         // if editing
@@ -61,13 +60,8 @@ class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINav
         super.prepare(for: segue, sender: sender)
         
         if let button = sender as? UIButton, button === self.saveButton {
-            
-            print("ending")
-            print(self.currentGoal.colour)
-            print(self.labelColour.chosenColour)
             self.currentGoal.name = mainTextField.text ?? ""
             self.currentGoal.colour = labelColour.chosenColour!
-            print(self.currentGoal.colour)
 //            self.currentGoal.daysToTrack = dayPicker.selectedBut
         }
         
@@ -75,43 +69,7 @@ class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINav
             destViewController.resetDate = self.currentGoal.initialDate
         }
     }
-    
-    //MARK: UITextFieldDelegate
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        textField.resignFirstResponder()
-        
-        // Indicates whether the system should process the press of the return key
-        return true
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-
-        guard let currentString = textField.text else {
-            return true
-        }
-        
-        let newLength = currentString.count + string.count - range.length
-
-        if newLength >= mainTextField.maxCharacters {
-            return false
-        }
-        
-        // animate the next section
-        self.animateNextSection()
-
-        return true
-    }
-    
-    @IBAction func textFieldDidChange(_ textField: UITextField) {
-        
-        // upper case the input text
-        textField.text = textField.text?.uppercased()
-        
-        // update the state of the save button
-        updateSaveButtonState()
-    }
-    
+  
     @IBAction func unwindDatePicker(sender: UIStoryboardSegue) {
         
         if let sourceViewController = sender.source as? GoalViewDatePickerViewController {
@@ -137,6 +95,18 @@ class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINav
     //MARK: Navigation
     @IBAction func cancelButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func textFieldDidChange(_ textField: UITextField) {
+        
+        // upper case the input text
+        textField.text = textField.text?.uppercased()
+        
+        // animate the next section
+        animateNextSection()
+        
+        // update the state of the save button
+        updateSaveButtonState()
     }
     
     // MARK: Private Methods

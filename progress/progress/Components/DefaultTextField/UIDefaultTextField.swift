@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TextEntryField: UITextField {
+class UIDefaultTextField: UITextField, UITextFieldDelegate {
     
     @IBInspectable var colour: UIColor = ThemeColours.textBackground {
         didSet {
@@ -22,7 +22,7 @@ class TextEntryField: UITextField {
         }
     }
     
-    @IBInspectable var borderWidth: CGFloat = 0.0 {
+    @IBInspectable var borderWidth: CGFloat = 3.0 {
         didSet {
             setup()
         }
@@ -68,5 +68,29 @@ class TextEntryField: UITextField {
         self.layer.borderWidth = borderWidth
         
         self.backgroundColor = colour
+    }
+    
+    //MARK: UITextFieldDelegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        self.resignFirstResponder()
+        
+        // Indicates whether the system should process the press of the return key
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        guard let currentString = textField.text else {
+            return true
+        }
+        
+        let newLength = currentString.count + string.count - range.length
+        
+        if newLength >= self.maxCharacters {
+            return false
+        }
+        
+        return true
     }
 }
