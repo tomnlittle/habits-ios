@@ -12,14 +12,17 @@ import os.log
 class GoalViewController: DefaultModalViewController, UINavigationControllerDelegate, UIColourPickerDelegate {
     
     //MARK: Properties
-    @IBOutlet weak var mainTextField: UIDefaultTextField!
     @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var labelColour: UIColourPicker!
-    @IBOutlet weak var dateButton: UIButton!
+    
+    @IBOutlet weak var mainTextField: UIDefaultTextField!
+    @IBOutlet weak var colourPicker: UIColourPicker!
+    @IBOutlet weak var startDatePicker: TextButton!
     @IBOutlet weak var dayPicker: UIDayPicker!
 
     @IBOutlet weak var colourView: UIView!
     @IBOutlet weak var dateView: UIView!
+    @IBOutlet weak var dayView: UIView!
+    @IBOutlet weak var reminderView: UIView!
     
     // assume initially that the controller is displaying an add new goal screen
     var isEditingGoal: Bool = false
@@ -33,12 +36,12 @@ class GoalViewController: DefaultModalViewController, UINavigationControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        labelColour.delegate = self
+        colourPicker.delegate = self
         
         // if editing
         if self.isEditingGoal {
             mainTextField.text = self.currentGoal.name
-            labelColour.chosenColour = self.currentGoal.colour
+            colourPicker.chosenColour = self.currentGoal.colour
         } else {
         
             // trigger the keyboard on the text field
@@ -47,6 +50,8 @@ class GoalViewController: DefaultModalViewController, UINavigationControllerDele
             // hide the colour and date picker initially
             self.colourView.layer.opacity = 0.0
             self.dateView.layer.opacity = 0.0
+            self.dayView.layer.opacity = 0.0
+            self.reminderView.layer.opacity = 0.0
         }
         
         updateDateButtonText(date: self.currentGoal.initialDate)
@@ -61,11 +66,11 @@ class GoalViewController: DefaultModalViewController, UINavigationControllerDele
         
         if let button = sender as? UIButton, button === self.saveButton {
             self.currentGoal.name = mainTextField.text ?? ""
-            self.currentGoal.colour = labelColour.chosenColour!
+            self.currentGoal.colour = colourPicker.chosenColour!
 //            self.currentGoal.daysToTrack = dayPicker.selectedBut
         }
         
-        if let button = sender as? UIButton, button === self.dateButton, let destViewController = segue.destination as? GoalViewDatePickerViewController {
+        if let button = sender as? UIButton, button === self.startDatePicker, let destViewController = segue.destination as? GoalViewDatePickerViewController {
             destViewController.resetDate = self.currentGoal.initialDate
         }
     }
@@ -113,7 +118,7 @@ class GoalViewController: DefaultModalViewController, UINavigationControllerDele
     // Disable the Save button if the text field is empty or if the colour has not yet been selected
     private func updateSaveButtonState() {
         let text = self.mainTextField.text ?? ""
-        self.saveButton.isEnabled = !text.isEmpty && self.labelColour.chosenColour != nil
+        self.saveButton.isEnabled = !text.isEmpty && self.colourPicker.chosenColour != nil
     }
     
     private func animateNextSection() {
@@ -129,9 +134,11 @@ class GoalViewController: DefaultModalViewController, UINavigationControllerDele
             })
         }
         
-        if self.labelColour.chosenColour != nil {
+        if self.colourPicker.chosenColour != nil {
             UIView.animate(withDuration: AnimationConstants.fadeInDuration, animations: { () -> Void in
                 self.dateView.layer.opacity = 1.0
+                self.dayView.layer.opacity = 1.0
+                self.reminderView.layer.opacity = 1.0
             })
         }
     }
@@ -143,7 +150,7 @@ class GoalViewController: DefaultModalViewController, UINavigationControllerDele
         formatter.timeStyle = .none
         formatter.locale = Locale(identifier: "en_US")
         
-        self.dateButton.setTitle(formatter.string(from: date), for: .normal)
+        self.startDatePicker.setTitle(formatter.string(from: date), for: .normal)
     }
 }
 

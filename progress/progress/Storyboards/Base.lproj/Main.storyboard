@@ -560,13 +560,15 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="colourPicker" destination="81D-4H-rmh" id="RRy-J0-IJf"/>
                         <outlet property="colourView" destination="sK3-on-A8o" id="izu-Gf-dLl"/>
-                        <outlet property="dateButton" destination="FcO-Pm-BIK" id="s4R-MO-cTg"/>
                         <outlet property="dateView" destination="ogD-ac-qHo" id="DL1-a3-msS"/>
                         <outlet property="dayPicker" destination="1bw-55-wkz" id="bF4-Fh-KYP"/>
-                        <outlet property="labelColour" destination="81D-4H-rmh" id="RRy-J0-IJf"/>
+                        <outlet property="dayView" destination="5wJ-8U-oyc" id="0fj-5E-z2s"/>
                         <outlet property="mainTextField" destination="X5g-SA-hQJ" id="L3I-yH-k3f"/>
+                        <outlet property="reminderView" destination="ldY-Nv-0Hr" id="xsL-tc-Mau"/>
                         <outlet property="saveButton" destination="Eft-Ps-jNS" id="MEG-gc-yYm"/>
+                        <outlet property="startDatePicker" destination="FcO-Pm-BIK" id="s4R-MO-cTg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
