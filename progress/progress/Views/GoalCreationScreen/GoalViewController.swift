@@ -24,6 +24,8 @@ class GoalViewController: DefaultModalViewController, UINavigationControllerDele
     @IBOutlet weak var dayView: UIView!
     @IBOutlet weak var reminderView: UIView!
     
+    @IBOutlet weak var collectionView: UITimeCollectionView!
+   
     // assume initially that the controller is displaying an add new goal screen
     var isEditingGoal: Bool = false
     

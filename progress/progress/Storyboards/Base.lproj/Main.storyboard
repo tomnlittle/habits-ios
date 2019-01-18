@@ -494,7 +494,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="X13-7E-lAf" customClass="UITimeCollectionViewCell" customModule="progress" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TimeCell" id="X13-7E-lAf">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -560,6 +560,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="collectionView" destination="xqn-Vf-KaM" id="W7v-Fy-KXn"/>
                         <outlet property="colourPicker" destination="81D-4H-rmh" id="RRy-J0-IJf"/>
                         <outlet property="colourView" destination="sK3-on-A8o" id="izu-Gf-dLl"/>
                         <outlet property="dateView" destination="ogD-ac-qHo" id="DL1-a3-msS"/>
@@ -703,6 +704,6 @@
         <image name="reset" width="192" height="192"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7nn-1W-T1F"/>
+        <segue reference="jzv-Wj-cYB"/>
     </inferredMetricsTieBreakers>
 </document>

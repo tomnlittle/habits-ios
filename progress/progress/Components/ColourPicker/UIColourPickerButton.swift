@@ -12,28 +12,17 @@ class UIColourPickerButton: UIRoundButton {
     
     public var colour: UIColor
     
-    // delegate
-    weak var delegate: UIColourPickerButtonDelegate?
-    
-    required init(colour: UIColor, borderColour: CGColor, radius: CGFloat) {
+    required init(colour: UIColor, borderColour: CGColor, frame: CGRect) {
         
         self.colour = colour
         
         // initialise super
-        super.init(radius: radius)
+        super.init(frame: frame)
         
         self.backgroundColor = colour
-        self.addTarget(self, action: #selector(UIColourPickerButton.colourTapped(button:)), for: .touchUpInside)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    //MARK: Button Action
-    @objc func colourTapped(button: UIButton) {
-        
-        // run the delegate function
-        delegate?.colourSelected(sender: self)
     }
 }

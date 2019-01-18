@@ -8,14 +8,7 @@
 
 import UIKit
 
-@IBDesignable class UIDayPicker: UIStackView, UIWeekdayButtonDelegate {
-    
-    // MARK: Designable
-    @IBInspectable var radius: CGFloat = 34 {
-        didSet {
-            setup()
-        }
-    }
+@IBDesignable class UIDayPicker: UIStackView {
     
     // MARK: Public Properties
     
@@ -50,16 +43,17 @@ import UIKit
         
         for day in EnumWeekdays.allCases {
 
-            let button = UIWeekdayButton(day: day, radius: radius)
+            let button = UIWeekdayButton(day: day, frame: self.frame)
             
-            button.delegate = self
+            button.addTarget(self, action: #selector(UIDayPicker.selected(button:)), for: .touchUpInside)
             
             addArrangedSubview(button)
             dayButtons.append(button)
         }
     }
     
-    func daySelected(sender: UIWeekdayButton) {
-        print("day un/selected")
+    @objc func selected(button: UIWeekdayButton) {
+    
+        print("yas")
     }
 }

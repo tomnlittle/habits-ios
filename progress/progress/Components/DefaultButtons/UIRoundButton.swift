@@ -8,20 +8,14 @@
 
 import UIKit
 
-class UIRoundButton: UIDefaultButton {
+class UIRoundButton: UIRoundedButton {
     
-    init(radius: CGFloat) {
+    init(frame: CGRect) {
+        
+        let radius = frame.height 
         
         // initialise super
-        super.init(frame: .zero)
-        
-        self.translatesAutoresizingMaskIntoConstraints = false
-        self.heightAnchor.constraint(equalToConstant: radius).isActive = true
-        self.widthAnchor.constraint(equalToConstant: radius).isActive = true
-        
-        self.layer.borderWidth = 0.0
-        self.layer.cornerRadius = radius / 2
-        self.clipsToBounds = true
+        super.init(radius: radius)
     }
     
     required init?(coder aDecoder: NSCoder) {

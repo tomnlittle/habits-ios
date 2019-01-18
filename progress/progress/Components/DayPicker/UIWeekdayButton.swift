@@ -9,9 +9,6 @@
 import UIKit
 
 class UIWeekdayButton: UIRoundButton {
-    
-    // delegate
-    weak var delegate: UIWeekdayButtonDelegate?
 
     //MARK: Private Variables
     private var weekday: WeekdayData
@@ -26,7 +23,7 @@ class UIWeekdayButton: UIRoundButton {
     private let selectedBackgroundColour: UIColor = UIColor.blue
     private let selectedTextColour: UIColor = UIColor.black
     
-    required init(day: EnumWeekdays, radius: CGFloat) {
+    required init(day: EnumWeekdays, frame: CGRect) {
         
         let weekday = WeekdayData(day: day)
         
@@ -34,7 +31,7 @@ class UIWeekdayButton: UIRoundButton {
         self.weekday = weekday
         
         // initialise super
-        super.init(radius: radius)
+        super.init(frame: frame)
         
         self.isSelected = true
         
@@ -55,11 +52,6 @@ class UIWeekdayButton: UIRoundButton {
     
     //MARK: Button Action
     @objc func dayTapped(button: UIButton) {
-        
         button.isSelected = !button.isSelected
-        
-        // call the delegate
-        delegate?.daySelected(sender: self)
     }
-    
 }

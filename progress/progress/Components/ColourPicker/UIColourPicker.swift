@@ -8,15 +8,9 @@
 
 import UIKit
 
-@IBDesignable class UIColourPicker: UIStackView, UIColourPickerButtonDelegate {
+@IBDesignable class UIColourPicker: UIStackView {
  
     //MARK: Properties
-    @IBInspectable var radius: CGFloat = 34 {
-        didSet {
-            setupButtons()
-        }
-    }
-    
     @IBInspectable var defaultBorderColour: UIColor = UIColor.black {
         didSet {
             setupButtons()
@@ -58,18 +52,18 @@ import UIKit
 
         for i in 0..<ThemeColours.labelColours.count {
             
-            let button = UIColourPickerButton(colour: ThemeColours.labelColours[i], borderColour: defaultBorderColour.cgColor, radius: radius)
+            let button = UIColourPickerButton(colour: ThemeColours.labelColours[i], borderColour: defaultBorderColour.cgColor, frame: self.frame)
             
-            button.delegate = self
+            button.addTarget(self, action: #selector(UIColourPicker.colourSelected(button:)), for: .touchUpInside)
             
             addArrangedSubview(button)
             colourButtons.append(button)
         }
     }
     
-    func colourSelected(sender: UIColourPickerButton) {
+    @objc func colourSelected(button: UIColourPickerButton) {
         
-        self.chosenColour = sender.colour
+        self.chosenColour = button.colour
         
         self.delegate?.colourSelected(sender: self)
     }

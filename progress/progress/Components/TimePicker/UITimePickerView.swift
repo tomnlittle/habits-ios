@@ -65,7 +65,7 @@ import UIKit
     private var verticalView = UIStackView()
     private var horizontalViews = [UIStackView]()
 
-    private var times = ["6am", "7am", "8am", "9am", "4pm", "5pm", "6pm", "7pm", "8pm", "Custom"]
+    private var times = ["6am", "7am", "8am", "9am", "4pm", "5pm", "6pm", "7pm", "8pm"]
     private var timeButtons = [UIButton]()
 
     //MARK: Initialisation
@@ -81,6 +81,8 @@ import UIKit
 
     //MARK: Private Methods
     private func setup() {
+        
+        print("setting up times")
         
         // remove all the views prior to initialisation
 //        cleanViews()
@@ -138,10 +140,6 @@ import UIKit
         superView.addSubview(newStackView)
         
         newStackView.translatesAutoresizingMaskIntoConstraints = false
-//        newStackView.topAnchor.constraint(equalTo: superView.topAnchor, constant: 0.0).isActive = true
-//        newStackView.leftAnchor.constraint(equalTo: superView.leftAnchor, constant: 0.0).isActive = true
-//        newStackView.rightAnchor.constraint(equalTo: superView.rightAnchor, constant: 0.0).isActive = true
-//        newStackView.bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: 0.0).isActive = true
         
         if orientation == .horizontal {
             newStackView.heightAnchor.constraint(equalToConstant: 45).isActive = true

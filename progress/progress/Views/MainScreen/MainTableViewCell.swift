@@ -10,7 +10,7 @@ import UIKit
 
 class ProgressionTableViewCell: UITableViewCell {
     
-    @IBInspectable var cornerRadius: CGFloat = 5.0 {
+    @IBInspectable var cornerRadius: CGFloat = LayerDefaults.defaultRadius {
         didSet {
             setup()
         }
