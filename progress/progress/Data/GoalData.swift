@@ -24,7 +24,7 @@ class GoalData: NSObject, NSCoding {
     var colour: UIColor
     
     // what days of the week are we going to track
-    var daysToTrack: [EnumDaysOfWeek]
+    var daysToTrack: [EnumWeekdays]
     
     // reminders that have been set by the user
     var reminders: [Int] = []
@@ -44,7 +44,7 @@ class GoalData: NSObject, NSCoding {
         static let reminders = "reminders"
     }
     
-    init?(name: String, initialDate: Date, colour: UIColor, daysToTrack: [EnumDaysOfWeek], reminders: [Int]) {
+    init?(name: String, initialDate: Date, colour: UIColor, daysToTrack: [EnumWeekdays], reminders: [Int]) {
         self.name = name
         self.initialDate = initialDate
         self.colour = colour
@@ -78,7 +78,7 @@ class GoalData: NSObject, NSCoding {
             return nil
         }
         
-        guard let daysToTrack = aDecoder.decodeObject(forKey: PropertyKey.daysToTrack) as? [EnumDaysOfWeek] else {
+        guard let daysToTrack = aDecoder.decodeObject(forKey: PropertyKey.daysToTrack) as? [EnumWeekdays] else {
             os_log("Unable to decode UIColor", log: OSLog.default, type: .debug)
             return nil
         }

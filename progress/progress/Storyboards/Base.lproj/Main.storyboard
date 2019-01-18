@@ -331,7 +331,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="81D-4H-rmh" userLabel="Picker" customClass="LabelColourPicker" customModule="progress" customModuleProvider="target">
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="81D-4H-rmh" userLabel="Picker" customClass="UIColourPicker" customModule="progress" customModuleProvider="target">
                                                 <rect key="frame" x="23.666666666666657" y="28" width="268" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="zzp-IK-I9b"/>

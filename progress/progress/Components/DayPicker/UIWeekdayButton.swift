@@ -8,12 +8,16 @@
 
 import UIKit
 
-class DayOfWeekButton: UIButton {
+class UIWeekdayButton: UIButton {
+    
+    // delegate
+    weak var delegate: UIWeekdayButtonDelegate?
+
     
     //MARK: Private Variables
     
-    private var dayOfWeek: DayOfWeek
-
+    private var weekday: WeekdayData
+   
     // unselected colours
     
     private let unselectedBackgroundColour: UIColor = UIColor.groupTableViewBackground
@@ -27,9 +31,14 @@ class DayOfWeekButton: UIButton {
     // haptic feedback
     private let selectionVibration = UISelectionFeedbackGenerator()
     
-    required init(dayOfWeek: DayOfWeek, radius: CGFloat) {
-        self.dayOfWeek = dayOfWeek
+    required init(day: EnumWeekdays, radius: CGFloat) {
         
+        let weekday = WeekdayData(day: day)
+        
+        // initialise the class
+        self.weekday = weekday
+        
+        // initialise super
         super.init(frame: .zero)
         
         self.isSelected = true
@@ -38,7 +47,7 @@ class DayOfWeekButton: UIButton {
         self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 10)
         self.setTitleColor(self.selectedTextColour, for: .selected)
         self.setTitleColor(self.unselectedTextColour, for: .normal)
-        self.setTitle(self.dayOfWeek.shortName(), for: .normal)
+        self.setTitle(self.weekday.shortName(), for: .normal)
         
         self.backgroundColor = self.unselectedBackgroundColour
         
@@ -50,7 +59,7 @@ class DayOfWeekButton: UIButton {
         self.layer.cornerRadius = radius / 2
         self.clipsToBounds = true
         
-        self.addTarget(self, action: #selector(DayOfWeekButton.dayTapped(button:)), for: .touchUpInside)
+        self.addTarget(self, action: #selector(UIWeekdayButton.dayTapped(button:)), for: .touchUpInside)
         
     }
     
@@ -62,6 +71,9 @@ class DayOfWeekButton: UIButton {
     @objc func dayTapped(button: UIButton) {
         button.isSelected = !button.isSelected
         self.selectionVibration.selectionChanged()
+        
+        // call the delegate
+        delegate?.daySelected(sender: self)
     }
     
 }

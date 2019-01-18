@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol LabelColourPickerDelegate: AnyObject {
-    func colourSelected(sender: LabelColourPicker)
+protocol UIColourPickerDelegate: AnyObject {
+    func colourSelected(sender: UIColourPicker)
 }

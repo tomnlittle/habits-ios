@@ -9,12 +9,12 @@
 import UIKit
 import os.log
 
-class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINavigationControllerDelegate, LabelColourPickerDelegate {
+class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIColourPickerDelegate {
     
     //MARK: Properties
     @IBOutlet weak var mainTextField: TextEntryField!
     @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var labelColour: LabelColourPicker!
+    @IBOutlet weak var labelColour: UIColourPicker!
     @IBOutlet weak var dateButton: UIButton!
     @IBOutlet weak var dayPicker: UIDayPicker!
 
@@ -61,8 +61,13 @@ class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINav
         super.prepare(for: segue, sender: sender)
         
         if let button = sender as? UIButton, button === self.saveButton {
+            
+            print("ending")
+            print(self.currentGoal.colour)
+            print(self.labelColour.chosenColour)
             self.currentGoal.name = mainTextField.text ?? ""
             self.currentGoal.colour = labelColour.chosenColour!
+            print(self.currentGoal.colour)
 //            self.currentGoal.daysToTrack = dayPicker.selectedBut
         }
         
@@ -117,7 +122,7 @@ class GoalViewController: DefaultModalViewController, UITextFieldDelegate, UINav
     }
     
     // called when a colour is selected in the colour picker field
-    func colourSelected(sender: LabelColourPicker) {
+    func colourSelected(sender: UIColourPicker) {
         
         // close the keyboard
         self.mainTextField.resignFirstResponder()

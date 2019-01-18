@@ -8,7 +8,14 @@
 
 import UIKit
 
-@IBDesignable class UIDayPicker: UIStackView {
+@IBDesignable class UIDayPicker: UIStackView, UIWeekdayButtonDelegate {
+    
+    // MARK: Designable
+    @IBInspectable var radius: CGFloat = 34 {
+        didSet {
+            setup()
+        }
+    }
     
     // MARK: Public Properties
     
@@ -17,13 +24,6 @@ import UIKit
     
     // MARK: Private Properties
     
-    private var selectedDays: [Int] = [] {
-        didSet {
-            updateSelection()
-        }
-    }
-    
-    private var days: [String] = []
     private var dayButtons: [UIButton] = []
     
     //MARK: Initialisation
@@ -48,27 +48,18 @@ import UIKit
         
         dayButtons.removeAll()
         
-        
-        let button = DayOfWeekButton(dayOfWeek: DayOfWeek(day: EnumDaysOfWeek.monday), radius: 34)
-        
-        addArrangedSubview(button)
-        dayButtons.append(button)
-        
-//        for i in 0..<self.days.count {
-//
-//        }
+        for day in EnumWeekdays.allCases {
+
+            let button = UIWeekdayButton(day: day, radius: radius)
+            
+            button.delegate = self
+            
+            addArrangedSubview(button)
+            dayButtons.append(button)
+        }
     }
     
-    private func updateSelection() {
-        
-        // clear selected array
-        self.selectedDays = []
-        
-        for button in self.dayButtons {
-            if button.isSelected {
-                //                self.selectedDays.append(button)
-            }
-        }
-        
+    func daySelected(sender: UIWeekdayButton) {
+        print("day un/selected")
     }
 }
