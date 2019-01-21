@@ -8,19 +8,35 @@
 
 import UIKit
 
-class UIDefaultButton: UIButton {
+@IBDesignable class UIDefaultButton: UIButton {
     
     // haptic feedback
     private let selectionVibration = UISelectionFeedbackGenerator()
+
+    private var backgroundColour: UIColor = UIColor.groupTableViewBackground
+    private var unselectedTextColour: UIColor = UIColor.lightGray
+    private var selectedTextColour: UIColor = UIColor.black
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.addTarget(self, action: #selector(UIDefaultButton.touchedInside(button:)), for: .touchUpInside)
+        self.setTitleColor(self.selectedTextColour, for: .selected)
+        self.setTitleColor(self.unselectedTextColour, for: .normal)
+        self.setTitleColor(self.unselectedTextColour, for: .disabled)
+        
+        self.backgroundColor = self.backgroundColour
+        
+        setupButton()
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        setupButton()
+    }
+    
+    private func setupButton() {
+        self.addTarget(self, action: #selector(UIDefaultButton.touchedInside(button:)), for: .touchUpInside)
     }
     
     @objc func touchedInside(button: UIDefaultButton) {

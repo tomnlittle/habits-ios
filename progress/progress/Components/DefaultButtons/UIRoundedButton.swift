@@ -8,23 +8,34 @@
 
 import UIKit
 
-class UIRoundedButton: UIDefaultButton {
+@IBDesignable class UIRoundedButton: UIDefaultButton {
+    
+    @IBInspectable var radius: CGFloat = LayerDefaults.defaultRadius {
+        didSet {
+            setup()
+        }
+    }
 
-    init(radius: CGFloat) {
-        
-        // initialise super
+    init() {
         super.init(frame: .zero)
-        
-        self.translatesAutoresizingMaskIntoConstraints = false
-        self.heightAnchor.constraint(equalToConstant: radius).isActive = true
-        self.widthAnchor.constraint(equalToConstant: radius).isActive = true
-        
-        self.layer.borderWidth = 0.0
-        self.layer.cornerRadius = radius / 2
-        self.clipsToBounds = true
+        setup()
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    init(radius: CGFloat) {
+        super.init(frame: .zero)
+    
+        self.radius = radius
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setup()
+    }
+    
+    private func setup() {
+        self.layer.borderWidth = 0.0
+        self.layer.cornerRadius = self.radius
+        self.clipsToBounds = true
     }
 }

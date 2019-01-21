@@ -12,7 +12,7 @@ import os.log
 class GoalViewController: DefaultModalViewController, UINavigationControllerDelegate, UIColourPickerDelegate {
     
     //MARK: Properties
-    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var saveButton: UIDefaultButton!
     
     @IBOutlet weak var mainTextField: UIDefaultTextField!
     @IBOutlet weak var colourPicker: UIColourPicker!

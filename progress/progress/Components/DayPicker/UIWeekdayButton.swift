@@ -13,16 +13,6 @@ class UIWeekdayButton: UIRoundButton {
     //MARK: Private Variables
     private var weekday: WeekdayData
    
-    // unselected colours
-    
-    private let unselectedBackgroundColour: UIColor = UIColor.groupTableViewBackground
-    private let unselectedTextColour: UIColor = UIColor.lightGray
-    
-    // selected colours
-    
-    private let selectedBackgroundColour: UIColor = UIColor.blue
-    private let selectedTextColour: UIColor = UIColor.black
-    
     required init(day: EnumWeekdays, frame: CGRect) {
         
         let weekday = WeekdayData(day: day)
@@ -34,15 +24,8 @@ class UIWeekdayButton: UIRoundButton {
         super.init(frame: frame)
         
         self.isSelected = true
-        
-        // setup button font
-        self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 10)
-        self.setTitleColor(self.selectedTextColour, for: .selected)
-        self.setTitleColor(self.unselectedTextColour, for: .normal)
         self.setTitle(self.weekday.shortName(), for: .normal)
-        
-        self.backgroundColor = self.unselectedBackgroundColour
-        
+        self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 10)
         self.addTarget(self, action: #selector(UIWeekdayButton.dayTapped(button:)), for: .touchUpInside)
     }
     

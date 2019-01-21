@@ -10,7 +10,6 @@ import UIKit
 
 class UITimeCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    @IBInspectable var buttonCornerRadius: CGFloat = LayerDefaults.defaultRadius
     @IBInspectable var numRows: Int = 2
     
     private let times = ["6am", "7am", "8am", "9am", "5pm", "6pm", "7pm", "8pm"]
@@ -40,21 +39,12 @@ class UITimeCollectionView: UICollectionView, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TimeCell", for: indexPath)
  
-        let button: UIRoundedButton = UIRoundedButton(radius: 10)
+        let button: UIRoundedButton = UIRoundedButton()
         
-//        button.layer.cornerRadius = buttonCornerRadius
-//        button.clipsToBounds = true
-        
-        let origin: CGPoint = CGPoint(x: 40, y: 60)
-        let size: CGSize = CGSize(width: 100, height: 100)
-        
-        button.frame = CGRect(origin: origin, size: size)
-
+        button.frame = cell.frame
         button.center = CGPoint(x: cell.frame.width / 2.0, y: cell.frame.height / 2.0)
-
         button.setTitle(self.times[indexPath.item], for: .normal)
-        button.backgroundColor = UIColor.red
-        
+        button.addTarget(self, action: #selector(UITimeCollectionView.cellTouched(button:)), for: .touchUpInside)
         cell.addSubview(button)
         
         return cell
@@ -68,5 +58,8 @@ class UITimeCollectionView: UICollectionView, UICollectionViewDelegate, UICollec
         
         return CGSize(width: cellWidth, height: cellHeight)
     }
-
+    
+    @objc func cellTouched(button: UIRoundedButton) {
+        
+    }
 }
