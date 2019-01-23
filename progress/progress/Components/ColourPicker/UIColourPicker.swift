@@ -13,7 +13,7 @@ import UIKit
     //MARK: Properties
     @IBInspectable var defaultBorderColour: UIColor = UIColor.black {
         didSet {
-            setupButtons()
+            setup()
         }
     }
     
@@ -28,19 +28,23 @@ import UIKit
     
     private var colourButtons = [UIColourPickerButton]()
     
-    //MARK: Initialisation
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupButtons()
+    override func prepareForInterfaceBuilder() {
+        setup()
     }
     
-    required init(coder: NSCoder) {
-        super.init(coder: coder)
-        setupButtons()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+        
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
     }
     
     //MARK: Private Methods
-    private func setupButtons() {
+    private func setup() {
         
         // clear existing buttons
         for button in colourButtons {

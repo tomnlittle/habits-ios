@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UIDefaultTextField: UITextField, UITextFieldDelegate {
+@IBDesignable class UIDefaultTextField: UITextField, UITextFieldDelegate {
     
     @IBInspectable var colour: UIColor = ThemeColours.textBackground {
         didSet {
@@ -16,7 +16,7 @@ class UIDefaultTextField: UITextField, UITextFieldDelegate {
         }
     }
     
-    @IBInspectable var cornerRadius: CGFloat = LayerDefaults.defaultRadius {
+    @IBInspectable var radius: CGFloat = LayerDefaults.defaultRadius {
         didSet {
             setup()
         }
@@ -40,34 +40,42 @@ class UIDefaultTextField: UITextField, UITextFieldDelegate {
         }
     }
     
-    @IBInspectable var maxCharacters: Int = 15
+    let maxCharacters: Int = 15
     
-    //MARK: Initialisation
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
+    override func prepareForInterfaceBuilder() {
+        setup()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         setup()
     }
     
     //MARK: Private Methods
-    private func setup() {
+    func setup() {
         
         // set height constraint
         let height = self.font!.pointSize + self.borderWidth + heightPadding
-        NSLayoutConstraint(item: self, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: height).isActive = true
+        NSLayoutConstraint(item: self, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.greaterThanOrEqual, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: height).isActive = true
     
-        // add padding to the left side of the text box
+        //  add padding to the left side of the text box
         let paddingWidth = borderWidth + leftPadding
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: paddingWidth, height: self.frame.size.height))
         self.leftView = paddingView
         self.leftViewMode = .always
         
+        backgroundColor = colour
+        
         // setup the border
-        self.layer.cornerRadius = cornerRadius
-        
-        self.layer.borderColor = colour.cgColor
-        self.layer.borderWidth = borderWidth
-        
-        self.backgroundColor = colour
+        layer.cornerRadius = radius
+        layer.borderWidth = borderWidth
+        layer.borderColor = colour.cgColor
     }
     
     //MARK: UITextFieldDelegate

@@ -16,13 +16,13 @@ class GoalViewController: DefaultModalViewController, UINavigationControllerDele
     
     @IBOutlet weak var mainTextField: UIDefaultTextField!
     @IBOutlet weak var colourPicker: UIColourPicker!
-    @IBOutlet weak var startDatePicker: UITextFieldButton!
+    @IBOutlet weak var startDatePicker: UIRoundedButton!
     @IBOutlet weak var dayPicker: UIDayPicker!
 
-    @IBOutlet weak var colourView: UIView!
-    @IBOutlet weak var dateView: UIView!
-    @IBOutlet weak var dayView: UIView!
-    @IBOutlet weak var reminderView: UIView!
+    @IBOutlet weak var colourView: UIStackView!
+    @IBOutlet weak var dateView: UIStackView!
+    @IBOutlet weak var dayView: UIStackView!
+    @IBOutlet weak var reminderView: UIStackView!
     
     @IBOutlet weak var collectionView: UITimeCollectionView!
    
@@ -152,7 +152,7 @@ class GoalViewController: DefaultModalViewController, UINavigationControllerDele
         formatter.timeStyle = .none
         formatter.locale = Locale(identifier: "en_US")
         
-        self.startDatePicker.setTitle(formatter.string(from: date), for: .normal)
+        startDatePicker.setTitle(formatter.string(from: date), for: .normal)
     }
 }
 

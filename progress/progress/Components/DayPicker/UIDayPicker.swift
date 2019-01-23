@@ -10,23 +10,23 @@ import UIKit
 
 @IBDesignable class UIDayPicker: UIStackView {
     
-    // MARK: Public Properties
-    
-    // delegate handle
-    public var delegate: UIDayPickerDelegate?
-    
     // MARK: Private Properties
     
     private var dayButtons: [UIButton] = []
     
-    //MARK: Initialisation
+    // MARK: Initialisation
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        setup()
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
     
-    required init(coder: NSCoder) {
-        super.init(coder: coder)
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         setup()
     }
     

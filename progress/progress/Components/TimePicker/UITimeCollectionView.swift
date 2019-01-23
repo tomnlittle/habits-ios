@@ -8,15 +8,24 @@
 
 import UIKit
 
-class UITimeCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+@IBDesignable class UITimeCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBInspectable var numRows: Int = 2
     
     private let times = ["6am", "7am", "8am", "9am", "5pm", "6pm", "7pm", "8pm"]
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        
+    // MARK: Initialisation
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    func setup() {
         self.delegate = self
         self.dataSource = self
     }
@@ -39,12 +48,8 @@ class UITimeCollectionView: UICollectionView, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TimeCell", for: indexPath)
  
-        let button: UIRoundedButton = UIRoundedButton()
+        let button: UITimeCollectionButton = UITimeCollectionButton(cell: cell, time: self.times[indexPath.item])
         
-        button.frame = cell.frame
-        button.center = CGPoint(x: cell.frame.width / 2.0, y: cell.frame.height / 2.0)
-        button.setTitle(self.times[indexPath.item], for: .normal)
-        button.addTarget(self, action: #selector(UITimeCollectionView.cellTouched(button:)), for: .touchUpInside)
         cell.addSubview(button)
         
         return cell
@@ -57,9 +62,5 @@ class UITimeCollectionView: UICollectionView, UICollectionViewDelegate, UICollec
         let cellWidth: CGFloat = (self.frame.width * CGFloat(self.numRows)) / CGFloat(self.times.count)
         
         return CGSize(width: cellWidth, height: cellHeight)
-    }
-    
-    @objc func cellTouched(button: UIRoundedButton) {
-        
     }
 }

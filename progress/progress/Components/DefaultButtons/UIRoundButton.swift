@@ -8,23 +8,31 @@
 
 import UIKit
 
-class UIRoundButton: UIRoundedButton {
+@IBDesignable class UIRoundButton: UIRoundedButton {
     
-    init(frame: CGRect) {
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        setup()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
         
-        let radius = frame.height / 2
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    private func setup() {
         
-        // initialise super
-        super.init(radius: radius)
+        super.radius = frame.height / 2
         
         self.translatesAutoresizingMaskIntoConstraints = false
         self.heightAnchor.constraint(equalToConstant: frame.height).isActive = true
         self.widthAnchor.constraint(equalToConstant: frame.height).isActive = true
         
     }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
 }

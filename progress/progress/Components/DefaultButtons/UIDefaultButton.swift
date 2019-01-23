@@ -13,29 +13,49 @@ import UIKit
     // haptic feedback
     private let selectionVibration = UISelectionFeedbackGenerator()
 
-    private var backgroundColour: UIColor = UIColor.groupTableViewBackground
-    private var unselectedTextColour: UIColor = UIColor.lightGray
-    private var selectedTextColour: UIColor = UIColor.black
+    @IBInspectable var backgroundColour: UIColor = ThemeColours.textBackground {
+        didSet {
+            setup()
+        }
+    }
+    
+    @IBInspectable var unselectedTextColour: UIColor = UIColor.lightGray {
+        didSet {
+            setup()
+        }
+    }
+    
+    @IBInspectable var selectedTextColour: UIColor = UIColor.black {
+        didSet {
+            setup()
+        }
+    }
+    
+    // MARK: Initialisation
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        setup()
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        self.setTitleColor(self.selectedTextColour, for: .selected)
-        self.setTitleColor(self.unselectedTextColour, for: .normal)
-        self.setTitleColor(self.unselectedTextColour, for: .disabled)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    private func setup() {
         
         self.backgroundColor = self.backgroundColour
         
-        setupButton()
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
+        self.setTitleColor(self.selectedTextColour, for: .selected)
+        self.setTitleColor(self.selectedTextColour, for: .normal)
         
-        setupButton()
-    }
-    
-    private func setupButton() {
+        self.setTitleColor(self.unselectedTextColour, for: .disabled)
+        
         self.addTarget(self, action: #selector(UIDefaultButton.touchedInside(button:)), for: .touchUpInside)
     }
     

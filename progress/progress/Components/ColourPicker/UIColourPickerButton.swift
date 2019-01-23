@@ -20,6 +20,7 @@ class UIColourPickerButton: UIRoundButton {
         super.init(frame: frame)
         
         self.backgroundColor = colour
+        self.layer.borderColor = borderColour
     }
     
     required init?(coder aDecoder: NSCoder) {

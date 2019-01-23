@@ -18,13 +18,9 @@
 		E239350221E4A59400B3AD2D /* DefaultOverContextModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E239350121E4A59400B3AD2D /* DefaultOverContextModal.swift */; };
 		E239350521E4B42E00B3AD2D /* UIViewRoundedBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E239350421E4B42E00B3AD2D /* UIViewRoundedBorder.swift */; };
 		E239350721E4B59100B3AD2D /* LayerDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E239350621E4B59100B3AD2D /* LayerDefaults.swift */; };
-		E239350921E4B9C700B3AD2D /* UITextFieldButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E239350821E4B9C700B3AD2D /* UITextFieldButton.swift */; };
 		E274C52421DE2008007AB9D3 /* GoalViewDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E274C52321DE2008007AB9D3 /* GoalViewDatePickerViewController.swift */; };
 		E28F935121EAEE9200FC87BC /* UITimeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28F935021EAEE9200FC87BC /* UITimeCollectionView.swift */; };
-		E28F935321EAEF6A00FC87BC /* UITimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28F935221EAEF6A00FC87BC /* UITimeCollectionViewCell.swift */; };
-		E28F935521EAF28D00FC87BC /* UIDayPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28F935421EAF28D00FC87BC /* UIDayPickerDelegate.swift */; };
 		E28F935721EAF2B700FC87BC /* UIDayPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28F935621EAF2B700FC87BC /* UIDayPicker.swift */; };
-		E29889E021E8714F001D8B69 /* UITimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29889DF21E8714F001D8B69 /* UITimePickerView.swift */; };
 		E2B503A021CE3E6A002DE8D4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B5039F21CE3E6A002DE8D4 /* MainViewController.swift */; };
 		E2D667BF21D861DA007CF73F /* UIDefaultTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D667BE21D861DA007CF73F /* UIDefaultTextField.swift */; };
 		E2DE7EFB21DCCBDF00ED7B37 /* UIColourPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE7EFA21DCCBDF00ED7B37 /* UIColourPickerDelegate.swift */; };
@@ -32,6 +28,7 @@
 		E2DE7F0121DCDCA900ED7B37 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE7F0021DCDCA900ED7B37 /* AboutViewController.swift */; };
 		E2DE7F0321DCDCDD00ED7B37 /* DefaultModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DE7F0221DCDCDD00ED7B37 /* DefaultModalViewController.swift */; };
 		E2E0A65421D6292A00D61741 /* ThemeColours.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E0A65321D6292A00D61741 /* ThemeColours.swift */; };
+		E2EE427321F5B7E50062AD9B /* UITimeCollectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EE427221F5B7E50062AD9B /* UITimeCollectionButton.swift */; };
 		E2F0CE6D21D5DEF60033EA05 /* Credits in Resources */ = {isa = PBXBuildFile; fileRef = E2F0CE6C21D5DEF60033EA05 /* Credits */; };
 		E2F36789217730AC00DAC0CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F36788217730AC00DAC0CE /* AppDelegate.swift */; };
 		E2F3678B217730AC00DAC0CE /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F3678A217730AC00DAC0CE /* GoalViewController.swift */; };
@@ -72,13 +69,9 @@
 		E239350121E4A59400B3AD2D /* DefaultOverContextModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultOverContextModal.swift; sourceTree = "<group>"; };
 		E239350421E4B42E00B3AD2D /* UIViewRoundedBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewRoundedBorder.swift; sourceTree = "<group>"; };
 		E239350621E4B59100B3AD2D /* LayerDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerDefaults.swift; sourceTree = "<group>"; };
-		E239350821E4B9C700B3AD2D /* UITextFieldButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldButton.swift; sourceTree = "<group>"; };
 		E274C52321DE2008007AB9D3 /* GoalViewDatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewDatePickerViewController.swift; sourceTree = "<group>"; };
 		E28F935021EAEE9200FC87BC /* UITimeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITimeCollectionView.swift; sourceTree = "<group>"; };
-		E28F935221EAEF6A00FC87BC /* UITimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITimeCollectionViewCell.swift; sourceTree = "<group>"; };
-		E28F935421EAF28D00FC87BC /* UIDayPickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIDayPickerDelegate.swift; path = progress/Components/DayPicker/UIDayPickerDelegate.swift; sourceTree = SOURCE_ROOT; };
 		E28F935621EAF2B700FC87BC /* UIDayPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIDayPicker.swift; path = progress/Components/DayPicker/UIDayPicker.swift; sourceTree = SOURCE_ROOT; };
-		E29889DF21E8714F001D8B69 /* UITimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITimePickerView.swift; sourceTree = "<group>"; };
 		E2B5039F21CE3E6A002DE8D4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E2D667BE21D861DA007CF73F /* UIDefaultTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDefaultTextField.swift; sourceTree = "<group>"; };
 		E2DE7EFA21DCCBDF00ED7B37 /* UIColourPickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColourPickerDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +79,7 @@
 		E2DE7F0021DCDCA900ED7B37 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		E2DE7F0221DCDCDD00ED7B37 /* DefaultModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultModalViewController.swift; sourceTree = "<group>"; };
 		E2E0A65321D6292A00D61741 /* ThemeColours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColours.swift; sourceTree = "<group>"; };
+		E2EE427221F5B7E50062AD9B /* UITimeCollectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITimeCollectionButton.swift; sourceTree = "<group>"; };
 		E2F0CE6C21D5DEF60033EA05 /* Credits */ = {isa = PBXFileReference; lastKnownFileType = text; path = Credits; sourceTree = "<group>"; };
 		E2F36785217730AC00DAC0CE /* progress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = progress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F36788217730AC00DAC0CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -141,7 +135,6 @@
 			children = (
 				E214C8B921F16ADC00D131FB /* UIDefaultButton.swift */,
 				E214C8B721F16ABB00D131FB /* UIRoundButton.swift */,
-				E239350821E4B9C700B3AD2D /* UITextFieldButton.swift */,
 				E214C8C021F19CCB00D131FB /* UIRoundedButton.swift */,
 			);
 			path = DefaultButtons;
@@ -160,7 +153,6 @@
 			children = (
 				E2158D0E21EDCD61008F23DE /* WeekdayData.swift */,
 				E28F935621EAF2B700FC87BC /* UIDayPicker.swift */,
-				E28F935421EAF28D00FC87BC /* UIDayPickerDelegate.swift */,
 				E2158D0C21EDCD21008F23DE /* UIWeekdayButton.swift */,
 			);
 			name = DayPicker;
@@ -247,9 +239,8 @@
 		E29889DE21E87131001D8B69 /* TimePicker */ = {
 			isa = PBXGroup;
 			children = (
-				E29889DF21E8714F001D8B69 /* UITimePickerView.swift */,
 				E28F935021EAEE9200FC87BC /* UITimeCollectionView.swift */,
-				E28F935221EAEF6A00FC87BC /* UITimeCollectionViewCell.swift */,
+				E2EE427221F5B7E50062AD9B /* UITimeCollectionButton.swift */,
 			);
 			path = TimePicker;
 			sourceTree = "<group>";
@@ -466,13 +457,11 @@
 				E2158D0D21EDCD21008F23DE /* UIWeekdayButton.swift in Sources */,
 				E2FA55A021D634D600D2E1BD /* UIColourPicker.swift in Sources */,
 				E28F935121EAEE9200FC87BC /* UITimeCollectionView.swift in Sources */,
-				E239350921E4B9C700B3AD2D /* UITextFieldButton.swift in Sources */,
-				E29889E021E8714F001D8B69 /* UITimePickerView.swift in Sources */,
 				E2DE7F0121DCDCA900ED7B37 /* AboutViewController.swift in Sources */,
-				E28F935521EAF28D00FC87BC /* UIDayPickerDelegate.swift in Sources */,
 				E239350721E4B59100B3AD2D /* LayerDefaults.swift in Sources */,
 				E239350221E4A59400B3AD2D /* DefaultOverContextModal.swift in Sources */,
 				E214C8BA21F16ADC00D131FB /* UIDefaultButton.swift in Sources */,
+				E2EE427321F5B7E50062AD9B /* UITimeCollectionButton.swift in Sources */,
 				E20F0AC221A4B9BF00869B37 /* GoalData.swift in Sources */,
 				E2D667BF21D861DA007CF73F /* UIDefaultTextField.swift in Sources */,
 				E2E0A65421D6292A00D61741 /* ThemeColours.swift in Sources */,
@@ -481,7 +470,6 @@
 				E2F3678B217730AC00DAC0CE /* GoalViewController.swift in Sources */,
 				E2F36789217730AC00DAC0CE /* AppDelegate.swift in Sources */,
 				E2DE7F0321DCDCDD00ED7B37 /* DefaultModalViewController.swift in Sources */,
-				E28F935321EAEF6A00FC87BC /* UITimeCollectionViewCell.swift in Sources */,
 				E2B503A021CE3E6A002DE8D4 /* MainViewController.swift in Sources */,
 				E20F0AC421A4C3D100869B37 /* MainTableViewCell.swift in Sources */,
 				E2048F8721EF22FB004A0E95 /* UIColourPickerButton.swift in Sources */,
@@ -668,10 +656,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tomnlittle.progress;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tomnlittle.simplehabits;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -686,10 +674,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tomnlittle.progress;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tomnlittle.simplehabits;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
