@@ -234,13 +234,21 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="z4Q-52-Ckn"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                         <state key="normal" title="Save">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <state key="disabled">
                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="normalBackground">
+                                                <color key="value" red="0.20000000000000001" green="0.54940687533575083" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="normalTextColour">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="IgF-ig-Gbf" kind="unwind" unwindAction="unwindToGoalListWithSender:" id="MxL-bn-hX4"/>
                                         </connections>
@@ -271,7 +279,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="wxf-Ga-WyC" userLabel="MainView">
-                                <rect key="frame" x="30" y="97" width="315" height="475"/>
+                                <rect key="frame" x="30" y="97" width="315" height="587"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="h11-5X-uHd" userLabel="NameView">
                                         <rect key="frame" x="0.0" y="0.0" width="315" height="73"/>
@@ -311,7 +319,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="81D-4H-rmh" userLabel="Picker" customClass="UIColourPicker" customModule="progress" customModuleProvider="target">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="81D-4H-rmh" userLabel="Picker" customClass="UIColourPicker" customModule="progress" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="315" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="zzp-IK-I9b"/>
@@ -355,7 +363,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="s1s-GC-s1J" userLabel="DayView">
-                                        <rect key="frame" x="0.0" y="318" width="315" height="84"/>
+                                        <rect key="frame" x="0.0" y="318" width="315" height="90"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="DAYS TO TRACK:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxo-cr-PZ7" userLabel="Heading">
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="20"/>
@@ -375,16 +383,22 @@
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1bw-55-wkz" userLabel="Picker" customClass="UIDayPicker" customModule="progress" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="50" width="315" height="34"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1bw-55-wkz" userLabel="Picker" customClass="UIDayPicker" customModule="progress" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="50" width="315" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="34" id="3xm-Cc-eaL"/>
+                                                    <constraint firstAttribute="height" constant="40" id="3xm-Cc-eaL"/>
+                                                    <constraint firstAttribute="width" constant="315" id="doi-3A-XK2"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="normalBackground">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </stackView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TRm-3e-yH6" userLabel="ReminderView">
-                                        <rect key="frame" x="0.0" y="433" width="315" height="42"/>
+                                        <rect key="frame" x="0.0" y="439" width="315" height="148"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="REMINDER:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PzB-ci-uAw">
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="20"/>
@@ -428,7 +442,7 @@
                                                 </cells>
                                             </collectionView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWh-Jc-Q22" customClass="UIRoundedButton" customModule="progress" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="50" width="315" height="30"/>
+                                                <rect key="frame" x="0.0" y="118" width="315" height="30"/>
                                                 <state key="normal" title="Custom"/>
                                             </button>
                                         </subviews>

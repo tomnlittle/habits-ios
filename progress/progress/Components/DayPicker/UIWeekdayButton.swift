@@ -22,11 +22,10 @@ class UIWeekdayButton: UIRoundButton {
         
         // initialise super
         super.init(frame: frame)
-        
-        self.isSelected = true
+    
         self.setTitle(self.weekday.shortName(), for: .normal)
-        self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 10)
-        self.addTarget(self, action: #selector(UIWeekdayButton.dayTapped(button:)), for: .touchUpInside)
+        self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
+        self.addTarget(self, action: #selector(UIWeekdayButton.buttonTapped(button:)), for: .touchUpInside)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -34,7 +33,7 @@ class UIWeekdayButton: UIRoundButton {
     }
     
     //MARK: Button Action
-    @objc func dayTapped(button: UIButton) {
-        button.isSelected = !button.isSelected
+    @objc func buttonTapped(button: UIButton) {
+        button.isSelected.toggle()
     }
 }

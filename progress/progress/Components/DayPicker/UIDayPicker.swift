@@ -10,9 +10,21 @@ import UIKit
 
 @IBDesignable class UIDayPicker: UIStackView {
     
+    @IBInspectable var normalBackground: UIColor = UIColor.white {
+        didSet {
+            setup()
+        }
+    }
+    
+    @IBInspectable var selectedBackground: UIColor = ThemeColours.textBackground {
+        didSet {
+            setup()
+        }
+    }
+    
     // MARK: Private Properties
     
-    private var dayButtons: [UIButton] = []
+    private var dayButtons: [UIWeekdayButton] = []
     
     // MARK: Initialisation
     override func prepareForInterfaceBuilder() {
@@ -45,15 +57,18 @@ import UIKit
 
             let button = UIWeekdayButton(day: day, frame: self.frame)
             
-            button.addTarget(self, action: #selector(UIDayPicker.selected(button:)), for: .touchUpInside)
+            button.selectedBackground = selectedBackground
+            button.normalBackground = normalBackground
+            
+            button.isSelected = true
+            button.addTarget(self, action: #selector(UIDayPicker.buttonTapped(button:)), for: .touchUpInside)
             
             addArrangedSubview(button)
             dayButtons.append(button)
         }
     }
     
-    @objc func selected(button: UIWeekdayButton) {
-    
-        print("yas")
+    @objc func buttonTapped(button: UIWeekdayButton) {
+        print("day button selected: " + String(button.isSelected))
     }
 }

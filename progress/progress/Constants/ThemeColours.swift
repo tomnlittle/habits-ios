@@ -14,6 +14,8 @@ struct ThemeColours {
     static let modalBackgroundColour = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 0.3)
     static let textBackground = UIColor.groupTableViewBackground
     
+    static let saveButtonColour = UIColor(red:0.20, green:0.71, blue:1.00, alpha:1.0) // #33B5FF // #33D1FF
+    
     // REDS
     static let begonia = UIColor(red:1.00, green:0.42, blue:0.47, alpha:1.0) // Red -> #FF6C78
     

@@ -13,13 +13,25 @@ import UIKit
     // haptic feedback
     private let selectionVibration = UISelectionFeedbackGenerator()
 
-    @IBInspectable var backgroundColour: UIColor = ThemeColours.textBackground {
+    @IBInspectable var normalBackground: UIColor = ThemeColours.textBackground {
         didSet {
             setup()
         }
     }
     
-    @IBInspectable var unselectedTextColour: UIColor = UIColor.lightGray {
+    @IBInspectable var selectedBackground: UIColor = ThemeColours.textBackground {
+        didSet {
+            setup()
+        }
+    }
+    
+    @IBInspectable var disabledBackground: UIColor = ThemeColours.textBackground {
+        didSet {
+            setup()
+        }
+    }
+    
+    @IBInspectable var normalTextColour: UIColor = UIColor.black {
         didSet {
             setup()
         }
@@ -28,6 +40,32 @@ import UIKit
     @IBInspectable var selectedTextColour: UIColor = UIColor.black {
         didSet {
             setup()
+        }
+    }
+    
+    @IBInspectable var disabledTextColour: UIColor = UIColor.lightGray {
+        didSet {
+            setup()
+        }
+    }
+    
+    override var isEnabled: Bool {
+        willSet(newValue) {
+            if newValue {
+                self.backgroundColor = normalBackground
+            } else {
+                self.backgroundColor = disabledBackground
+            }
+        }
+    }
+    
+    override var isSelected: Bool {
+       willSet(newValue) {
+            if newValue {
+                self.backgroundColor = selectedBackground
+            } else {
+                self.backgroundColor = normalBackground
+            }
         }
     }
     
@@ -49,12 +87,11 @@ import UIKit
     
     private func setup() {
         
-        self.backgroundColor = self.backgroundColour
+        self.backgroundColor = self.normalBackground
         
+        self.setTitleColor(self.normalTextColour, for: .normal)
         self.setTitleColor(self.selectedTextColour, for: .selected)
-        self.setTitleColor(self.selectedTextColour, for: .normal)
-        
-        self.setTitleColor(self.unselectedTextColour, for: .disabled)
+        self.setTitleColor(self.disabledTextColour, for: .disabled)
         
         self.addTarget(self, action: #selector(UIDefaultButton.touchedInside(button:)), for: .touchUpInside)
     }
