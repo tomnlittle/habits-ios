@@ -271,7 +271,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="wxf-Ga-WyC" userLabel="MainView">
-                                <rect key="frame" x="30" y="97" width="315" height="581"/>
+                                <rect key="frame" x="30" y="97" width="315" height="475"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="h11-5X-uHd" userLabel="NameView">
                                         <rect key="frame" x="0.0" y="0.0" width="315" height="73"/>
@@ -384,7 +384,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TRm-3e-yH6" userLabel="ReminderView">
-                                        <rect key="frame" x="0.0" y="433" width="315" height="148"/>
+                                        <rect key="frame" x="0.0" y="433" width="315" height="42"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="REMINDER:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PzB-ci-uAw">
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="20"/>
@@ -428,7 +428,7 @@
                                                 </cells>
                                             </collectionView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWh-Jc-Q22" customClass="UIRoundedButton" customModule="progress" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="118" width="315" height="30"/>
+                                                <rect key="frame" x="0.0" y="50" width="315" height="30"/>
                                                 <state key="normal" title="Custom"/>
                                             </button>
                                         </subviews>

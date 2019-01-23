@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class UITimeCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class UITimeCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBInspectable var numRows: Int = 2
     
