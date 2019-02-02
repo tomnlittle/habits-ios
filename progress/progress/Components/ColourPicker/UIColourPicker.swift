@@ -11,7 +11,7 @@ import UIKit
 @IBDesignable class UIColourPicker: UIStackView {
  
     //MARK: Properties
-    @IBInspectable var defaultBorderColour: UIColor = UIColor.black {
+    @IBInspectable var borderWidth: CGFloat = 2.0 {
         didSet {
             setup()
         }
@@ -56,10 +56,10 @@ import UIKit
 
         for i in 0..<ThemeColours.labelColours.count {
             
-            let button = UIColourPickerButton(colour: ThemeColours.labelColours[i], borderColour: defaultBorderColour.cgColor, frame: self.frame)
+            let button = UIColourPickerButton(colour: ThemeColours.labelColours[i], borderWidth: borderWidth, frame: self.frame)
             
             button.addTarget(self, action: #selector(UIColourPicker.colourSelected(button:)), for: .touchUpInside)
-            
+          
             addArrangedSubview(button)
             colourButtons.append(button)
         }
@@ -82,9 +82,9 @@ import UIKit
         for button in self.colourButtons {
             
             if areColoursEqual(colour_1: button.colour, colour_2: colour) {
-                button.layer.borderWidth = 3.0
+                button.backgroundColor = colour
             } else {
-                button.layer.borderWidth = 0.0
+                button.backgroundColor = UIColor.white
             }
         }
     }

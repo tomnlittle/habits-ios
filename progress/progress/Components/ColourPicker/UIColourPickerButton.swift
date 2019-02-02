@@ -12,15 +12,31 @@ class UIColourPickerButton: UIRoundButton {
     
     public var colour: UIColor
     
-    required init(colour: UIColor, borderColour: CGColor, frame: CGRect) {
+    required init(colour: UIColor, borderWidth: CGFloat, frame: CGRect) {
         
         self.colour = colour
         
         // initialise super
         super.init(frame: frame)
         
-        self.backgroundColor = colour
-        self.layer.borderColor = borderColour
+        self.layer.borderWidth = borderWidth
+        self.layer.borderColor = colour.cgColor
+    
+        let scale: CGFloat = borderWidth * CGFloat.pi
+        let newDimensions: CGFloat = self.frame.size.height - scale
+
+        let circlePath = UIBezierPath(ovalIn: CGRect(x: scale/2,
+                                                     y: scale/2,
+                                                     width: newDimensions,
+                                                     height: newDimensions))
+        let shapeLayer = CAShapeLayer()
+        
+        shapeLayer.path = circlePath.cgPath
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.strokeColor = UIColor.white.cgColor
+        shapeLayer.lineWidth = borderWidth
+        
+        self.layer.addSublayer(shapeLayer)
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -28,7 +28,7 @@ import UIKit
         }
     }
     
-    @IBInspectable var heightPadding: CGFloat = 25.0 {
+    @IBInspectable var heightPadding: CGFloat = 20.0 {
         didSet {
             setup()
         }

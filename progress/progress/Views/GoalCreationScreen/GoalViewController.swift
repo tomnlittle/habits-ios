@@ -18,7 +18,9 @@ class GoalViewController: DefaultModalViewController, UINavigationControllerDele
     @IBOutlet weak var colourPicker: UIColourPicker!
     @IBOutlet weak var startDatePicker: UIRoundedButton!
     @IBOutlet weak var dayPicker: UIDayPicker!
-
+    
+    @IBOutlet weak var mainCard: UIViewRounded!
+    
     @IBOutlet weak var colourView: UIStackView!
     @IBOutlet weak var dateView: UIStackView!
     @IBOutlet weak var dayView: UIStackView!
@@ -38,12 +40,15 @@ class GoalViewController: DefaultModalViewController, UINavigationControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        colourPicker.delegate = self
+        self.colourPicker.delegate = self
         
         // if editing
         if self.isEditingGoal {
-            mainTextField.text = self.currentGoal.name
-            colourPicker.chosenColour = self.currentGoal.colour
+            self.mainTextField.text = self.currentGoal.name
+            self.colourPicker.chosenColour = self.currentGoal.colour
+            
+            self.saveButton.normalBorderColour = self.currentGoal.colour
+
         } else {
         
             // trigger the keyboard on the text field
@@ -82,6 +87,9 @@ class GoalViewController: DefaultModalViewController, UINavigationControllerDele
         
         // close the keyboard
         self.mainTextField.resignFirstResponder()
+        
+        // set the save buttons normal background colour
+        self.saveButton.normalBorderColour = sender.chosenColour!
         
         // call the animation field again
         animateNextSection()

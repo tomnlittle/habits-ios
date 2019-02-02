@@ -9,6 +9,6 @@
 import UIKit
 
 struct LayerDefaults {
-    static let defaultRadius: CGFloat = 5
+    static let defaultRadius: CGFloat = 3
 }
 

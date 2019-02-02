@@ -21,9 +21,6 @@ class GoalViewDatePickerViewController: DefaultOverContextModal {
         super.viewDidLoad()
         
         self.datePicker.date = self.resetDate
-        
-        self.dateView.roundAllCorners()
-        self.controlView.roundAllCorners()
     }
     
     @IBAction func dismiss(_ sender: Any) {

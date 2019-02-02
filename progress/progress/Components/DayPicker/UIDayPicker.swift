@@ -10,13 +10,19 @@ import UIKit
 
 @IBDesignable class UIDayPicker: UIStackView {
     
-    @IBInspectable var normalBackground: UIColor = UIColor.white {
+    @IBInspectable var normalBackgroundColour: UIColor = UIColor.white {
         didSet {
             setup()
         }
     }
     
-    @IBInspectable var selectedBackground: UIColor = ThemeColours.textBackground {
+    @IBInspectable var selectedBackgroundColour: UIColor = ThemeColours.textBackground {
+        didSet {
+            setup()
+        }
+    }
+    
+    @IBInspectable var borderWidth: CGFloat = 1.0 {
         didSet {
             setup()
         }
@@ -57,8 +63,11 @@ import UIKit
 
             let button = UIWeekdayButton(day: day, frame: self.frame)
             
-            button.selectedBackground = selectedBackground
-            button.normalBackground = normalBackground
+            button.selectedBackgroundColour = selectedBackgroundColour
+            button.normalBackgroundColour = normalBackgroundColour
+            
+            button.layer.borderColor = selectedBackgroundColour.cgColor
+            button.layer.borderWidth = self.borderWidth
             
             button.isSelected = true
             button.addTarget(self, action: #selector(UIDayPicker.buttonTapped(button:)), for: .touchUpInside)
